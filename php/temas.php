@@ -23,9 +23,7 @@
             $consulta = mysqli_query($conector, $otraQuery);
 
             $otraFila = mysqli_fetch_assoc($consulta);
-            {
-                echo $otraFila['count'];
-            }
+            echo $otraFila['count'];
             echo "<br>";
         }
     }
