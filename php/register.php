@@ -11,9 +11,14 @@ $correo = $_POST["correo"] ??  null;
 $clave = $_POST["clave"] ??  null;
 $usuario = $_POST["usuario"]?? null ;
 
+//agregar imagen
+$imagen = $_FILES['imagen']['name'];
+$ruta = $_FILES['imagen'] ['tmp_name'];
+$destino = "../image/".$imagen;
+copy($ruta, $destino);
 
-$query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto)
-          VALUES('$correo','$usuario','$clave','$nombre')";
+$query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto,image_user)
+          VALUES('$correo','$usuario','$clave','$nombre','$destino')";
 
 
 
