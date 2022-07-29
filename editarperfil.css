@@ -1,0 +1,211 @@
+/* Estilos letras */
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+/* font-family: 'Arimo', sans-serif; */
+
+
+body{
+background-color: #eeeeee;
+}
+
+/* HEADER*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+nav {
+    border: 1px solid black;
+    height: 80px;
+    background-color: #282d33;
+    z-index: 600;
+}
+.imgMenu {
+    width: 50px;
+    position: fixed;
+    top: 14px;
+    left: 26px;
+}
+
+.headerLogo {
+    width: 59px;
+    position: fixed;
+    left: 117px;
+    top: 7px;
+}
+.PopLR {
+    position: fixed;
+    border: 1px solid #282d33;
+    background-color: #282d33;
+    color: #fff;
+    top: 81px;
+    right: 1px;
+    padding: 10px 10px;
+    display: none;
+}
+.PopLR-v {
+    display: block;
+}
+
+.PopLR img {
+    width: 10px;
+    margin: 10px 5px 0 0 ;
+}
+
+.PopLR li {
+    list-style: none;
+}
+.PopLR li:hover{
+    color: yellow;
+
+}
+
+.form-control{
+    position: fixed;
+    right: 186px;
+    top: 15px; 
+    height: 46px;
+    border-radius: 13px;
+    width: 0;
+    border: none;
+    transition: .5s;
+}
+
+.feature-v {
+    width: 352px;
+    padding: 10px 10px;
+    transition: .5s;
+}
+
+.searchbutton {
+    position: fixed;
+    right: 130px;
+    top: 14px;
+    width: 53px;
+    
+}
+.imgHeader {
+    position: fixed;
+    right: 55px;
+    top: 12px;
+}
+.pfHeader {
+    width: 55px;
+    border-radius: 50%;
+    height: 55px;
+}
+
+
+
+
+
+/*Editar perfil*/
+.parteCentral{
+   /* margin:15% 30%;
+    display: flex;
+    align-items: center;
+    width:50%;
+    border: solid 1px;
+    border-radius: 10px;
+    height: 200px;*/
+    width: 700px;
+    height: 300px;
+    margin: 130px auto;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px !important;
+}
+
+.userOptions h3 {
+    font-family: 'Arimo', sans-serif;;
+    font-size: small;
+    color: white;
+    background-color: orange;
+    border: solid 1px;
+    box-shadow: 0px 1.5px rgb(0 0 0 / 25%);
+    padding: 4px 20px;
+}
+
+
+
+
+.userOptions button{
+    background-color: #282d33;
+    color:white;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    width: 80px;
+    margin-left: 70px;
+}
+
+
+.cajaInput{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+
+}
+
+.img_name{
+    display: flex;
+    flex-direction: column;
+    height: 20vw;
+    margin-left: 20px;
+    gap: 8px;
+    position: relative;
+    top: -108px;
+    left: 29px;
+    
+}
+.img_name img {
+    width: 180px;
+    border-radius: 90%;
+    height: 180px;
+    border: 2px solid #282d33;
+}
+
+.userOptions{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: -80px;
+    margin-left: 186px;
+}
+
+
+/*Boton para cambiar foto*/
+
+#costumFile{
+    display: none;
+}
+
+.formFile {
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: small;
+    font-family: 'Arimo', sans-serif;
+    justify-content: center;
+    background-color: #282d33;
+    padding: 4px 20px;
+    
+}
+
+
+
+.name , .email {
+    text-align: center;
+    background-color: #eeeeee;
+    width: 100px;
+    border-radius:10px;
+    border:none;
+    margin-top: 5px;
+    padding: 4px;
+}
+

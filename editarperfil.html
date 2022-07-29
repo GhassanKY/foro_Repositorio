@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editarperfil</title>
+    <link rel="stylesheet" href="editarperfil.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <!-- <img src="img/menu.png" alt="Menu" class="imgMenu"> -->
+        <img src="img/logo.png" alt="Logo" class="headerLogo">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <img src="img/lupa.png" alt="Lupa" class="searchbutton">
+
+        <div class="imgHeader">
+            <img src="img/pf.jpg" alt="" class="pfHeader">
+                    <ol class="PopLR">
+                        <li class="perfil"><img src="" alt="perfil" class="buttonPerfil buttonPop"> Perfil</li>
+                        <li class="settings"><img src="img/config.png" alt="settings" class="buttonSettings buttonPop"> Configuración</li>
+                        <li class="exit"><img src="img/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li>
+                    </ol>
+        </div>
+
+    </nav>
+  </header>
+
+            <div class="parteCentral">
+              
+                <div class="img_name">
+                  <img src="img/pf.jpg" alt="">
+                  <div class="actualizaimg">
+                    <input type="file" placeholder="actualiza tu foto" id="costumFile">
+                    <label for="costumFile" class="formFile">Cambiar foto</label>
+                  </div>
+                </div>
+
+                <div class="userOptions">
+                  <h3>Datos de usuario</h3>
+                  <div class="cajaInput">
+                    <input type="text"  placeholder="nombre"class="name">
+                    <input type="email" placeholder="correo" class="email">
+                  </div>
+                  <button>Guardar</button>
+              
+                </div>
+              
+
+            </div>
+
+            <script src="editarperfil.js"></script>
+    
+</body>        
+</html>
