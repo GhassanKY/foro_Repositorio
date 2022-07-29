@@ -67,15 +67,12 @@ anchoPage();
 
 //funcion para previsualizar la foto de perfil
 let vista_preliminar = (event)=>{
-	let leer_img = new FileReader();
-	let id_img = document.getElementById("file");
-
- console.log(leer_img.readyState)
+    let leer_img = new FileReader();
+    let id_img = document.getElementById("file");
 leer_img.onload = ()=>{
-	if(leer_img.readyState == 2){
+    if(leer_img.readyState == 2){
      id_img.src = leer_img.result;
-	}
+    }
 }
-
 leer_img.readAsDataURL(event.target.files[0]);
 }
