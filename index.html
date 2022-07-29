@@ -41,6 +41,10 @@
                     <!--Register-->
                     <form action="./php/register.php" class="formulario__register" method="POST">
                         <h2>Regístrarse</h2>
+                        
+                        <div class="foto"><img  class="preliminar" src="" id="file" alt=""></div>
+                        <input id="file-arch" type="file" name="src-file1" aria-label="Archivo" onchange="vista_preliminar(event)">
+        
                         <input name="nombre"  class="nombre" type="text" placeholder="Nombre completo" required>
                         <input name="correo" class="correo" type="text" placeholder="Correo Electronico" required>
                         <input name="usuario" class="usuario" type="text" placeholder="Usuario" required>
@@ -48,7 +52,7 @@
                         <p class="error"></p>
                         <button>Regístrarse</button>
                     </form>
-                </div>
+                </div> 
             </div>
 
         </main>
