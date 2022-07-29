@@ -15,7 +15,7 @@ if(!isset($_SESSION["welcome"])){
                                         WHERE correo = '$usuario';");
     $array = [];
     while($fila = mysqli_fetch_assoc($datosUsuario)){ 
-        echo "Usuario: ".$fila["nombreUsuario"];
+        $n = $fila["nombreUsuario"];
         echo "<br>";
     } 
 
@@ -35,7 +35,7 @@ if(!isset($_SESSION["welcome"])){
 
 
 
-
+echo "$n";
 
 }
 

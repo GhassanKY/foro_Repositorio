@@ -10,10 +10,10 @@ $nombre = $_POST["nombre"] ??  null;
 $correo = $_POST["correo"] ??  null;
 $clave = $_POST["clave"] ??  null;
 $usuario = $_POST["usuario"]?? null ;
-
+// $destino = $_POST["src-file1"] ?? null;
 //agregar imagen
-$imagen = $_FILES['imagen']['name'];
-$ruta = $_FILES['imagen'] ['tmp_name'];
+$imagen = $_FILES['src-file1']['name'];
+$ruta = $_FILES['src-file1'] ['tmp_name'];
 $destino = "../image/".$imagen;
 copy($ruta, $destino);
 
