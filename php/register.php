@@ -12,8 +12,8 @@ $clave = $_POST["clave"] ??  null;
 $usuario = $_POST["usuario"]?? null ;
 
 //agregar imagen
-$imagen = $_FILES['imagen']['name'];
-$ruta = $_FILES['imagen'] ['tmp_name'];
+$imagen = $_FILES['src-file1']['name'];
+$ruta = $_FILES['src-file1'] ['tmp_name'];
 $destino = "../image/".$imagen;
 copy($ruta, $destino);
 
