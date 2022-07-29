@@ -1,6 +1,8 @@
 <?php
 require 'conector.php';
-require 'sesion.php';
+header("location:sesion.php");
+// require 'sesion.php';
+$n = $_GET["id"];
 
 $id_usuario = $n;
 $nombre_hilo = $_POST['namehilo'];

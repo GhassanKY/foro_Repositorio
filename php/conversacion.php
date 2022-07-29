@@ -3,19 +3,23 @@ include "conector.php";
 $id = $_GET["id"];
 
 //Obtengo el nombre de quien creo el hilo
-$nombreHilo = mysqli_query($conector, "SELECT nombre_Hilos
-                                         FROM hilos
-                                         WHERE ID = $id;");
+$nombreHilo = mysqli_query($conector, "SELECT hilos.*, usuarios.nombreUsuario
+FROM hilos
+JOIN usuarios
+ON usuarios.id = hilos.usuario
+WHERE hilos.ID = $id");
 
 
 //obtengo todos lo comentarios del hilo
-$datosHiloCompleto = mysqli_query($conector, "SELECT hilos.*, mensajes.texto, usuarios.*
+$datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.texto, usuarios.*
                                               FROM hilos
                                               JOIN mensajes
                                               ON mensajes.hilo_ID = hilos.ID
                                               JOIN usuarios
                                               ON mensajes.usuario_ID = usuarios.id
                                               WHERE hilos.ID = $id; ");
+
+
 ?>
 
 
@@ -45,6 +49,8 @@ $datosHiloCompleto = mysqli_query($conector, "SELECT hilos.*, mensajes.texto, us
 
     <?php while($fila = mysqli_fetch_assoc($nombreHilo)){   ?>
         <h1><?php echo $fila["nombre_Hilos"]; ?></h1> 
+        <p><?php echo $fila["descripcion"]; ?></p>
+        <p><?php echo $fila["nombreUsuario"]; ?></p>
     <?php } ?>
 
 

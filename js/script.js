@@ -10,6 +10,7 @@ var contenedor_login_register = document.querySelector(".contenedor__login-regis
 var caja_trasera_login = document.querySelector(".caja__trasera-login");
 var caja_trasera_register = document.querySelector(".caja__trasera-register");
 
+
     //FUNCIONES
 
 function anchoPage(){
@@ -76,3 +77,6 @@ leer_img.onload = ()=>{
 }
 leer_img.readAsDataURL(event.target.files[0]);
 }
+
+
+

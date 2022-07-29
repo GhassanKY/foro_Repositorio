@@ -1,0 +1,75 @@
+
+/* barra lateral */
+
+.list {
+    background-color: #282d33;
+    width: 300px;
+    height: 90vh;
+    position: fixed;
+    top: 81px;
+    display: flex;
+    justify-content: center;  
+    z-index: 500;
+}
+
+.imgBar {
+    width: 40px;
+}
+.listGroup {
+    padding: 30px 30px 0 30px;
+    list-style: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.listGroup img {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+
+@media ( max-width: 1000px ) {
+    
+    .list {
+        display: block;
+        left: -100%;
+        transition: .5s;
+    }
+    .list-v {
+        width: 100%;
+        left: 0;
+        transition: .5s;
+    }
+    .sectionInfo {
+        margin: 0;
+        width: 100%;
+    }
+    .buttonReciente {
+        padding: 0 20px;
+    }
+    .feature-v {
+        width: 67%;
+    right: 77px;
+    top: 83px;
+ 
+    border: 1px solid black;
+    }
+    .fatherHilos {
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+    }
+    .titleHilo {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .comments {
+        width: 25px;
+    
+    }
+    .headerLogo {
+        display: none;
+    }
+}

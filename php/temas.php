@@ -34,10 +34,8 @@
 
     
    //con esto obtengo los hilos por categorias
-   $datosHilos = mysqli_query($conector, "SELECT hilos.*, count(mensajes.texto) AS comentarios, usuarios.*, temas.ID AS idTema
+   $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*, temas.ID AS idTema
                                           FROM hilos
-                                          JOIN mensajes
-                                          ON mensajes.hilo_ID = hilos.ID
                                           JOIN usuarios
                                           ON usuarios.id = hilos.usuario
                                           JOIN temas
@@ -72,7 +70,6 @@
       <h3><?php echo $hilo["descripcion"]; ?></h3>
       <p><?php echo $hilo["nombreUsuario"]; ?></p>
       <p><?php echo $hilo["fechaCreacionHilo"]; ?></p>
-      <p><?php echo $hilo["comentarios"]." comentarios"; ?></p>
       <a href="conversacion.php?id=<?php echo $hilo["ID"]?>"><button>Leer mas</button></a>
     </div>
 <?php } ?>
