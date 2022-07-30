@@ -96,7 +96,7 @@ if (!isset($_SESSION["welcome"])) {
 
 
      <!-- BOTONES DE LOS TEMAS -->
-     <button class="botonTemas">Temas</button>
+     <button class="botonTemas">Temas <img  src="../image/a.png" alt=""></button>
     <div class="divTema">
     <?php while ($temas1 = mysqli_fetch_assoc($datosTemas1)) { ?>
         <a href="temas.php?id=<?php echo $temas1['ID']; ?>"><p><?php echo $temas1['nombre']; ?></p></a>
