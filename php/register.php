@@ -15,6 +15,7 @@ $usuario = $_POST["usuario"]?? null ;
 $imagen = $_FILES['src-file1']['name'] ?? null;
 $ruta = $_FILES['src-file1'] ['tmp_name'] ?? null;
 $destino = "../image/".$imagen;
+
 copy($ruta, $destino) ?? null;
 
 $query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto,image_user)
