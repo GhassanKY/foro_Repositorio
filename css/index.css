@@ -13,6 +13,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+   
 }
 
 .foto{
@@ -174,13 +175,14 @@ main{
 @media screen and (max-width: 850px){
 
     main{
-        margin-top: 50px;
+        margin-top: 0px;
+       
     }
 
     .caja__trasera{
         max-width: 350px;
         height: 300px;
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin: auto;
     }
 

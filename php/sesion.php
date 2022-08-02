@@ -2,7 +2,7 @@
 include "conector.php";
 session_start();
 $usuario = $_SESSION["welcome"];
-
+$idHilo;
 if (!isset($_SESSION["welcome"])) {
     header("location:index.html");
 } else {
@@ -30,8 +30,29 @@ if (!isset($_SESSION["welcome"])) {
                                  
 
     //Cantidad de comentarios
-    $CantidadComentarios = mysqli_query($conector, " SELECT * FROM mensajes");
-}
+    $CantidadComentarios = mysqli_query($conector, "SELECT hilos.ID AS idTabla, COUNT(mensajes.texto) AS comentarios, mensajes.usuario_ID AS idUsuario
+                                                    FROM hilos
+                                                    JOIN mensajes
+                                                    ON  mensajes.hilo_ID = hilos.ID");
+
+
+
+
+// $datos = [];
+// while ($datos[] = mysqli_fetch_assoc($CantidadComentarios)){}
+// print_r($datos);
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 
 
@@ -58,19 +79,20 @@ if (!isset($_SESSION["welcome"])) {
 <body>
 
 
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
 <header>
                 <nav>
                     <img src="../image/menu.png" alt="Menu" class="imgMenu">
                     <img src="../image/logo.png" alt="Logo" class="headerLogo">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                     <img src="../image/lupa.png" alt="Lupa" class="searchbutton">
 
                     <div class="imgHeader">
                         <img src="<?php echo $foto; ?>" alt="" class="pfHeader">
-                                <ol class="PopLR">
-                                    <a style="color:white;" href="sesionDestroy.php"><li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
-                                    <li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Configuración</li>
-                                </ol>
+                        <ol class="PopLR">
+                            <li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
+                            <a href="editarperfil.php?id=<?php echo $n ?>"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
+                            <a href="sesiondestroy.php"><li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
+                        </ol>
                     </div>
 
                 </nav>
@@ -129,7 +151,7 @@ if (!isset($_SESSION["welcome"])) {
                         <div class="publication">
                         <div class="fatherHilos">
                                 <?php while ($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
-
+                                   <?php $id2 = $hilo["ID"] ?>
                                    <div class="hilos">
                                         <div class="informationPublic">
 
@@ -149,8 +171,22 @@ if (!isset($_SESSION["welcome"])) {
                                         </div> 
 
                                             <div class="comments">
-                                               <a href="conversacion.php?id=<?php echo $hilo["ID"] ?>"><img src="../image/burbuja-de-dialogo.png" alt="comments" class="comments"></a> 
-                                                <p class="countsComments">2.5k</p>
+                                               <a href="conversacion.php?id=<?php echo $id2 ?>"><img src="../image/burbuja-de-dialogo.png" alt="comments" class="comments"></a> 
+                                              
+                                              
+                                               <?php while($dato = mysqli_fetch_assoc($CantidadComentarios)) {  ?>
+                                                    <?php if ($dato["idTabla"] == $id2){ ?>
+                                                       <p class="countsComments"><?php echo $dato["comentarios"]; ?></p>
+                                                    <?php }  else{ ?>
+                                                    
+                                                        <p>0</p>
+
+                                                    <?php } ?>
+
+
+                                               <?php } ?>
+                                           
+                                           
                                             </div>
                                      </div> 
 
