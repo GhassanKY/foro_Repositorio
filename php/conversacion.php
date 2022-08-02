@@ -1,25 +1,33 @@
 <?php
 include "conector.php";
+session_start();
+$usuario = $_SESSION["welcome"];
+$datosUsuario = mysqli_query($conector, "SELECT *
+                                        FROM usuarios
+                                        WHERE correo = '$usuario';");
+
+while ($fila = mysqli_fetch_assoc($datosUsuario)) {
+    $idSesion = $fila["id"];
+}
+
 
 $id = $_GET["id"];
 //Obtengo el nombre de quien creo el hilo
 $nombreHilo = mysqli_query($conector, "SELECT hilos.*, usuarios.nombreUsuario
-FROM hilos
-JOIN usuarios
-ON usuarios.id = hilos.usuario
-WHERE hilos.ID = $id");
+                                        FROM hilos
+                                        JOIN usuarios
+                                        ON usuarios.id = hilos.usuario
+                                        WHERE hilos.ID = $id");
 
 
 //obtengo todos lo comentarios del hilo
-$datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.texto, usuarios.*
-                                              FROM hilos
-                                              JOIN mensajes
-                                              ON mensajes.hilo_ID = hilos.ID
-                                              JOIN usuarios
-                                              ON mensajes.usuario_ID = usuarios.id
-                                              WHERE hilos.ID = $id; ");
-
-
+$datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.*, usuarios.*
+                                            FROM hilos
+                                            JOIN mensajes
+                                            ON mensajes.hilo_ID = hilos.ID
+                                            JOIN usuarios
+                                            ON mensajes.usuario_ID = usuarios.id
+                                            WHERE hilos.ID = $id; ");
 ?>
 
 
@@ -68,8 +76,26 @@ $datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.texto, u
         <div class="hilo">
             <p><?php echo $hilo["texto"]; ?></p>
             <p><?php echo $hilo["nombreUsuario"]; ?></p>
-            <p><?php echo $hilo["fechaCreacion"]; ?></p>
+            <p><?php echo $hilo["fecha"]; ?></p>
             <a href="perfil.php?id=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a>
+             <br>
+             <br>
+
+
+            <?php if($hilo["id"] == $idSesion) { ?>
+            <button>Editar</button>
+            <form action="editarComentario.php" method="POST">
+                <input type="hidden" value="<?php echo $id ;?>" name="idTabla">
+                <input type="hidden" value="<?php echo $hilo["ID"];?>" name="idTexto">
+                <input type="hidden" value="editar" name="accion" >
+                <textarea name="textoHilo" id="ckeditor" class="ckeditor">
+                  <?php echo $hilo["texto"]; ?>
+                </textarea>
+                <button>Guardar Cambios</button>
+                <button class="eliminar">Eliminar</button>
+            </form>
+      
+            <?php } ?>
         </div>
     <?php } ?>
 

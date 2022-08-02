@@ -2,31 +2,36 @@
 /* barra lateral */
 
 .list {
-    background-color: #282d33;
-    width: 300px;
-    height: 90vh;
+    background-color: #292b31;
+    width: 200px;
+    height: 93vh;
     position: fixed;
-    top: 81px;
+    top: 61px;
+    left: 0;
     display: flex;
-    justify-content: center;  
+    justify-content: flex-start;
     z-index: 500;
+    padding-top: 55px;
+    padding-left: 20px;
 }
 
 .imgBar {
-    width: 40px;
+    width: 25px;
 }
 .listGroup {
-    padding: 30px 30px 0 30px;
     list-style: none;
     color: #fff;
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .listGroup img {
     margin-right: 15px;
     cursor: pointer;
+    
 }
 
 

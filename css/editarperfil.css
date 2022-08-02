@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
-
+@import url(header.css);
 
 
 a{
@@ -11,7 +11,7 @@ background-color: #eeeeee;
 }
 
 /* HEADER*/
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -85,27 +85,10 @@ nav {
     width: 352px;
     padding: 10px 10px;
     transition: .5s;
-}
+} */
 
-.searchbutton {
-    position: fixed;
-    right: 90px;
-    top: 14px;
-    width: 53px;
-    
-}
-.imgHeader {
-    position: fixed;
-    right: 20px;
-    top: 12px;
-}
-.pfHeader2 {
-    width: 55px;
-    border-radius: 50%;
-    height: 55px;
-    object-fit: cover;
-    object-position: center;
-}
+
+
 
 
 
