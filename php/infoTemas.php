@@ -1,7 +1,7 @@
 <?php
 require 'conector.php';
 header("location:sesion.php");
-// require 'sesion.php';
+//require 'sesion.php';
 $n = $_GET["id"];
 
 $id_usuario = $n;
