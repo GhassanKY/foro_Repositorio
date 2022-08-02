@@ -17,7 +17,7 @@ if (!isset($_SESSION["welcome"])) {
         $foto = $fila["image_user"];
         echo "<br>";
     }
-    //Datos de los temas para el slect
+    //Datos de los temas para el select
     $datosTemas = mysqli_query($conector, " SELECT * FROM temas");
     $datosTemas1 = mysqli_query($conector, " SELECT * FROM temas");
     
