@@ -21,6 +21,7 @@
 
 
    $id = $_GET["id"];
+
     $query = "SELECT * FROM temas ORDER BY nombre";
     $temas = mysqli_query($conector, $query);
     $fila = [];
@@ -86,8 +87,9 @@
             <div class="imgHeader">
                 <img src="<?php echo $foto ?>" alt="" class="pfHeader">
                         <ol class="PopLR">
+                            <li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
+                            <a href="editarperfil.php?id=<?php echo $n ?>"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
                             <li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li>
-                            <li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Configuración</li>
                         </ol>
             </div>
 
@@ -166,6 +168,8 @@
                           <!-- kkk -->
 
                           <?php } ?>
+                          
+
 
                 </div>
          

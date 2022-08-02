@@ -8,6 +8,9 @@
     text-decoration: none;
     font-family: sans-serif;
 }
+a{
+    color: white;
+}
 .titulo{
  
     color: black;

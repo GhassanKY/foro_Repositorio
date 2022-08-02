@@ -7,10 +7,13 @@
     box-sizing: border-box;
     font-family: sans-serif;
     text-decoration: none;
+    
 }
 
 
-
+a{
+    color: white;
+}
 
 
 /* seccion informacion */

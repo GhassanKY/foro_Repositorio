@@ -13,6 +13,7 @@ nav {
     position: fixed;
     top: 14px;
     left: 26px;
+    display: none;
 }
 
 .headerLogo {
@@ -50,32 +51,36 @@ nav {
 
 .form-control{
     position: fixed;
-    right: 186px;
-    top: 15px; 
+    right: 160px;
+    top: 17px; 
     height: 46px;
     border-radius: 13px;
     width: 0;
     border: none;
-    transition: .5s;
+    transition: .3s;
+    opacity: 0;
+   z-index: 1000;
 }
 
 .feature-v {
     width: 352px;
     padding: 10px 10px;
-    transition: .5s;
+    transition: .3s;
+    z-index: 1000;
+   opacity: 1;
 }
 
 .searchbutton {
     position: fixed;
-    right: 130px;
-    top: 14px;
+    right: 90px;
+    top: 12px;
     width: 53px;
     cursor: pointer;
     
 }
 .imgHeader {
     position: fixed;
-    right: 55px;
+    right: 20px;
     top: 12px;
 }
 .pfHeader {
@@ -83,11 +88,16 @@ nav {
     border-radius: 50%;
     height: 55px;
     cursor: pointer;
+    object-fit: cover;
+    object-position: center;
 }
 
 
 @media ( max-width: 1000px ) {
-    
+    .imgMenu{
+        display: block;
+        left: 20px;
+    }
     .list {
         display: block;
         left: -100%;
@@ -105,12 +115,23 @@ nav {
     .buttonReciente {
         padding: 0 20px;
     }
+    .form-control{
+        z-index: 0;
+        margin: 10px auto;
+        left: 0;
+        right: 0;
+        transform: translateX(13%);
+    }
     .feature-v {
-        width: 67%;
-    right: 77px;
-    top: 83px;
- 
-    border: 1px solid black;
+        width: 90%;
+        margin-left: 0;
+        margin-right: 0;
+        right: 0;
+        left: 0;
+        margin: 10px auto;
+        z-index: 500;
+        border: 1px solid black;
+        right: 0;
     }
     .fatherHilos {
         width: 100%;
