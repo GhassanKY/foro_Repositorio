@@ -3,7 +3,6 @@ let form = document.querySelector(".cajaPublicarNuevo")
 let boton1 = document.querySelector(".buttonCreate")
 let botontema = document.querySelector(".botonTemas")
 let divtema = document.querySelector(".divTema");
-let boton = document.querySelector(".searchbutton");
 let item = document.querySelector(".form-control");
 let lupa = document.querySelector(".searchbutton");
 const search = document.querySelector(".form-control");

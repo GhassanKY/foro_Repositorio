@@ -204,6 +204,12 @@ a{
         margin: 0;
         align-items: center;
     }
+    .feature-v {
+        width: 67%;
+        right: 77px;
+        top: 83px;
+        border: 1px solid black;
+    }
     .pfHeaderpf {
         display: none;
     }
