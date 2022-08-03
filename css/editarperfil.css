@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 @import url(header.css);
-
+@import url(lista.css);
 
 a{
     color: white;
@@ -9,96 +9,26 @@ a{
 body{
 background-color: #eeeeee;
 }
-
-/* HEADER*/
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-.salir1{
-    position: fixed;
-    top: 100px;
-    left: 20px;
-    width: 30px;
-}
-nav {
-    border: 1px solid black;
-    height: 80px;
-    background-color: #282d33;
-    z-index: 600;
-}
-.imgMenu {
-    width: 50px;
-    position: fixed;
-    top: 14px;
-    left: 26px;
-}
-
-.headerLogo {
-    width: 59px;
-    position: fixed;
-    left: 20px;
-    top: 7px;
-}
-.PopLR {
-    position: fixed;
-    border: 1px solid #282d33;
-    background-color: #282d33;
-    color: #fff;
-    top: 81px;
-    right: 1px;
-    padding: 10px 10px;
+.searchbutton {
     display: none;
 }
-.PopLR-v {
-    display: block;
+
+.list{
+left: -300px;
 }
+.actualizaimg{
+ 
 
-.PopLR img {
-    width: 10px;
-    margin: 10px 5px 0 0 ;
+    width: 100%;
 }
-
-.PopLR li {
-    list-style: none;
-}
-.PopLR li:hover{
-    color: yellow;
-
-}
-
-.form-control{
-    position: fixed;
-    right: 186px;
-    top: 15px; 
-    height: 46px;
-    border-radius: 13px;
-    width: 0;
-    border: none;
-    transition: .5s;
-}
-
-.feature-v {
-    width: 352px;
-    padding: 10px 10px;
-    transition: .5s;
-} */
-
-
-
-
-
-
 
 
 /*Editar perfil*/
 .parteCentral{
      position: relative;
     width: 700px;
-    height: 300px;
+    height: auto;
+    padding-bottom: 20px;
     margin: 130px auto;
     display: flex;
     justify-content: space-between;
@@ -120,7 +50,8 @@ nav {
     position: absolute;
     font-weight: 500;
     line-height: 1px;
-    top: 20px;
+    top: 0px;
+    margin-bottom: 20px;
     right: 0;
     border-radius: 10px 10px 0 0;
 }
@@ -186,7 +117,7 @@ nav {
     align-items: center;
     color: #666666;
     text-transform: capitalize;
-   
+   overflow: auto;
 }
 .icono img{
     margin-right:10px ;
@@ -256,7 +187,11 @@ nav {
 
 
 @media (max-width:900px) {
-
+    .list-v {
+        width: 100%;
+        left: 0px;
+        transition: .5s;
+    }
       nav{
         position: fixed;
         top:0;

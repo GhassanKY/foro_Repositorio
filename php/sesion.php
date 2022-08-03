@@ -79,10 +79,10 @@ if (!isset($_SESSION["welcome"])) {
             <div class="imgHeader">
                 <img src="<?php echo $foto; ?>" alt="" class="pfHeader">
                 <ol class="PopLR">
-                    <a href="perfil.php?id=<?php echo $n ?>">
+                    <a href="perfil.php?idPerfil=<?php echo $n ?>">
                         <li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
                     </a>
-                    <a href="editarperfil.php?id=<?php echo $n ?>">
+                    <a href="editarperfil.php">
                         <li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
                     <a href="sesiondestroy.php">
@@ -142,40 +142,9 @@ if (!isset($_SESSION["welcome"])) {
         </div>
 
         <div class="publication">
-<<<<<<< HEAD
-            <div class="fatherHilos">
-                <?php while ($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
-                    <?php $id2 = $hilo["ID"] ?>
-                        <div class="hilos">
-                            <div class="informationPublic">
-                                    <div class="imgDiv">
-                                        <a href="perfil.php?id=<?php echo $hilo["id"]; ?>" style="color:black;"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
-                                    </div>
-                                    <a href="conversacion.php?id=<?php echo $id2 ?>">
-                                    <div class="txtHilo">
-                                        <p class="titleHilo"><?php echo $hilo["nombre_Hilos"]; ?></p>
-                                        <p><?php echo $hilo["descripcion"]; ?></p>
-                                            <div class="boxInfo">
-                                                <p class="date"><?php echo $hilo["fechaCreacionHilo"]; ?></p>
-                                                <img src="../image/fecha.png" alt="date" class="calendar">
-                                            </div>
-                                        <p class="nameUser"><?php echo $hilo["nombreUsuario"]; ?></p>
-                                    </div>
-                            </div></a>
-                        
-                            <div class="comments">
-                                <a href="conversacion.php?id=<?php echo $id2 ?>"><img src="../image/burbuja-de-dialogo.png" alt="comments" class="comments"></a> 
-                                    
-                                            
-                                    
-                            </div>
-                        </div> 
-                <?php } ?>
-=======
             <div id="fatherHilos" class="fatherHilos">
 
 
->>>>>>> cb28f8f49ce30f85653aa61cff6fd2addecdb1dc
             </div>
         </div>
     </section>

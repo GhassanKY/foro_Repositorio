@@ -2,20 +2,21 @@ let boton = document.querySelector(".searchbutton");
 let item = document.querySelector(".form-control");
 let lupa = document.querySelector(".searchbutton");
 const search = document.querySelector(".form-control");
-let pfHeader = document.querySelector(".pfHeader2");
+let pfHeader = document.querySelector(".pfHeader");
 const PopLR = document.querySelector(".PopLR");
+let desplegable = document.querySelector(".list");
+let menu = document.querySelector(".imgMenu");
 
-lupa.addEventListener('click', () => {
-	item.classList.toggle("feature-v");
-});
 
+menu.addEventListener('click', () => {
+    desplegable.classList.toggle("list-v")
+})
 
 pfHeader.addEventListener('click', () => {
 
-    // alert("hola");
-	PopLR.classList.toggle("PopLR-v");t
+	PopLR.classList.toggle("PopLR-v");
     
-});
+})
 
 //funcion para previsualizar la foto de perfil
 let vista_preliminar = (event)=>{

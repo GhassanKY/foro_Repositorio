@@ -39,7 +39,7 @@
     
     .list {
         display: block;
-        left: -100%;
+        left: -200px;
         transition: .5s;
     }
     .list-v {
