@@ -10,12 +10,6 @@
     
 }
 
-
-a{
-    color: white;
-}
-
-
 /* seccion informacion */
 
 .sectionInfo {
@@ -266,6 +260,9 @@ right: 20px;
     justify-content: flex-start;
     
 }
+.informationPublic a{
+     color: black;
+}
 .fatherHilos {
     width: 80%;
    
@@ -296,8 +293,11 @@ right: 20px;
 .boxInfo {
     display: flex;
     align-items: center;
+    color: black;
 }
-
+.nameUser a{
+    color: rgb(51, 51, 51);
+}
 .calendar {
     width: 13px;
     height: 13px;
@@ -322,8 +322,11 @@ right: 20px;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
-    
-
+    color: black;
+} .titleHilo a{
+    color: black;
+} .titleHilo a p{
+    color: rgb(88, 88, 88);
 }
 .countsComments {
     font-weight: 700;

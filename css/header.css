@@ -9,7 +9,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1200;
+    z-index: 500;
 }
 nav {
     border: 1px solid black;
@@ -50,6 +50,9 @@ nav {
     top: 61px;
     right: 1px;
     height: auto;
+}
+.PopLR-v a{
+    color: #fff;
 }
 
 .PopLR img {

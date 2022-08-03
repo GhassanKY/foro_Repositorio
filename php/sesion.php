@@ -31,14 +31,29 @@ if (!isset($_SESSION["welcome"])) {
                                  
 
     //Cantidad de comentarios
+
     $CantidadComentarios = mysqli_query($conector, "SELECT hilos.ID AS idTabla, COUNT(mensajes.texto) AS comentarios, mensajes.usuario_ID AS idUsuario
                                                     FROM hilos
                                                     JOIN mensajes
-                                                    ON  mensajes.hilo_ID = hilos.ID");
+                                                    ON  mensajes.hilo_ID = hilos.ID
+                                                    GROUP BY idTabla");
 
-    }
     
+//     $array=[];
+//     while ($fila = mysqli_fetch_assoc($datosUsuario)) {
+         
+//         $array[] = [
 
+//              "idTabla" => $fila["ID"],
+//              "comentarios" => $fila["comentarios"]
+
+//         ];
+//     }
+
+// print_r($array);
+
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,9 +145,9 @@ if (!isset($_SESSION["welcome"])) {
                         <div class="hilos">
                             <div class="informationPublic">
                                     <div class="imgDiv">
-                                        <a href="perfil.php?id=<?php echo $hilo["id"]; ?>"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
+                                        <a href="perfil.php?id=<?php echo $hilo["id"]; ?>" style="color:black;"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
                                     </div>
-                                
+                                    <a href="conversacion.php?id=<?php echo $id2 ?>">
                                     <div class="txtHilo">
                                         <p class="titleHilo"><?php echo $hilo["nombre_Hilos"]; ?></p>
                                         <p><?php echo $hilo["descripcion"]; ?></p>
@@ -142,17 +157,13 @@ if (!isset($_SESSION["welcome"])) {
                                             </div>
                                         <p class="nameUser"><?php echo $hilo["nombreUsuario"]; ?></p>
                                     </div>
-                            </div> 
-
+                            </div></a>
+                        
                             <div class="comments">
                                 <a href="conversacion.php?id=<?php echo $id2 ?>"><img src="../image/burbuja-de-dialogo.png" alt="comments" class="comments"></a> 
-                                    <?php while($dato = mysqli_fetch_assoc($CantidadComentarios)) {  ?>
-                                            <?php if ($dato["idTabla"] == $id2){ ?>
-                                                <p class="countsComments"><?php echo $dato["comentarios"]; ?></p>
-                                            <?php }  else{ ?>
-                                                <p>0</p>
-                                            <?php } ?>
-                                    <?php } ?>
+                                    
+                                            
+                                    
                             </div>
                         </div> 
                 <?php } ?>
