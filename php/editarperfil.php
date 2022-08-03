@@ -2,7 +2,21 @@
 include "conector.php";
 session_start();
 $id = $_GET["id"];
- 
+session_start();
+$usuario = $_SESSION["welcome"];
+$datosUsuario = mysqli_query($conector, "SELECT *
+                                FROM usuarios
+                                WHERE correo = '$usuario';");
+while ($fila = mysqli_fetch_assoc($datosUsuario)) {
+$idSesion = $fila["id"];
+
+}
+
+//si el Id del Usuario es distinto al de la sesion, destruyo la sesion. Por seguridad.
+if($idSesion != $id){
+  header("location: sesionDestroy.php");
+
+} else{
 
 $datosUsuario = mysqli_query($conector, "SELECT *
                                          FROM usuarios
@@ -19,9 +33,8 @@ $datosUsuario = mysqli_query($conector, "SELECT *
         
 }
 
-//obtengo los datos del formulario y los actualizo
 
-
+}
 
 
 ?>
@@ -43,11 +56,11 @@ $datosUsuario = mysqli_query($conector, "SELECT *
         <img src="../image/lupa.png" alt="Lupa" class="searchbutton">
 
         <div class="imgHeader">
-            <img src="<?php echo $foto ?>" alt="" class="pfHeader2">
+            <img src="<?php echo $foto ?>" alt="" class="pfHeader">
                     <ol class="PopLR">
-                            <li class="perfil1"><img src="" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
-                            <a  href="editarperfil.php?id=<?php echo $n ?>"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
-                            <li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li>
+                            <a href="perfil.php?id=<?php echo $n ?>"><li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
+                            <a href="editarperfil.php?id=<?php echo $n ?>"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
+                            <a href="sesionDestroy.php"><li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
                     </ol>
         </div>
 

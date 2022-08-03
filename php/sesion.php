@@ -4,7 +4,7 @@ session_start();
 $usuario = $_SESSION["welcome"];
 $idHilo;
 if (!isset($_SESSION["welcome"])) {
-    header("location:index.html");
+    header("location: index.html");
 } else {
 
     //Datos del usuario que inicio sesion
@@ -17,9 +17,10 @@ if (!isset($_SESSION["welcome"])) {
         $foto = $fila["image_user"];
         echo "<br>";
     }
-    //Datos de los temas para el slect
+    //Datos de los temas para el select
     $datosTemas = mysqli_query($conector, " SELECT * FROM temas");
     $datosTemas1 = mysqli_query($conector, " SELECT * FROM temas");
+    
 
     //con esto obtengo los datos de todos los hilos
     /* $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*
@@ -58,8 +59,6 @@ if (!isset($_SESSION["welcome"])) {
 
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
