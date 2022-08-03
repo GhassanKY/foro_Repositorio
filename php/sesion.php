@@ -23,12 +23,12 @@ if (!isset($_SESSION["welcome"])) {
     
 
     //con esto obtengo los datos de todos los hilos
-    $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*
+    /* $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*
                                            FROM hilos
                                            JOIN usuarios
-                                           ON usuarios.id = hilos.usuario");
+                                           ON usuarios.id = hilos.usuario"); */
 
-                                 
+
 
     //Cantidad de comentarios
 
@@ -38,22 +38,9 @@ if (!isset($_SESSION["welcome"])) {
                                                     ON  mensajes.hilo_ID = hilos.ID
                                                     GROUP BY idTabla");
 
-    
-//     $array=[];
-//     while ($fila = mysqli_fetch_assoc($datosUsuario)) {
-         
-//         $array[] = [
-
-//              "idTabla" => $fila["ID"],
-//              "comentarios" => $fila["comentarios"]
-
-//         ];
-//     }
-
-// print_r($array);
-
-
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,6 +50,7 @@ if (!isset($_SESSION["welcome"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/sesion.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Document</title>
     <style>
         .hilo {
@@ -74,64 +62,79 @@ if (!isset($_SESSION["welcome"])) {
 <body>
 
 
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <header>
-                <nav>
-                    <img src="../image/menu.png" alt="Menu" class="imgMenu">
-                    <img src="../image/logo.png" alt="Logo" class="headerLogo">
-                    <img src="../image/lupa.png" alt="Lupa" class="searchbutton">
+    <form class="d-flex">
 
-                    <div class="imgHeader">
-                      <img src="<?php echo $foto; ?>" alt="" class="pfHeader">
-                        <ol class="PopLR">
-                              <a href="perfil.php?id=<?php echo $n ?>"><li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
-                            <a href="editarperfil.php?id=<?php echo $n ?>"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
-                            <a href="sesiondestroy.php"><li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
-                        </ol>
-                    </div>
+    <input class="form-control me-2" id="buscar" name="buscar" onkeyup="buscar_ahora($('#buscar').val());" type="search" placeholder="buscar" aria-label="Search">
 
-                </nav>
-            </header>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
 
-    
-                <div class="list">
-                    <ul>
-                        <li class="listGroup"><img src="../image/chat.png" alt="Chat" class="imgBar">   Discusiones</li>
-                        <li class="listGroup"><img src="../image/tag.png" alt="Chat" class="imgBar">  Tags</li>
-                        <li class="listGroup"><img src="../image/question.png" alt="Chat" class="imgBar">  Ayuda</li>
-                        <li class="listGroup"><img src="../image/config.png" alt="Chat" class="imgBar">  Ajustes</li>  
-                    </ul>
-                </div>
+    </form>
+
+    <header>
+        <nav>
+            <img src="../image/menu.png" alt="Menu" class="imgMenu">
+            <img src="../image/logo.png" alt="Logo" class="headerLogo">
+            <img src="../image/lupa.png" alt="Lupa" class="searchbutton">
+
+            <div class="imgHeader">
+                <img src="<?php echo $foto; ?>" alt="" class="pfHeader">
+                <ol class="PopLR">
+                    <a href="perfil.php?id=<?php echo $n ?>">
+                        <li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
+                    </a>
+                    <a href="editarperfil.php?id=<?php echo $n ?>">
+                        <li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
+                    </a>
+                    <a href="sesiondestroy.php">
+                        <li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li>
+                    </a>
+                </ol>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <div class="list">
+        <ul>
+            <li class="listGroup"><img src="../image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
+            <li class="listGroup"><img src="../image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+            <li class="listGroup"><img src="../image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            <li class="listGroup"><img src="../image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+        </ul>
+    </div>
 
 
     <section class="sectionInfo">
         <div class="buttonReciente">
 
-             <!-- BOTONES DE LOS TEMAS -->
-            <button class="botonTemas">Temas <img  src="../image/a.png" alt=""></button>
+            <!-- BOTONES DE LOS TEMAS -->
+            <button class="botonTemas">Temas <img src="../image/a.png" alt=""></button>
             <div class="divTema">
-                    <?php while ($temas1 = mysqli_fetch_assoc($datosTemas1)) { ?>
-                        <a href="temas.php?id=<?php echo $temas1['ID']; ?>"><p><?php echo $temas1['nombre']; ?></p></a>
-                    <?php } ?>
-             </div>
+                <?php while ($temas1 = mysqli_fetch_assoc($datosTemas1)) { ?>
+                    <a href="temas.php?id=<?php echo $temas1['ID']; ?>">
+                        <p><?php echo $temas1['nombre']; ?></p>
+                    </a>
+                <?php } ?>
+            </div>
             <button class="buttonCreate">Iniciar Nueva Discusión </button>
-            
+
             <!-- CAJA DE PUBLICAR EL NUEVO HILO -->
             <div class="cajaPublicarNuevo">
                 <div class="form1">
                     <form class="form0" class="cajaNuevoHilo" method="POST" action="infoTemas.php?id=<?php echo $n ?>">
                         <img class="x" src="../image/cross.png" alt="">
-                        <input  class="input1" name="namehilo" type="text" placeholder="Nombre de tu hilo">
+                        <input class="input1" name="namehilo" type="text" placeholder="Nombre de tu hilo">
                         <textarea class="textarea1" name="descripcionHilo" placeholder="Descripcion hilo de debate"></textarea>
                         <p class="temap">Elige un tema</p>
                         <div class="div2">
                             <select class="select1" name="select">
-                                    <?php while ($temas = mysqli_fetch_assoc($datosTemas)) { ?>
-                                  
-                                        <option value="<?php echo $temas['ID']; ?>"><?php echo $temas['nombre']; ?></option>
-                                    <?php } ?>
-                                </select>
-                                <button class="enviar1">enviar <img class="e" src="../image/enviar.png" alt=""></button>
+                                <?php while ($temas = mysqli_fetch_assoc($datosTemas)) { ?>
+
+                                    <option value="<?php echo $temas['ID']; ?>"><?php echo $temas['nombre']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <button class="enviar1">enviar <img class="e" src="../image/enviar.png" alt=""></button>
                         </div>
                     </form>
                 </div>
@@ -139,6 +142,7 @@ if (!isset($_SESSION["welcome"])) {
         </div>
 
         <div class="publication">
+<<<<<<< HEAD
             <div class="fatherHilos">
                 <?php while ($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
                     <?php $id2 = $hilo["ID"] ?>
@@ -167,11 +171,29 @@ if (!isset($_SESSION["welcome"])) {
                             </div>
                         </div> 
                 <?php } ?>
+=======
+            <div id="fatherHilos" class="fatherHilos">
+
+
+>>>>>>> cb28f8f49ce30f85653aa61cff6fd2addecdb1dc
             </div>
         </div>
-    </div>
     </section>
-<script src="../js/sesion.js"></script>
+    <script type="text/javascript">
+        function buscar_ahora(buscar) {
+            var parametros = {"buscar":buscar};
+            $.ajax({
+                data: parametros,
+                type: 'POST',
+                url: 'buscador.php',
+                success: function(data) {
+                    document.getElementById("fatherHilos").innerHTML = data;
+                }
+            });
+        }
+        buscar_ahora();
+    </script>
+    <script src="../js/sesion.js"></script>
 </body>
 
 </html>
