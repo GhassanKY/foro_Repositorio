@@ -8,9 +8,23 @@
     text-decoration: none;
     font-family: sans-serif;
 }
-/* body{
-    background-color: #f79400;
-} */
+body{
+    background-color: #edeff1;
+}
+.body{
+    width: 80%;
+    background-color: #ffffff;
+    box-shadow: rgba(82, 82, 82, 0.09) 0px 2px 1px, rgba(88, 88, 88, 0.09) 0px 4px 2px, rgba(97, 97, 97, 0.09) 0px 8px 4px, rgba(83, 83, 83, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-radius: 7px;
+    margin-bottom: 50px;
+    
+}
 .searchbutton {
     display: none;
 }
@@ -27,7 +41,7 @@
 }
 
 .buttonReciente {
-    margin: 100px 0 30px 0px;
+    margin: 70px 0 30px 0px;
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -147,7 +161,7 @@
 .hiloForUsers {
     border: 1px solid #D9D9D9;
     border-radius: 10px;
-    width: 80%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     position: relative;

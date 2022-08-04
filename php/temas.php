@@ -36,7 +36,8 @@
                                           JOIN temas
                                           ON temas.ID = hilos.tema
                                           WHERE temas.ID = $id
-                                          GROUP BY hilos.nombre_Hilos");
+                                          GROUP BY hilos.nombre_Hilos
+                                          ORDER BY hilos.fechaCreacionHilo DESC ");
 
    //titulo del tema
    $tituloTema = mysqli_query($conector, "SELECT * 
@@ -102,7 +103,7 @@
             </div>
 
 
-            
+        <div class="body">  
          <?php while($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
 
 
@@ -146,7 +147,7 @@
                           <!-- kkk -->
 
                           <?php } ?>
-                          
+                </div>  
 
 
                 </div>

@@ -47,14 +47,15 @@ $datosUsuario = mysqli_query($conector, "SELECT *
     } 
     
 
-   //obtengo los datos completos del hilo nombre, descripcion, fecha de ceracion...
+   //obtengo los datos completos del hilo nombre, descripcion, fecha de creacion...
     $datoshilo = mysqli_query($conector, "   SELECT hilos.* , usuarios.*, temas.nombre AS tema
                                                 FROM hilos
                                                 JOIN usuarios
                                                 ON hilos.usuario = usuarios.id
                                                 JOIN temas
                                                 ON temas.ID = hilos.tema
-                                                WHERE usuarios.id = $id");                
+                                                WHERE usuarios.id = $id
+                                                ORDER BY hilos.fechaCreacionHilo DESC");                
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,44 +74,40 @@ $datosUsuario = mysqli_query($conector, "SELECT *
 </head>
 <body>
     
-                    <header>
-                        <nav>
-                            <img src="../image/menu.png" alt="Menu" class="imgMenu">
-                            <a href="sesion.php"><img src="../image/logo.png" alt="Logo" class="headerLogo"></a>
-                            <img src="../image/lupa.png" alt="Lupa" class="searchbutton">
-                            <div class="imgHeader">
-                                <img src="<?php echo $fotoSesion; ?>" alt="" class="pfHeader">
-                                <ol class="PopLR">
-                                    <a href="perfil.php?idPerfil=<?php echo $idSesion; ?>">
-                                        <li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
-                                    </a>
-                                    <a href="editarperfil.php?id=<?php echo $n ?>">
-                                        <li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
-                                    </a>
-                                    <a href="sesiondestroy.php">
-                                        <li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li>
-                                    </a>
-                                </ol>
-                            </div>
-                        </nav>
-                    </header>
-                    <div class="list">
-                        <ul>
-                            <li class="listGroup"><img src="../image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
-                            <li class="listGroup"><img src="../image/tag.png" alt="Chat" class="imgBar"> Tags</li>
-                            <li class="listGroup"><img src="../image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
-                            <li class="listGroup"><img src="../image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
-                        </ul>
-                    </div>
+    <header>
+        <nav>
+            <img src="../image/menu.png" alt="Menu" class="imgMenu">
+            <a href="sesion.php"><img src="../image/logo.png" alt="Logo" class="headerLogo"></a>
+            <img src="../image/lupa.png" alt="Lupa" class="searchbutton">
+            <div class="imgHeader">
+                <img src="<?php echo $fotoSesion; ?>" alt="" class="pfHeader">
+                <ol class="PopLR">
+                    <a href="perfil.php?idPerfil=<?php echo $idSesion; ?>">
+                        <li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
+                    </a>
+                    <a href="editarperfil.php?id=<?php echo $n ?>">
+                        <li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
+                    </a>
+                    <a href="sesiondestroy.php">
+                        <li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li>
+                    </a>
+                </ol>
+            </div>
+        </nav>
+    </header>
+    <div class="list">
+        <ul>
+            <li class="listGroup"><img src="../image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
+            <li class="listGroup"><img src="../image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+            <li class="listGroup"><img src="../image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            <li class="listGroup"><img src="../image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+        </ul>
+    </div>
 
-
-
-
-                    <div>
+    <div>
         <div class="barradedatos">
             <div class="user_image">
-                <img class="img_user"
-                    src="<?php echo $foto ?>">
+                    <img class="img_user" src="<?php echo $foto ?>">
                 <div class="nombres">
                     <h2><?php echo $nombreUsuario ?></h2>
                 </div>
@@ -168,42 +165,31 @@ $datosUsuario = mysqli_query($conector, "SELECT *
         </div>
     </div>
 
-
-
     <div class="parteCentral">
-    <?php while($hilo = mysqli_fetch_assoc($datoshilo))  { ?>
-    <div class="hiloForUsers">
-                  
+        <?php while($hilo = mysqli_fetch_assoc($datoshilo))  { ?>
+            <div class="hiloForUsers">
+                     
                   <div class="dpContInfo">                               
                           <div class="dataUsers">
-
                               <h1><?php echo $hilo["nombre_Hilos"]; ?></h1>
                               <p><?php echo $hilo["descripcion"]; ?></p>
-                              <p class="fecha"><?php echo $hilo["fechaCreacionHilo"]; ?></p>
-                              
+                              <p class="fecha"><?php echo $hilo["fechaCreacionHilo"]; ?></p>  
                           </div>
-
                   </div>
                       <div class="commentsAndPhoto">
-
                               <div class="imgFriends">
                                   <img src="img/pf.jpg" alt="" class="pfHeaderpf photoOne">
                                   <img src="img/pf.jpg" alt="" class="pfHeaderpf photoTwo">
                                   <img src="img/pf.jpg" alt="" class="pfHeaderpf">
                                   <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                  
+                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf">    
                               </div>
-
                               <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">43 comentarios</a>
-
                       </div>
-
                       <img src="../image/mas (1).png" alt="more" class="configButton puntos ">
                      </a>
-
-              </div>
-              <?php } ?>
+            </div>
+        <?php } ?>
     </div>
 
 </div>

@@ -20,13 +20,7 @@ if (!isset($_SESSION["welcome"])) {
     //Datos de los temas para el select
     $datosTemas = mysqli_query($conector, " SELECT * FROM temas");
     $datosTemas1 = mysqli_query($conector, " SELECT * FROM temas");
-    
 
-    //con esto obtengo los datos de todos los hilos
-    /* $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*
-                                           FROM hilos
-                                           JOIN usuarios
-                                           ON usuarios.id = hilos.usuario"); */
 
 
 
