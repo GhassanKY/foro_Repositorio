@@ -425,6 +425,16 @@ dialog{
 
 @media screen and (max-width: 1025px) {
 
+    dialog {
+        display: none;
+        margin: auto;
+        height: 25vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border: none;
+        padding: 15px;
+    }
+
     .i1{
     width: 20px;
     position: absolute;

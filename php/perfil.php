@@ -136,11 +136,11 @@ $datoshilo = mysqli_query($conector, "   SELECT hilos.* , usuarios.*, temas.nomb
                     </div>
                 </div>
                 <button onclick="eliminar_user()" class="menu_options informacion1"><img class="iconoTrash" src="../image/trash-can.png"></i>Eliminar Cuenta</button>
-                <dialog close id="dialogo">
+                <dialog id="dialogo">
                     ¿Estas seguro que quieres eliminar tu cuenta?
                     <div class="boton_fiting">
-                        <form method="POST" action="borrarUser.php"><button id="si" value="0">Si</button></form>
-                        <button onclick="cerrar_dialog()">No</button>
+                        <form method="POST" action="borrarUser.php"><button class="informacion1" id="si" value="0">Si</button></form>
+                        <button class="informacion1" onclick="cerrar_dialog()">No</button>
                     </div>
                 </dialog>
             </div>
