@@ -64,9 +64,9 @@ if (!isset($_SESSION["welcome"])) {
 
     <form class="d-flex">
 
-    <input class="form-control me-2" id="buscar" name="buscar" onkeyup="buscar_ahora($('#buscar').val());" type="search" placeholder="buscar" aria-label="Search">
+    <input class="form-control" id="buscar" name="buscar" onkeyup="buscar_ahora($('#buscar').val());" type="search" placeholder="buscar" aria-label="Search">
 
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
 
     </form>
 
@@ -142,40 +142,9 @@ if (!isset($_SESSION["welcome"])) {
         </div>
 
         <div class="publication">
-<<<<<<< HEAD
-            <div class="fatherHilos">
-                <?php while ($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
-                    <?php $id2 = $hilo["ID"] ?>
-                        <div class="hilos">
-                            <div class="informationPublic">
-                                    <div class="imgDiv">
-                                        <a href="perfil.php?id=<?php echo $hilo["id"]; ?>" style="color:black;"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
-                                    </div>
-                                    <a href="conversacion.php?id=<?php echo $id2 ?>">
-                                    <div class="txtHilo">
-                                        <p class="titleHilo"><?php echo $hilo["nombre_Hilos"]; ?></p>
-                                        <p><?php echo $hilo["descripcion"]; ?></p>
-                                            <div class="boxInfo">
-                                                <p class="date"><?php echo $hilo["fechaCreacionHilo"]; ?></p>
-                                                <img src="../image/fecha.png" alt="date" class="calendar">
-                                            </div>
-                                        <p class="nameUser"><?php echo $hilo["nombreUsuario"]; ?></p>
-                                    </div>
-                            </div></a>
-                        
-                            <div class="comments">
-                                <a href="conversacion.php?id=<?php echo $id2 ?>"><img src="../image/burbuja-de-dialogo.png" alt="comments" class="comments"></a> 
-                                    
-                                            
-                                    
-                            </div>
-                        </div> 
-                <?php } ?>
-=======
             <div id="fatherHilos" class="fatherHilos">
 
 
->>>>>>> cb28f8f49ce30f85653aa61cff6fd2addecdb1dc
             </div>
         </div>
     </section>

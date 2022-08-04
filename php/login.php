@@ -1,14 +1,15 @@
 <?php
 include "conector.php";
 session_start();
+
+
 $correo = $_POST["correo"] ?? null;
 $clave = $_POST["clave"] ?? null;
 
-// echo $usu;
-// echo $contra;
-$validar = mysqli_query($conector, "SELECT * FROM usuarios 
-                                    WHERE correo = '$correo' and clave = '$clave'");
 
+$validar = mysqli_query($conector, "SELECT * FROM usuarios 
+                                    WHERE correo = '$correo' and clave = '$clave' and borrar_user = 1");
+                            
 
 if(mysqli_num_rows($validar) > 0){
     $_SESSION["welcome"] = $correo;  
