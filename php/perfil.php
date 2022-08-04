@@ -8,13 +8,12 @@ $datosUsuario = mysqli_query($conector, "SELECT *
                                         FROM usuarios
                                         WHERE correo = '$usuario';");
 
-        while ($fila = mysqli_fetch_assoc($datosUsuario)) {
-        $idSesion = $fila["id"];
-        $fotoSesion = $fila["image_user"];
-        
-        }
-     //Hago una consulta que me da los datos del usuario y el numero de comentarios...
-    $datosUsuario = mysqli_query($conector, "SELECT hilos.ID, usuarios.*, count(mensajes.texto) AS comentarios
+while ($fila = mysqli_fetch_assoc($datosUsuario)) {
+    $idSesion = $fila["id"];
+    $fotoSesion = $fila["image_user"];
+}
+//Hago una consulta que me da los datos del usuario y el numero de comentarios...
+$datosUsuario = mysqli_query($conector, "SELECT hilos.ID, usuarios.*, count(mensajes.texto) AS comentarios
                                         FROM hilos
                                         JOIN usuarios
                                         ON hilos.usuario = usuarios.id
@@ -45,15 +44,15 @@ while ($fila = mysqli_fetch_assoc($numhilos)) {
     $hilos = $fila["NumHilos"];
 }
 
-   //obtengo los datos completos del hilo nombre, descripcion, fecha de creacion...
-    $datoshilo = mysqli_query($conector, "   SELECT hilos.* , usuarios.*, temas.nombre AS tema
+//obtengo los datos completos del hilo nombre, descripcion, fecha de creacion...
+$datoshilo = mysqli_query($conector, "   SELECT hilos.* , usuarios.*, temas.nombre AS tema
                                                 FROM hilos
                                                 JOIN usuarios
                                                 ON hilos.usuario = usuarios.id
                                                 JOIN temas
                                                 ON temas.ID = hilos.tema
                                                 WHERE usuarios.id = $id
-                                                ORDER BY hilos.fechaCreacionHilo DESC");                
+                                                ORDER BY hilos.fechaCreacionHilo DESC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +72,7 @@ while ($fila = mysqli_fetch_assoc($numhilos)) {
 </head>
 
 <body>
-    
+
     <header>
         <nav>
             <img src="../image/menu.png" alt="Menu" class="imgMenu">
@@ -107,7 +106,7 @@ while ($fila = mysqli_fetch_assoc($numhilos)) {
     <div>
         <div class="barradedatos">
             <div class="user_image">
-                    <img class="img_user" src="<?php echo $foto ?>">
+                <img class="img_user" src="<?php echo $foto ?>">
                 <div class="nombres">
                     <h2><?php echo $nombreUsuario ?></h2>
                 </div>
@@ -132,14 +131,23 @@ while ($fila = mysqli_fetch_assoc($numhilos)) {
                     <p class="info">Informacion</p>
                     <div class="datos">
                         <a href="mailto:<?php echo $correo ?>"><img src="../image/gmail.png" alt=""><?php echo $correo ?></a>
-                        <a href="https://wa.me/<?php echo $telefono?>"><img src="../image/whatsap.png" alt=""><?php echo $telefono?></a>
+                        <a href="https://wa.me/<?php echo $telefono ?>"><img src="../image/whatsap.png" alt=""><?php echo $telefono ?></a>
                         <a href="<?php echo $link ?>"><img src="../image/internet.png" alt=""><?php echo $link ?></a>
-                        </div>
                     </div>
+                </div>
+                <button onclick="eliminar_user()" class="menu_options informacion1"><img class="iconoTrash" src="../image/trash-can.png"></i>Eliminar Cuenta</button>
+                <dialog close id="dialogo">
+                    ¿Estas seguro que quieres eliminar tu cuenta?
+                    <div class="boton_fiting">
+                        <form method="POST" action="borrarUser.php"><button id="si" value="0">Si</button></form>
+                        <button onclick="cerrar_dialog()">No</button>
+                    </div>
+                </dialog>
             </div>
         </div>
         <div class="box_options_mobile">
-        <div class="menu_options">
+            <div class="menu_options">
+                <div>
                     <p>Comentarios</p>
                     <div class="icon">
                         <img class="i2" src="../image/chateando.png" alt="">
@@ -147,54 +155,56 @@ while ($fila = mysqli_fetch_assoc($numhilos)) {
                     </div>
                 </div>
                 <div class="menu_options o2">
-                    <p>Hilos</p>
                     <div class="icon2">
+                    <p>Hilos</p>
                         <img class="i1" src="../image/hilos.png" alt="">
                         <p class="NumHilos"><?php echo $hilos ?></p>
                     </div>
                 </div>
-                <div class="menu_options informacion">
-                    <img width="20px" src=" ../image/i.png" alt="">
-                    <p class="info2">Informacion</p>
-                    <div class="datos2">
-                        <a href="#"><img src="../image/gmail.png" alt=""><?php echo $correo ?></a>
-                        <a href="#"><img src="../image/whatsap.png" alt=""><?php echo $telefono?></a>
-                        <a href="#"><img src="../image/internet.png" alt=""><?php echo $link?></a>
-                    </div>
+            </div>
+            <div class="informacion">
+                <img width="20px" src=" ../image/i.png" alt="">
+                <p class="info2">Informacion</p>
+                <div class="datos2">
+                    <a href="#"><img src="../image/gmail.png" alt=""><?php echo $correo ?></a>
+                    <a href="#"><img src="../image/whatsap.png" alt=""><?php echo $telefono ?></a>
+                    <a href="#"><img src="../image/internet.png" alt=""><?php echo $link ?></a>
                 </div>
+            </div>
+            <button onclick="eliminar_user()" class="informacion"><img class="iconoTrash" src="../image/trash-can.png"></i>Eliminar Cuenta</button>
         </div>
     </div>
 
     <div class="parteCentral">
-        <?php while($hilo = mysqli_fetch_assoc($datoshilo))  { ?>
+        <?php while ($hilo = mysqli_fetch_assoc($datoshilo)) { ?>
             <div class="hiloForUsers">
-                     
-                  <div class="dpContInfo">                               
-                          <div class="dataUsers">
-                              <h1><?php echo $hilo["nombre_Hilos"]; ?></h1>
-                              <p><?php echo $hilo["descripcion"]; ?></p>
-                              <p class="fecha"><?php echo $hilo["fechaCreacionHilo"]; ?></p>  
-                          </div>
-                  </div>
-                      <div class="commentsAndPhoto">
-                              <div class="imgFriends">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf photoOne">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf photoTwo">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf">    
-                              </div>
-                              <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">43 comentarios</a>
-                      </div>
-                      <img src="../image/mas (1).png" alt="more" class="configButton puntos ">
-                     </a>
+
+                <div class="dpContInfo">
+                    <div class="dataUsers">
+                        <h1><?php echo $hilo["nombre_Hilos"]; ?></h1>
+                        <p><?php echo $hilo["descripcion"]; ?></p>
+                        <p class="fecha"><?php echo $hilo["fechaCreacionHilo"]; ?></p>
+                    </div>
+                </div>
+                <div class="commentsAndPhoto">
+                    <div class="imgFriends">
+                        <img src="img/pf.jpg" alt="" class="pfHeaderpf photoOne">
+                        <img src="img/pf.jpg" alt="" class="pfHeaderpf photoTwo">
+                        <img src="img/pf.jpg" alt="" class="pfHeaderpf">
+                        <img src="img/pf.jpg" alt="" class="pfHeaderpf">
+                        <img src="img/pf.jpg" alt="" class="pfHeaderpf">
+                    </div>
+                    <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"] ?>">43 comentarios</a>
+                </div>
+                <img src="../image/mas (1).png" alt="more" class="configButton puntos ">
+                </a>
             </div>
         <?php } ?>
     </div>
 
-</div>
-
+    </div>
     <script src="../js/perfil.js"></script>
+    <script src="../js/botonEliminar.js"></script>
 </body>
 
 </html>

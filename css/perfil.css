@@ -92,7 +92,7 @@ body {
 }
 
 .barradedatos {
-    width: 60%;
+    width:90vw;
     position: relative;
     height: 92px;
     margin: 120px auto 50px auto;
@@ -234,8 +234,9 @@ body {
     border-radius: 8px;
     display: flex;
     justify-content: space-around;
-    width: 150px;
+    width: 11vw;
     cursor: pointer;
+    border:none;
 }
 .informacion{
     padding: 10px 15px;
@@ -252,7 +253,24 @@ body {
     margin-top: 15px;
 }
 
+.boton_fiting{
+    display: flex;
+    justify-content: space-evenly;
+}
 
+dialog{
+    display: none;
+    margin: auto;
+    height: 25vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: none;
+    padding: 15px;
+}
+
+.iconoTrash{
+    width: 20px;
+}
 
 
 
@@ -406,6 +424,21 @@ body {
 
 
 @media screen and (max-width: 1025px) {
+
+    .i1{
+    width: 20px;
+    position: absolute;
+    top: -17px;
+    right: -21px;
+}
+    
+
+    .i2 {
+        width: 23px;
+        position: absolute;
+        top: -34px;
+        right: -21px;
+    }
     
     .box_options {
         display: none;
@@ -451,9 +484,9 @@ body {
      } .datos2 a img{
          margin-right: 10px;
      }
-    .box_options_mobile {
+     .box_options_mobile {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 0 20px;
@@ -463,17 +496,22 @@ body {
     .menu_options {
         display: flex;
         flex-direction: row;
-        width: 120px;
+        width: 50vw;
         align-items: center;
         color: #282d33;
-      /*   font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400; */
+        justify-content: space-evenly;
     }
-  .informacion{
-    margin-left: 20px;
-    position: relative;
-  }
+    .informacion {
+        padding: 10px 15px;
+        background-color: #413d3923;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-around;
+        width: 150px;
+        cursor: pointer;
+        border: none;
+        margin-bottom: 5px;
+    }
     .barradedatos {
         padding-left: 0;
         width: 75%;
