@@ -77,7 +77,7 @@ $datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.*, usuar
             <p><?php echo $hilo["texto"]; ?></p>
             <p><?php echo $hilo["nombreUsuario"]; ?></p>
             <p><?php echo $hilo["fecha"]; ?></p>
-            <a href="perfil.php?id=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a>
+            <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a>
              <br>
              <br>
 

@@ -1,0 +1,514 @@
+@import url(header.css);
+@import url(lista.css);
+
+
+.searchbutton {
+    display: none;
+
+    
+}
+
+/* Estilos letras */
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+/* font-family: 'Arimo', sans-serif; */
+
+body {
+    background-color: hsl(0, 0%, 93%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.datos{
+   background-color: #f8f8f8;
+   border-radius: 7px;
+   position: absolute;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   top: 50px;
+   right: -60px;
+   z-index: 200;
+   max-width: 400px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   overflow: hidden;
+   height: 0;
+   padding: 30px 10px 30px 10px;
+   opacity: 0;
+   
+}
+.datos-v{
+    opacity: 1;
+    transition: .3s;
+    height: auto;
+}
+.datos a{
+   
+    color: #001f86;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    width: auto;
+    overflow: auto;
+} .datos a img{
+    margin-right: 10px;
+}
+.searchbutton {
+    position: fixed;
+    right: 130px;
+    top: 12px;
+    width: 20px;
+
+}
+.nombres{
+    font-size: 14px;
+    height: 100%;
+    width: 50%;
+}
+    .list{
+        left: -200px;
+    }
+
+
+
+.parteCentral {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 90%, rgba(237 237 237) 100%);
+    box-shadow: rgba(82, 82, 82, 0.09) 0px 2px 1px, rgba(88, 88, 88, 0.09) 0px 4px 2px, rgba(97, 97, 97, 0.09) 0px 8px 4px, rgba(83, 83, 83, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.barradedatos {
+    width: 60%;
+    position: relative;
+    height: 92px;
+    margin: 120px auto 50px auto;
+    display: flex;
+    align-items: center;
+    border-radius:15px;
+    background-color: #FFB74D;
+    box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px !important;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.barradedatos h2{
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+.img1{
+    border: #000000 1px solid;
+}
+
+.h1 {
+    position: absolute;
+    width: 370px;
+    height: 58px;
+    left: 330px;
+    top: 198px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58px;
+    color: #eeeeee;
+
+
+    color: #000000;
+
+}
+
+
+.listado {
+    font-family: 'Arimo', sans-serif;
+    ;
+    color: #eeeeee;
+    padding: 4px 26px;
+}
+
+
+
+
+.userOptions button {
+    background-color: #282d33;
+    color: white;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    width: 80px;
+    margin-left: 70px;
+}
+
+.img_user {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 4px solid hsl(0, 0%, 93%) ;
+    object-fit: cover;
+    object-position: center;
+    
+}
+.box_options_mobile{
+    display: none;
+}
+.menu_options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.o2{
+    width: 60px;
+    
+}
+.box_options {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user_image {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    align-items: center;
+    justify-content: space-around;
+}
+.icon{
+    position: relative;
+    margin-left: 7px;
+}
+.i2{
+  width: 25px;
+  position: absolute;
+  top: -22px;
+  right: -10px;
+}
+.NumComentarios{
+    font-weight: 600;
+    color: #202020;
+}
+
+.icon2{
+    position: absolute;
+   
+    margin-left: 15px;
+    top: -18px;
+    right: 10px;
+}
+.i1{
+    width: 20px;
+    position: absolute;
+    top: -2px;
+    right: -6px;
+  }
+
+  .NumHilos{
+    font-weight: 600;
+    color: #1d1d1d;
+    font-size: 12px;
+    margin-right: -1px;
+    margin-top: 1px;
+
+}
+.informacion1{
+    padding: 10px 15px;
+    background-color: #413d3923;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    cursor: pointer;
+}
+.informacion{
+    padding: 10px 15px;
+    background-color: #413d3923;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    cursor: pointer;
+}
+
+.hiloForUsers a{
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hiloForUsers {
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    width: 95%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 15px;
+    margin-bottom: 17px;
+}
+.editar{
+    background-color: #f8f8f8;
+    border: 1px solid rgb(151, 151, 151);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    position: fixed;
+    top: 80px;
+}
+.dpContInfo {
+    display: flex;
+}
+.dataUsers {
+    margin-left: 20px;
+}
+.dataUsers h1{
+    font-size: 23px;
+}
+.fecha{
+    font-size: 12px;
+    margin-top: 3px;
+    color: rgb(136, 136, 136);
+}
+.commentsAndPhoto {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.commentsAndPhoto p {
+    margin-right: 7px;
+}
+.configButton {
+    width: 17px;
+
+    height: 17px;
+}
+.puntos {
+    position: absolute;
+    right: 15px;
+}
+
+.imgFriends {
+    padding-left: 0rem;
+    display: flex;
+    margin-right: 10px;
+}
+
+@media (max-width: 1000px) {
+    .principalDiv {
+        width: 100%;
+        margin: 0;
+        align-items: center;
+    }
+    .feature-v {
+        width: 67%;
+        right: 77px;
+        top: 83px;
+        border: 1px solid black;
+    }
+    .pfHeaderpf {
+        display: none;
+    }
+    .photoOne, .photoTwo {
+        display: block;
+    }
+    .hiloForUsers {
+        width: 95%;
+    }
+    .dataUsers h1  {
+        font-size: 20px;
+    }
+    .dataUsers {
+        margin: 0;
+        margin-right: 10px;
+    }
+    .commentsAndPhoto {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+    .imgFriends {
+        padding: 0;
+        margin: 0;
+    }
+    .commentsAndPhoto p {
+        font-size: 14px;
+        margin-top: 4px;
+    }
+    .configButton {
+        display: none;
+    }
+    .puntos {
+        display: block;
+    }
+
+
+
+    .list-v {
+        width: 100%;
+        left: 0px;
+        transition: .5s;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1025px) {
+    
+    .box_options {
+        display: none;
+    }
+    .datos{
+        display: none;
+    }
+    .datos2{
+        background-color: #f8f8f8;
+        border-radius: 7px;
+        position: absolute;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        top: 50px;
+        right: 0px;
+        z-index: 200;
+        width: 330px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        overflow: hidden;
+        height: 0;
+        padding: 30px 10px 30px 10px;
+        opacity: 0;
+        
+     }
+     .datos2-v{
+         opacity: 1;
+         transition: .3s;
+         height: auto;
+     }
+     .datos2 a{
+        
+         color: #001f86;
+         margin-bottom: 10px;
+         display: flex;
+         align-items: center;
+         padding: 10px 10px;
+         background-color: white;
+         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+         border-radius: 10px;
+         width: auto;
+         overflow: auto;
+     } .datos2 a img{
+         margin-right: 10px;
+     }
+    .box_options_mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .menu_options {
+        display: flex;
+        flex-direction: row;
+        width: 120px;
+        align-items: center;
+        color: #282d33;
+      /*   font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400; */
+    }
+  .informacion{
+    margin-left: 20px;
+    position: relative;
+  }
+    .barradedatos {
+        padding-left: 0;
+        width: 75%;
+        margin-left: 0;
+        height: 92px;
+        margin: 100px 0 60px 60px;
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        background-color: #FFB74D;
+        box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px !important;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .parteCentral {
+        margin-top: 20px;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        height: auto;
+        align-items: center;
+        border-radius: 15px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px !important;
+    }
+
+
+    .hiloForUsers{
+        flex-direction: column;
+    }
+}
+
+/* @media screen and (min-width: 1025px) {
+    .box_options_mobile {
+        display: none;
+    }
+} */

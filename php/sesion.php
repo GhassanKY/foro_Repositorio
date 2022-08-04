@@ -20,13 +20,7 @@ if (!isset($_SESSION["welcome"])) {
     //Datos de los temas para el select
     $datosTemas = mysqli_query($conector, " SELECT * FROM temas");
     $datosTemas1 = mysqli_query($conector, " SELECT * FROM temas");
-    
 
-    //con esto obtengo los datos de todos los hilos
-    /* $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*
-                                           FROM hilos
-                                           JOIN usuarios
-                                           ON usuarios.id = hilos.usuario"); */
 
 
 
@@ -79,10 +73,10 @@ if (!isset($_SESSION["welcome"])) {
             <div class="imgHeader">
                 <img src="<?php echo $foto; ?>" alt="" class="pfHeader">
                 <ol class="PopLR">
-                    <a href="perfil.php?id=<?php echo $n ?>">
+                    <a href="perfil.php?idPerfil=<?php echo $n ?>">
                         <li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
                     </a>
-                    <a href="editarperfil.php?id=<?php echo $n ?>">
+                    <a href="editarperfil.php">
                         <li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
                     <a href="sesiondestroy.php">

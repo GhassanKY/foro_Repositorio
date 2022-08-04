@@ -36,7 +36,8 @@
                                           JOIN temas
                                           ON temas.ID = hilos.tema
                                           WHERE temas.ID = $id
-                                          GROUP BY hilos.nombre_Hilos");
+                                          GROUP BY hilos.nombre_Hilos
+                                          ORDER BY hilos.fechaCreacionHilo DESC ");
 
    //titulo del tema
    $tituloTema = mysqli_query($conector, "SELECT * 
@@ -66,7 +67,7 @@
                 <img src="<?php echo $foto ?>" alt="" class="pfHeader">
                         <ol class="PopLR">
                             <a href="perfil.php?id=<?php echo $n ?>"><li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
-                            <a href="editarperfil.php?id=<?php echo $n ?>"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
+                            <a href="editarperfil.php"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
                             <a href="sesionDestroy.php"><li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
                         </ol>
             </div>
@@ -102,7 +103,7 @@
             </div>
 
 
-            
+        <div class="body">  
          <?php while($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
 
 
@@ -111,7 +112,7 @@
                   
                                 <div class="dpContInfo">                               
                                        <div class="dataUsers">
-                                       <a href="perfil.php?id=<?php echo $hilo["id"]; ?>"><img src="<?php echo $hilo["image_user"]; ?>" alt="photo" class="pfHeader"></a>
+                                       <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><img src="<?php echo $hilo["image_user"]; ?>" alt="photo" class="pfHeader"></a>
                                        </div>
                                        <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">
                                         <div class="dataUsers">
@@ -146,7 +147,7 @@
                           <!-- kkk -->
 
                           <?php } ?>
-                          
+                </div>  
 
 
                 </div>

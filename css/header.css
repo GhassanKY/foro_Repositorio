@@ -123,6 +123,9 @@ nav {
         width: 35px;
         top: 15px;
     }
+    .headerLogo{
+    display: none;
+    }
     .list {
         display: block;
         left: -100%;
