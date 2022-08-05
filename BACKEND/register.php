@@ -14,7 +14,7 @@ $usuario = $_POST["usuario"]?? null ;
 //agregar imagen
 $imagen = $_FILES['src-file1']['name'] ?? null;
 $ruta = $_FILES['src-file1'] ['tmp_name'] ?? null;
-$destino = "../image/".$imagen;
+$destino = "image/".$imagen;
 
 copy($ruta, $destino) ?? null;
 

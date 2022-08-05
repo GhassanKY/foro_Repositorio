@@ -10,22 +10,22 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editarperfil</title>
-    <link rel="stylesheet" href="../css/editarperfil.css">
+    <link rel="stylesheet" href="css/editarperfil.css">
 </head>
 <body>
   <header>
     <nav>
-        <img src="../image/menu.png" alt="Menu" class="imgMenu">
-        <a href="sesion.php"><img src="../image/logo.png" alt="Logo" class="headerLogo"></a>
+        <img src="image/menu.png" alt="Menu" class="imgMenu">
+        <a href="sesion.php"><img src="image/logo.png" alt="Logo" class="headerLogo"></a>
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <img src="../image/lupa.png" alt="Lupa" class="searchbutton">
+        <img src="image/lupa.png" alt="Lupa" class="searchbutton">
 
         <div class="imgHeader">
             <img src="<?php echo $foto ?>" alt="" class="pfHeader">
                     <ol class="PopLR">
-                            <a href="perfil.php?idPerfil=<?php echo $n ?>"><li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
-                            <a href="editarperfil.php?id=<?php echo $n ?>"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
-                            <a href="sesionDestroy.php"><li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
+                            <a href="perfil.php?idPerfil=<?php echo $n ?>"><li class="perfil1"><img src="image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
+                            <a href="editarperfil.php?id=<?php echo $n ?>"><li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
+                            <a href="sesionDestroy.php"><li class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
                     </ol>
         </div>
 
@@ -33,13 +33,13 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
   </header>
   <div class="list">
       <ul>
-          <li class="listGroup"><img src="../image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
-          <li class="listGroup"><img src="../image/tag.png" alt="Chat" class="imgBar"> Tags</li>
-          <li class="listGroup"><img src="../image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
-          <li class="listGroup"><img src="../image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+          <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
+          <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+          <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+          <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
       </ul>
   </div>
-        <a href="sesion.php"><img class="salir1" src="../image/salir.png" alt=""></a>
+        <a href="sesion.php"><img class="salir1" src="image/salir.png" alt=""></a>
             <form method="POST" action="../BACKEND/configuararPerfil.php"  enctype="multipart/form-data">
                 <div class="parteCentral">
                   
@@ -49,9 +49,9 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
                          <input type="hidden" value="<?php echo $n ?>" name="id">
                         <input name="foto" type="file" placeholder="actualiza tu foto" id="costumFile" aria-label="Archivo" onchange="vista_preliminar(event)">
                         <label for="costumFile" class="formFile">Cambiar foto</label>
-                        <p class="icono"><img src="../image/usuario.png" alt=""> <?php echo $nombre ?></p>
-                        <p class="icono"><img src="../image/whatsapp.png" alt=""> <?php echo $tel ?></p>
-                        <p class="icono"><img  src="../image/facebook.png" alt=""> <?php echo $red ?></p>
+                        <p class="icono"><img src="image/usuario.png" alt=""> <?php echo $nombre ?></p>
+                        <p class="icono"><img src="image/whatsapp.png" alt=""> <?php echo $tel ?></p>
+                        <p class="icono"><img  src="image/facebook.png" alt=""> <?php echo $red ?></p>
                       </div>
                     </div>
                 
@@ -70,7 +70,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
                     </div>
                 </div>
              </form>
-            <script src="../js/editarperfil.js"></script>
+            <script src="js/editarperfil.js"></script>
     
 </body>        
 </html>

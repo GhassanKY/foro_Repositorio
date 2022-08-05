@@ -1,53 +1,5 @@
 <?php
-<<<<<<< HEAD:FRONTEND/temas.php
     include "../BACKEND/BD_TEMAS.php";
-=======
-    include "conector.php";
-   
-    session_start();
-    $usuario = $_SESSION["welcome"];
-    //Datos del usuario que inicio sesion
-    $datosUsuario = mysqli_query($conector, "SELECT *
-                                        FROM usuarios
-                                        WHERE correo = '$usuario';");
-    while ($fila = mysqli_fetch_assoc($datosUsuario)) {
-        $n = $fila["id"];
-        $foto = $fila["image_user"];
-        echo "<br>";
-    }
-    
-   
-    $datosUsuario = mysqli_query($conector, "SELECT *
-                                        FROM usuarios
-                                        WHERE correo = '$usuario';");
-
-
-
-   $id = $_GET["id"];
-
-
-     //Datos de los temas para el slect
-    $datosTemas = mysqli_query($conector, " SELECT * FROM temas");
-    $datosTemas1 = mysqli_query($conector, " SELECT * FROM temas");
-
-    
-   //con esto obtengo los hilos por categorias
-   $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*, temas.ID AS idTema
-                                          FROM hilos
-                                          JOIN usuarios
-                                          ON usuarios.id = hilos.usuario
-                                          JOIN temas
-                                          ON temas.ID = hilos.tema
-                                          WHERE temas.ID = $id
-                                          GROUP BY hilos.nombre_Hilos
-                                          ORDER BY hilos.fechaCreacionHilo DESC ");
-
-   //titulo del tema
-   $tituloTema = mysqli_query($conector, "SELECT * 
-                                          FROM temas
-                                          WHERE ID = $id");
->>>>>>> 02dcbbfa82535f4b6f4e19906d7cb644e23d388b:php/temas.php
-
 ?>
 
 <!DOCTYPE html>
@@ -56,23 +8,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/tema.css">
+    <link rel="stylesheet" href="css/tema.css">
     <title>Document</title>
 </head>
 <body>
 <header>
         <nav>
-            <img src="../image/menu.png" alt="Menu" class="imgMenu">
-            <a href="sesion.php"><img src="../image/logo.png" alt="Logo" class="headerLogo"></a>
+            <img src="image/menu.png" alt="Menu" class="imgMenu">
+            <a href="sesion.php"><img src="image/logo.png" alt="Logo" class="headerLogo"></a>
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <img src="../image/lupa.png" alt="Lupa" class="searchbutton">
+            <img src="image/lupa.png" alt="Lupa" class="searchbutton">
 
             <div class="imgHeader">
                 <img src="<?php echo $foto ?>" alt="" class="pfHeader">
                         <ol class="PopLR">
-                            <a href="perfil.php?idPerfil=<?php echo $n ?>"><li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
-                            <a href="editarperfil.php"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
-                            <a href="sesionDestroy.php"><li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
+                            <a href="perfil.php?idPerfil=<?php echo $n ?>"><li class="perfil1"><img src="image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
+                            <a href="editarperfil.php"><li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
+                            <a href="../BACKEND/sesionDestroy.php"><li class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
                         </ol>
             </div>
 
@@ -83,10 +35,10 @@
         <div class="list">
 
             <ul>
-                    <li class="listGroup"><img src="../image/chat.png" alt="Chat" class="imgBar">   Discusiones</li>
-                    <li class="listGroup"><img src="../image/tag.png" alt="Chat" class="imgBar">  Tags</li>
-                    <li class="listGroup"><img src="../image/question.png" alt="Chat" class="imgBar">  Ayuda</li>
-                    <li class="listGroup"><img src="../image/config.png" alt="Chat" class="imgBar">  Ajustes</li>  
+                    <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar">   Discusiones</li>
+                    <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar">  Tags</li>
+                    <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar">  Ayuda</li>
+                    <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar">  Ajustes</li>  
             </ul>
         </div>
 
@@ -94,7 +46,7 @@
             
             
             <div class="buttonReciente">
-                <button class="botonTemas">Temas <img  src="../image/a.png" alt=""></button>
+                <button class="botonTemas">Temas <img  src="image/a.png" alt=""></button>
                     <div class="divTema">
                         <?php while ($temas1 = mysqli_fetch_assoc($datosTemas1)) { ?>
                         <a href="temas.php?id=<?php echo $temas1['ID']; ?>"><p><?php echo $temas1['nombre']; ?></p></a>
@@ -145,7 +97,7 @@
 
                                     </div>
 
-                                    <img src="../image/mas (1).png" alt="more" class="configButton puntos ">
+                                    <img src="image/mas (1).png" alt="more" class="configButton puntos ">
                                    </a>
                             </div>
                           <!-- kkk -->
@@ -156,6 +108,6 @@
 
                 </div>
          
-<script src="../js/temas.js"></script>
+<script src="js/temas.js"></script>
 </body>
 </html>
