@@ -1,7 +1,7 @@
 <?php
 include "conector.php";
 $idTabla = $_POST["idTabla"];
-header("location: conversacion.php?id=$idTabla");
+header("location: ../FRONTEND/conversacion.php?id=$idTabla");
 
 $texto = $_POST["textoHilo"];
 $idtexto = $_POST["idTexto"];

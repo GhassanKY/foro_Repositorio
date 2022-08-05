@@ -1,23 +1,5 @@
 <?php
-include "conector.php";
-session_start();
-$usuario = $_SESSION["welcome"];
-$datosUsuario = mysqli_query($conector, "SELECT *
-                                FROM usuarios
-                                WHERE correo = '$usuario';");
-
- while ($fila = mysqli_fetch_assoc($datosUsuario)) {
-
-        $n = $fila["id"];
-        $foto = $fila["image_user"];
-        $nombre = $fila["nombreUsuario"];
-        $tel = $fila["telefono"];
-        $red = $fila["link"];
-        
-}
-
-
-
+include "../BACKEND/BD_EDITAR-PERFIL.php";
 
 
 ?>
@@ -58,7 +40,7 @@ $datosUsuario = mysqli_query($conector, "SELECT *
       </ul>
   </div>
         <a href="sesion.php"><img class="salir1" src="../image/salir.png" alt=""></a>
-            <form method="POST" action="configuararPerfil.php"  enctype="multipart/form-data">
+            <form method="POST" action="../BACKEND/configuararPerfil.php"  enctype="multipart/form-data">
                 <div class="parteCentral">
                   
                     <div class="img_name">

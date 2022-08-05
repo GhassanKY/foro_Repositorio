@@ -1,45 +1,5 @@
 <?php
-include "conector.php";
-session_start();
-$usuario = $_SESSION["welcome"];
-$idHilo;
-if (!isset($_SESSION["welcome"])) {
-    header("location: index.html");
-} else {
-
-    //Datos del usuario que inicio sesion
-    $datosUsuario = mysqli_query($conector, "SELECT *
-                                        FROM usuarios
-                                        WHERE correo = '$usuario';");
-
-    while ($fila = mysqli_fetch_assoc($datosUsuario)) {
-        $n = $fila["id"];
-        $foto = $fila["image_user"];
-        echo "<br>";
-    }
-    //Datos de los temas para el select
-    $datosTemas = mysqli_query($conector, " SELECT * FROM temas");
-    $datosTemas1 = mysqli_query($conector, " SELECT * FROM temas");
-    
-
-    //con esto obtengo los datos de todos los hilos
-    /* $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*
-                                           FROM hilos
-                                           JOIN usuarios
-                                           ON usuarios.id = hilos.usuario"); */
-
-
-
-    //Cantidad de comentarios
-
-    $CantidadComentarios = mysqli_query($conector, "SELECT hilos.ID AS idTabla, COUNT(mensajes.texto) AS comentarios, mensajes.usuario_ID AS idUsuario
-                                                    FROM hilos
-                                                    JOIN mensajes
-                                                    ON  mensajes.hilo_ID = hilos.ID
-                                                    GROUP BY idTabla");
-
-}
-
+include "../BACKEND/BD_SESION.php";
 
 ?>
 <!DOCTYPE html>
@@ -49,7 +9,7 @@ if (!isset($_SESSION["welcome"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/sesion.css">
+    <link rel="stylesheet" href="css/sesion.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Document</title>
     <style>
@@ -85,7 +45,7 @@ if (!isset($_SESSION["welcome"])) {
                     <a href="editarperfil.php">
                         <li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
-                    <a href="sesiondestroy.php">
+                    <a href="../BACKEND/sesionDestroy.php">
                         <li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li>
                     </a>
                 </ol>
@@ -122,7 +82,7 @@ if (!isset($_SESSION["welcome"])) {
             <!-- CAJA DE PUBLICAR EL NUEVO HILO -->
             <div class="cajaPublicarNuevo">
                 <div class="form1">
-                    <form class="form0" class="cajaNuevoHilo" method="POST" action="infoTemas.php?id=<?php echo $n ?>">
+                    <form class="form0" class="cajaNuevoHilo" method="POST" action="../BACKEND/infoTemas.php?id=<?php echo $n ?>">
                         <img class="x" src="../image/cross.png" alt="">
                         <input class="input1" name="namehilo" type="text" placeholder="Nombre de tu hilo">
                         <textarea class="textarea1" name="descripcionHilo" placeholder="Descripcion hilo de debate"></textarea>

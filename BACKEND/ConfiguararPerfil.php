@@ -1,7 +1,7 @@
 <?php
 include "conector.php";
 $id = $_POST["id"];
-header("location:editarperfil.php?id=$id");
+header("location: ../FRONTEND/editarperfil.php?id=$id");
 
 
 $datosUsuario = mysqli_query($conector, "SELECT *

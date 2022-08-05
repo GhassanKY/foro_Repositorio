@@ -1,36 +1,7 @@
 <?php
-include "conector.php";
-session_start();
-$usuario = $_SESSION["welcome"];
-$datosUsuario = mysqli_query($conector, "SELECT *
-                                        FROM usuarios
-                                        WHERE correo = '$usuario';");
+include "../BACKEND/BD_CONVERSACION.php";
 
-while ($fila = mysqli_fetch_assoc($datosUsuario)) {
-    $idSesion = $fila["id"];
-}
-
-
-$id = $_GET["id"];
-//Obtengo el nombre de quien creo el hilo
-$nombreHilo = mysqli_query($conector, "SELECT hilos.*, usuarios.nombreUsuario
-                                        FROM hilos
-                                        JOIN usuarios
-                                        ON usuarios.id = hilos.usuario
-                                        WHERE hilos.ID = $id");
-
-
-//obtengo todos lo comentarios del hilo
-$datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.*, usuarios.*
-                                            FROM hilos
-                                            JOIN mensajes
-                                            ON mensajes.hilo_ID = hilos.ID
-                                            JOIN usuarios
-                                            ON mensajes.usuario_ID = usuarios.id
-                                            WHERE hilos.ID = $id; ");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +26,7 @@ $datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.*, usuar
     <a href="temas.php?id=5"><button>Mercador</button></a>
     <a href="sesion.php"><button>Todos</button></a>
 
-    <form method="post" action="infoMensajes.php">
+    <form method="post" action="../BACKEND/infoMensajes.php">
         <textarea name="editorMSJ" id="ckeditor" class="ckeditor">
     This is my textarea to be replaced with HTML editor.
     </textarea>
@@ -77,14 +48,14 @@ $datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.*, usuar
             <p><?php echo $hilo["texto"]; ?></p>
             <p><?php echo $hilo["nombreUsuario"]; ?></p>
             <p><?php echo $hilo["fecha"]; ?></p>
-            <a href="perfil.php?id=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a>
+            <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a>
              <br>
              <br>
 
 
             <?php if($hilo["id"] == $idSesion) { ?>
             <button>Editar</button>
-            <form action="editarComentario.php" method="POST">
+            <form action="../BACKEND/editarComentario.php" method="POST">
                 <input type="hidden" value="<?php echo $id ;?>" name="idTabla">
                 <input type="hidden" value="<?php echo $hilo["ID"];?>" name="idTexto">
                 <input type="hidden" value="editar" name="accion" >

@@ -1,6 +1,6 @@
 <?php
 require 'conector.php';
-header("location:sesion.php");
+header("location: ../FRONTEND/sesion.php");
 //require 'sesion.php';
 $n = $_GET["id"];
 

@@ -1,47 +1,5 @@
 <?php
-    include "conector.php";
-   
-    session_start();
-    $usuario = $_SESSION["welcome"];
-    //Datos del usuario que inicio sesion
-    $datosUsuario = mysqli_query($conector, "SELECT *
-                                        FROM usuarios
-                                        WHERE correo = '$usuario';");
-    while ($fila = mysqli_fetch_assoc($datosUsuario)) {
-        $n = $fila["id"];
-        $foto = $fila["image_user"];
-        echo "<br>";
-    }
-    
-   
-    $datosUsuario = mysqli_query($conector, "SELECT *
-                                        FROM usuarios
-                                        WHERE correo = '$usuario';");
-
-
-
-   $id = $_GET["id"];
-
-
-     //Datos de los temas para el slect
-    $datosTemas = mysqli_query($conector, " SELECT * FROM temas");
-    $datosTemas1 = mysqli_query($conector, " SELECT * FROM temas");
-
-    
-   //con esto obtengo los hilos por categorias
-   $datosHilos = mysqli_query($conector, "SELECT hilos.*, usuarios.*, temas.ID AS idTema
-                                          FROM hilos
-                                          JOIN usuarios
-                                          ON usuarios.id = hilos.usuario
-                                          JOIN temas
-                                          ON temas.ID = hilos.tema
-                                          WHERE temas.ID = $id
-                                          GROUP BY hilos.nombre_Hilos");
-
-   //titulo del tema
-   $tituloTema = mysqli_query($conector, "SELECT * 
-                                          FROM temas
-                                          WHERE ID = $id");
+    include "../BACKEND/BD_TEMAS.php";
 
 ?>
 
@@ -65,7 +23,7 @@
             <div class="imgHeader">
                 <img src="<?php echo $foto ?>" alt="" class="pfHeader">
                         <ol class="PopLR">
-                            <a href="perfil.php?id=<?php echo $n ?>"><li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
+                            <a href="perfil.php?idPerfil=<?php echo $n ?>"><li class="perfil1"><img src="../image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
                             <a href="editarperfil.php"><li class="settings"><img src="../image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
                             <a href="sesionDestroy.php"><li class="exit"><img src="../image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
                         </ol>
@@ -102,7 +60,7 @@
             </div>
 
 
-            
+        <div class="body">  
          <?php while($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
 
 
@@ -146,7 +104,7 @@
                           <!-- kkk -->
 
                           <?php } ?>
-                          
+                </div>  
 
 
                 </div>

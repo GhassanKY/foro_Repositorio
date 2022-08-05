@@ -33,7 +33,7 @@ if (!empty($UserID_Mensaje) || !empty($HiloID_Mensaje) || !empty($texto)) {
         $stmt = $conector->prepare($INSERT);
         $stmt->bind_param("sss", $texto, $UserID_Mensaje, $HiloID_Mensaje);
         $stmt->execute();
-        header("location: conversacion.php?id=$HiloID_Mensaje");
+        header("location: ../FRONTEND/conversacion.php?id=$HiloID_Mensaje");
         echo "Mensaje enviado con exito";
     } else {
         echo "vaya no puedes enviar el mismo mensaje mas de 1 vez :/";

@@ -1,5 +1,5 @@
             <?php
-                require 'conector.php';
+                require '../BACKEND/conector.php';
 
                 $buscar = $_POST["buscar"] ?? null;
                 $buscador = mysqli_query($conector, "SELECT hilos.*, usuarios.* 

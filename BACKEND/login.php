@@ -12,7 +12,7 @@ $validar = mysqli_query($conector, "SELECT * FROM usuarios
 
 if(mysqli_num_rows($validar) > 0){
     $_SESSION["welcome"] = $correo;  
-    header("location: sesion.php");
+    header("location: ../FRONTEND/sesion.php");
     
     
 } else{
@@ -23,3 +23,4 @@ if(mysqli_num_rows($validar) > 0){
     </script>";
 }
 
+?>
