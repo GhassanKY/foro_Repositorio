@@ -98,7 +98,7 @@ include "../BACKEND/BD_PERFIL.php";
                     </div>
                 </div>
                 <div class="menu_options informacion">
-                    <img width="20px" src=" ../image/i.png" alt="">
+                    <img width="20px" src="image/i.png" alt="">
                     <p class="info2">Informacion</p>
                     <div class="datos2">
                         <a href="#"><img src="image/gmail.png" alt=""><?php echo $correo ?></a>
@@ -122,11 +122,11 @@ include "../BACKEND/BD_PERFIL.php";
                   </div>
                       <div class="commentsAndPhoto">
                               <div class="imgFriends">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf photoOne">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf photoTwo">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="img/pf.jpg" alt="" class="pfHeaderpf">    
+                                  <!-- <img src="image/pf.jpg" alt="" class="pfHeaderpf photoOne">
+                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf photoTwo">
+                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">
+                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">
+                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">     -->
                               </div>
                               <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">43 comentarios</a>
                       </div>
@@ -139,7 +139,7 @@ include "../BACKEND/BD_PERFIL.php";
 
 </div>
 
-    <script src="js/perfil.js"></script>
     <script src="js/editarHilo.js"></script>
+    <script src="js/perfil.js"></script>
 </body>
 </html>
