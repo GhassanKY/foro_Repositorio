@@ -80,6 +80,17 @@ include "../BACKEND/BD_PERFIL.php";
                         <a href="<?php echo $link ?>"><img src="image/internet.png" alt=""><?php echo $link ?></a>
                     </div>
                 </div>
+
+                <button  class="botonEliminar" onclick="eliminar_user ()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
+                <dialog id="dialogo">
+                    ¿Estas seguro de querer eliminar tu cuenta?
+                    <div class="boton_fiting">
+                    <form method="POST" action="../BACKEND/borrarUser.php"><button class="botonEliminar" id="Si" value="0">Si</button></form>
+                    <button class="botonEliminar" onclick="cerrar_dialog()">No</button>
+                    </div>
+                </dialog>
+
+
             </div>
         </div>
         <div class="box_options_mobile">
@@ -97,6 +108,7 @@ include "../BACKEND/BD_PERFIL.php";
                         <p class="NumHilos"><?php echo $hilos ?></p>
                     </div>
                 </div>
+                <div class="box_OP">
                 <div class="menu_options informacion">
                     <img width="20px" src="image/i.png" alt="">
                     <p class="info2">Informacion</p>
@@ -105,6 +117,16 @@ include "../BACKEND/BD_PERFIL.php";
                         <a href="#"><img src="image/whatsap.png" alt=""><?php echo $telefono?></a>
                         <a href="#"><img src="image/internet.png" alt=""><?php echo $link?></a>
                     </div>
+                </div>
+
+                <button  class="botonEliminar" onclick="eliminar_userMobile()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
+                <dialog class="dialog2" id="dialog2">
+                    ¿Estas seguro de querer eliminar tu cuenta?
+                    <div class="boton_fiting">
+                    <form method="POST" action="../BACKEND/borrarUser.php"><button class="botonEliminar" id="Si" value="0">Si</button></form>
+                    <button class="botonEliminar" onclick="cerrar_dialog2()">No</button>
+                    </div>
+                </dialog>
                 </div>
         </div>
     </div>
@@ -140,6 +162,6 @@ include "../BACKEND/BD_PERFIL.php";
 </div>
 
     <script src="js/editarHilo.js"></script>
-    <script src="js/perfil.js"></script>
+    <script src="./js/botonEliminar.js"></script>
 </body>
 </html>
