@@ -20,7 +20,7 @@ if(mysqli_num_rows($validar) > 0){
     echo
     "<script>
        alert('Usuario no existe');
-       window.location = '../index.html'
+       window.location = '../FRONTEND/index.html'
     </script>";
 }
 

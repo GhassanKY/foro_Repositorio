@@ -19,4 +19,4 @@ $id_User = $n;
 mysqli_query($conector, "UPDATE usuarios SET borrar_user = '$Si' WHERE id = '$id_User'");
 mysqli_close($conector);
 
-header('location: ../FRONTEND/login.php');
+header('location: ../BACKEND/sesionDestroy.php');

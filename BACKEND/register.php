@@ -32,7 +32,7 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
      echo '
      <script>
        alert("el correo ya existe intente con otro");
-        window.location = "../index.html";
+        window.location = "../FRONTEND/index.html";
      </script>
      ';
 
@@ -42,7 +42,7 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
     '
     <script>
     alert("Registrado correctamente");
-     window.location = "../index.html";
+     window.location = "../FRONTEND/index.html";
   </script>';
 }
 

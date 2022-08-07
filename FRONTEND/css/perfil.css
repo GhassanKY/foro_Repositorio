@@ -483,6 +483,9 @@ dialog {
         justify-content: space-evenly;
         border: none;
         padding: 15px;
+        position: absolute;
+        z-index: 300;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     }
 
     .i1 {
@@ -627,6 +630,9 @@ dialog {
         cursor: pointer;
         border: none;
         align-items: center;
+        position: relative;
+        z-index: 200;
+      
     }
 
     .box_OP {

@@ -163,5 +163,8 @@ include "../BACKEND/BD_PERFIL.php";
 
     <script src="js/editarHilo.js"></script>
     <script src="./js/botonEliminar.js"></script>
+    <script src="js/perfil.js"></script>
+
+
 </body>
 </html>
