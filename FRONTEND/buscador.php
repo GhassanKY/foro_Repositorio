@@ -15,7 +15,7 @@
                         
                             <div class="informationPublic">
                                 <div class="imgDiv">
-                                    <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>" style="color:black;"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
+                                    <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>" style="color:black;" class="vperfil"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
                                 </div>
                                 <a href="conversacion.php?id=<?php echo $id2 ?>">
                                     <div class="txtHilo">
@@ -23,14 +23,14 @@
                                         <p><?php echo $hilo["descripcion"]; ?></p>
                                         <div class="boxInfo">
                                             <p class="date"><?php echo $hilo["fechaCreacionHilo"]; ?></p>
-                                            <img src="../image/fecha.png" alt="date" class="calendar">
+                                            <img src="image/fecha.png" alt="date" class="calendar">
                                         </div>
                                         <p class="nameUser"><?php echo $hilo["nombreUsuario"]; ?></p>
                                     </div>
                                 </a>
                             </div>
                             <div class="comments">
-                                <a href="conversacion.php?id=<?php echo $id2 ?>"><img src="../image/chateando.png" alt="comments" class="comments"></a>
+                                <a href="conversacion.php?id=<?php echo $id2 ?>"><img src="image/chateando.png" alt="comments" class="comments"></a>
                             </div>
                         </div>
             <?php } ?>

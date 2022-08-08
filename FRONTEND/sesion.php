@@ -124,6 +124,7 @@ include "../BACKEND/BD_SESION.php";
         buscar_ahora();
     </script>
     <script src="js/sesion.js"></script>
+    <script src="js/buscador.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <?php
 include "conector.php";
+// include "../FRONTEND/perfil.php";
 $id = $_GET["idPerfil"];
 session_start();
 $usuario = $_SESSION["welcome"];
@@ -20,7 +21,7 @@ $datosUsuario = mysqli_query($conector, "SELECT *
                                         ON hilos.usuario = usuarios.id
                                         JOIN mensajes
                                         ON mensajes.hilo_ID = hilos.ID
-                                        WHERE usuarios.id = $id");
+                                    ");
 
     while($fila = mysqli_fetch_assoc($datosUsuario)){
         $id1 = $fila["id"];
@@ -47,13 +48,14 @@ $datosUsuario = mysqli_query($conector, "SELECT *
     } 
     
 
-   //obtengo los datos completos del hilo nombre, descripcion, fecha de creacion...
-    $datoshilo = mysqli_query($conector, "   SELECT hilos.* , usuarios.*, temas.nombre AS tema
-                                                FROM hilos
-                                                JOIN usuarios
-                                                ON hilos.usuario = usuarios.id
-                                                JOIN temas
-                                                ON temas.ID = hilos.tema
-                                                WHERE usuarios.id = $id
-                                                ORDER BY hilos.fechaCreacionHilo DESC");                
+//    obtengo los datos completos del hilo nombre, descripcion, fecha de creacion...
+    $fotoperfil = mysqli_query($conector, "   SELECT *
+                                             FROM usuarios
+                                             WHERE usuarios.id = $id
+                                            "); 
+    while ($fila = mysqli_fetch_assoc($fotoperfil)) {
+        
+        $fotoPerfil = $fila["image_user"];
+        
+        }               
 ?>
