@@ -84,15 +84,23 @@
                                     <div class="commentsAndPhoto">
 
                                             <div class="imgFriends">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf photoOne">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf photoTwo">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf">
+                                                <img src="./image/p1.jpg" alt="" class="pfHeaderpf photoOne">
+                                                <img src="./image/p2.jpg" alt="" class="pfHeaderpf photoTwo">
+                                                <img src="./image/p3.jpg" alt="" class="pfHeaderpf">
+                                                <img src="./image/p4.jpg" alt="" class="pfHeaderpf">
+                                                <img src="./image/p5.jpg" alt="" class="pfHeaderpf">
                                                 
                                             </div>
 
-                                            <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">43 comentarios</a>
+                                            <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">
+                                            <?php
+                                                $id = $hilo["ID"];
+                                                $query = "SELECT COUNT(*) AS total FROM mensajes WHERE hilo_ID = $id"; 
+                                                $comentarios = mysqli_query($conector, $query);
+                                                $comentariosArray = mysqli_fetch_assoc($comentarios);
+                                                echo $comentariosArray['total'];
+                                            ?>
+                                             comentarios</a>
                                     
 
                                     </div>
