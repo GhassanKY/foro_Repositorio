@@ -122,10 +122,6 @@ body {
 
 
 
-
-
-
-<<<<<<< HEAD
 .datos{
    background-color: #f8f8f8;
    border-radius: 7px;
@@ -144,8 +140,6 @@ body {
    opacity: 0;
    
 } 
-.datos-v{
-=======
 .datos {
     background-color: #f8f8f8;
     border-radius: 7px;
@@ -166,7 +160,7 @@ body {
 }
 
 .datos-v {
->>>>>>> 37c49d0dc9b6e93b5ba6a9bc158c112367f5d5e5
+
     opacity: 1;
     transition: .3s;
     height: auto;
@@ -218,6 +212,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
     border-radius: 0 0 15px 15px;
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 90%, rgba(237 237 237) 100%);
