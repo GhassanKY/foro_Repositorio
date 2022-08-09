@@ -50,7 +50,7 @@ include "../BACKEND/BD_PERFIL.php";
     <div>
         <div class="barradedatos">
             <div class="user_image">
-                    <img class="img_user" src="<?php echo $foto ?>">
+                    <img class="img_user" src="<?php echo $fotoPerfil ?>">
                 <div class="nombres">
                     <h2><?php echo $nombreUsuario ?></h2>
                 </div>
@@ -137,33 +137,18 @@ include "../BACKEND/BD_PERFIL.php";
     </div>
 
     <div class="parteCentral">
-        <?php while($hilo = mysqli_fetch_assoc($datoshilo))  { ?>
-            <div class="hiloForUsers" idhilo="<?php echo $hilo["ID"]?>">
-                     
-                  <div class="dpContInfo">                               
-                          <div class="dataUsers">
-                              <h1><?php echo $hilo["nombre_Hilos"]; ?></h1>
-                              <p><?php echo $hilo["descripcion"]; ?></p>
-                              <p class="fecha"><?php echo $hilo["fechaCreacionHilo"]; ?></p>  
-                          </div>
-                  </div>
-                      <div class="commentsAndPhoto">
-                              <div class="imgFriends">
-                                  <!-- <img src="image/pf.jpg" alt="" class="pfHeaderpf photoOne">
-                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf photoTwo">
-                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">     -->
-                              </div>
-                              <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">43 comentarios</a>
-                      </div>
-                      <img src="image/mas (1).png" alt="more" class="configButton puntos ">
-                     </a>
-                     <button type="submit" class="eliminarHilo">eliminar</button>
-            </div>
-        <?php } ?>
+       
     </div>
-
+   <div class="caja1">
+   <div class="caja">
+        <form class="item1" id="form1">
+            <img class="x" src="image/salir.png">
+            <input id="titulohilo"  placeholder="Titulo del hilo">
+            <input id="descripcionhilo" placeholder="Descripcion del hilo">
+            <button class="guardar">guardar</button>
+        </form>
+    </div>
+   </div>
 </div>
 
     <script src="js/editarHilo.js"></script>

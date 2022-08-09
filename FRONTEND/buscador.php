@@ -15,7 +15,7 @@
                         
                             <div class="informationPublic">
                                 <div class="imgDiv">
-                                    <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>" style="color:black;"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
+                                    <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>" style="color:black;" class="vperfil"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
                                 </div>
                                 <a href="conversacion.php?id=<?php echo $id2 ?>">
                                     <div class="txtHilo">
