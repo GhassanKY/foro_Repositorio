@@ -1,10 +1,12 @@
 <?php
-require 'conector.php';
+require './conector.php';
+
 session_start();
 $usuario = $_SESSION["welcome"];
 
+$w = $_POST['close_hilo'];
+$k = $_POST['name_hilo'];
 
-//Datos del usuario que inicio sesion
 $datosUsuario = mysqli_query($conector, "SELECT *
  FROM usuarios
  WHERE correo = '$usuario';");
@@ -13,11 +15,8 @@ $datosUsuario = mysqli_query($conector, "SELECT *
     $n = $fila["id"];
 }
 
-$Si = $_POST['si'] ?? null;
-$id_User = $n;
 
-
-mysqli_query($conector, "UPDATE usuarios SET borrar_user = '$Si' WHERE id = '$id_User'");
+mysqli_query($conector, "UPDATE hilos SET activo = '$w' WHERE usuario = '$n' AND ID = $k");
 mysqli_close($conector);
-header('location: ./sesionDestroy.php');
 
+header('location: ../FRONTEND/conversacion.php?id='.$k);

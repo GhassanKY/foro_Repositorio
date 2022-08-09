@@ -20,6 +20,7 @@ $nombreHilo = mysqli_query($conector, "SELECT hilos.*, usuarios.nombreUsuario
                                         WHERE hilos.ID = $id");
 
 
+
 //obtengo todos lo comentarios del hilo
 $datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.*, usuarios.*
                                             FROM hilos
@@ -28,4 +29,15 @@ $datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.*, usuar
                                             JOIN usuarios
                                             ON mensajes.usuario_ID = usuarios.id
                                             WHERE hilos.ID = $id; ");
+
+
+$datosHilosFull = mysqli_query($conector, "SELECT * from hilos WHERE ID = $id");
+while ($act = mysqli_fetch_assoc($datosHilosFull)){
+    $activos = $act["activo"];
+}
+
+$datosBoton = mysqli_query($conector, "SELECT * FROM hilos WHERE usuario = $idSesion AND ID = $id");
+while ($Boton = mysqli_fetch_assoc($datosBoton)){
+    $info = $Boton["ID"];
+}
 ?>

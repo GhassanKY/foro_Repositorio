@@ -19,7 +19,6 @@ include "../BACKEND/BD_CONVERSACION.php";
 </head>
 
 <body>
-
     <a href="temas.php?id=1"><button>Aviones</button></a>
     <a href="temas.php?id=2"><button>Carros</button></a>
     <a href="temas.php?id=3"><button>Juguetes</button></a>
@@ -27,6 +26,9 @@ include "../BACKEND/BD_CONVERSACION.php";
     <a href="temas.php?id=5"><button>Mercador</button></a>
     <a href="sesion.php"><button>Todos</button></a>
 
+<?php
+if ($activos == 1){
+?>
     <form method="post" action="../BACKEND/infoMensajes.php">
         <textarea name="editorMSJ" id="ckeditor" class="ckeditor">
     This is my textarea to be replaced with HTML editor.
@@ -35,7 +37,26 @@ include "../BACKEND/BD_CONVERSACION.php";
         <input type="submit" name="submit" value="SUBMIT">
     </form>
 
+<?php
+ if (!empty($info)){
+  ?>
+<button onclick="desactivar_hilo()">Cerrar Hilo</button>
 
+    <dialog id="dialog_hilo">
+        <p>¿Estas seguro de querer desactivar este hilo?</p>
+        <p>Al desactivar este hilo no permites que alguien <br> escriba un nuevo mensaje</p>
+        <div class="desactivar_Hilo">
+        <form method="POST" action="../BACKEND/desactivarHilo.php">
+            <input name="name_hilo" type="hidden" value="<?php echo "$id" ?>">
+            <button name="close_hilo" value="0">Si</button>
+        </form>
+        <button>No</button>
+        </div>
+    </dialog>
+<?php } ?>
+<?php
+}
+?>
 
     <?php while ($fila = mysqli_fetch_assoc($nombreHilo)) {   ?>
         <h1><?php echo $fila["nombre_Hilos"]; ?></h1>
@@ -50,28 +71,29 @@ include "../BACKEND/BD_CONVERSACION.php";
             <p><?php echo $hilo["nombreUsuario"]; ?></p>
             <p><?php echo $hilo["fecha"]; ?></p>
             <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a>
-             <br>
-             <br>
+            <br>
+            <br>
 
 
-            <?php if($hilo["id"] == $idSesion) { ?>
-            <button>Editar</button>
-            <form action="../BACKEND/editarComentario.php" method="POST">
-                <input type="hidden" value="<?php echo $id ;?>" name="idTabla">
-                <input type="hidden" value="<?php echo $hilo["ID"];?>" name="idTexto">
-                <input type="hidden" value="editar" name="accion" >
-                <textarea name="textoHilo" id="ckeditor" class="ckeditor">
+            <?php if ($hilo["id"] == $idSesion) { ?>
+                <button>Editar</button>
+                <form action="../BACKEND/editarComentario.php" method="POST">
+                    <input type="hidden" value="<?php echo $id; ?>" name="idTabla">
+                    <input type="hidden" value="<?php echo $hilo["ID"]; ?>" name="idTexto">
+                    <input type="hidden" value="editar" name="accion">
+                    <textarea name="textoHilo" id="ckeditor" class="ckeditor">
                   <?php echo $hilo["texto"]; ?>
                 </textarea>
-                <button>Guardar Cambios</button>
-                <button class="eliminar">Eliminar</button>
-            </form>
-      
+                    <button>Guardar Cambios</button>
+                    <button class="eliminar">Eliminar</button>
+                </form>
+
             <?php } ?>
         </div>
     <?php } ?>
 
     <script src="ckeditor/ckeditor.js"></script>
+    <script src="./js/desactivarHilo.js"></script>
 </body>
 
 </html>
