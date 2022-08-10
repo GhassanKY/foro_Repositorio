@@ -1,6 +1,5 @@
 <?php
-include "../BACKEND/BD_PERFIL.php";
-
+include "../BACKEND/BD_PERFIL.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,6 +82,10 @@ include "../BACKEND/BD_PERFIL.php";
                     </div>
                 </div>
 
+                <?php
+                $SesionActual = $_GET['idPerfil'];
+                if ($idSesion == $SesionActual){
+                ?>
                 <button  class="botonEliminar" onclick="eliminar_user ()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
                 <dialog id="dialogo">
                     ¿Estas seguro de querer eliminar tu cuenta?
@@ -91,7 +94,9 @@ include "../BACKEND/BD_PERFIL.php";
                     <button class="botonEliminar" onclick="cerrar_dialog()">No</button>
                     </div>
                 </dialog>
-
+                <?php
+                }
+                ?>
 
             </div>
         </div>
