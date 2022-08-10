@@ -3,7 +3,7 @@
 
 include "conector.php";
 
-// header("location: ../index.html");
+;
 
 $mensaje = "";
 $nombre = $_POST["nombre"] ??  null;
@@ -15,11 +15,24 @@ $usuario = $_POST["usuario"]?? null ;
 $imagen = $_FILES['src-file1']['name'] ?? null;
 $ruta = $_FILES['src-file1'] ['tmp_name'] ?? null;
 $destino = "image/".$imagen;
+$destinoCopia = "../FRONTEND/image/".$imagen;
 
-copy($ruta, $destino) ?? null;
 
-$query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto,image_user)
-          VALUES('$correo','$usuario','$clave','$nombre','$destino')";
+
+
+if(is_uploaded_file($ruta)){
+  copy($ruta, $destinoCopia);
+} else{
+  $destinoCopia = "../FRONTEND/image/usu.jpg";
+  $destino = "image/usu.jpg";
+
+}
+
+
+;
+
+$query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto,image_user,telefono,link,borrar_user)
+          VALUES('$correo','$usuario','$clave','$nombre','$destino','vacio','vacio','1')";
 
 
 
@@ -32,7 +45,7 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
      echo '
      <script>
        alert("el correo ya existe intente con otro");
-        window.location = "../index.html";
+        window.location = "../FRONTEND/index.html";
      </script>
      ';
 
@@ -42,7 +55,7 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
     '
     <script>
     alert("Registrado correctamente");
-     window.location = "../index.html";
+     window.location = "../FRONTEND/index.html";
   </script>';
 }
 
@@ -51,20 +64,17 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
 $ejecutar = mysqli_query($conector,$query);
 
 
-// if($ejecutar){
-//     echo
-//     '<script>
-//     alert(registrado correctamente);
-//     window.location = "../sesion.php"
-//  </script>';
-    
-// } else{
-//     '<script>
-//     alert(el correo ya existe);
-//     window.location = "../sesion.php"
-//     </script>';
-// }
-
-
-
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,7 +1,7 @@
 <?php
 include "conector.php";
 $id = $_POST["id"];
-header("location: ../FRONTEND/editarperfil.php?id=$id");
+header("location: ../FRONTEND/perfil.php?idPerfil=$id");
 
 
 $datosUsuario = mysqli_query($conector, "SELECT *
@@ -19,15 +19,18 @@ $link = $_POST["link"] ?? null;
 $imagen = $_FILES["foto"]['name'] ?? null;
 $ruta = $_FILES["foto"] ['tmp_name'] ?? null;
 echo $id;
-$destino = "../image/".$imagen;
+$destino = "image/".$imagen;
+$destinoCopia = "../FRONTEND/image/".$imagen;
+
 
 if(is_uploaded_file($ruta)){
-  copy($ruta, $destino);
+  copy($ruta, $destinoCopia);
 } else{
-
+  $destinoCopia = "../FRONTEND/image/".$imagen;
   $destino = $foto;
 
 }
+
 
 
 

@@ -1,6 +1,5 @@
 <?php
-include "../BACKEND/BD_PERFIL.php";
-            
+include "../BACKEND/BD_PERFIL.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +18,9 @@ include "../BACKEND/BD_PERFIL.php";
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="mandos">
+      <a href="sesion.php"><p>HOMME</p><img src="image/der.png" alt=""></a>
+    </div>
     <header>
         <nav>
             <img src="image/menu.png" alt="Menu" class="imgMenu">
@@ -35,12 +36,14 @@ include "../BACKEND/BD_PERFIL.php";
                         <li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
                     <a href="../BACKEND/sesionDestroy.php"><li class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
+                   
                 </ol>
             </div>
         </nav>
     </header>
     <div class="list">
         <ul>
+            <li class="listGroup"><a style="color:white;" href="sesion.php">Inicio</a></li>
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
             <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
@@ -51,7 +54,7 @@ include "../BACKEND/BD_PERFIL.php";
     <div>
         <div class="barradedatos">
             <div class="user_image">
-                    <img class="img_user" src="<?php echo $foto ?>">
+                    <img class="img_user" src="<?php echo $fotoPerfil ?>">
                 <div class="nombres">
                     <h2><?php echo $nombreUsuario ?></h2>
                 </div>
@@ -80,6 +83,23 @@ include "../BACKEND/BD_PERFIL.php";
                         <a href="<?php echo $link ?>"><img src="image/internet.png" alt=""><?php echo $link ?></a>
                     </div>
                 </div>
+
+                <?php
+                $SesionActual = $_GET['idPerfil'];
+                if ($idSesion == $SesionActual){
+                ?>
+                <button  class="botonEliminar" onclick="eliminar_user ()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
+                <dialog id="dialogo">
+                    ¿Estas seguro de querer eliminar tu cuenta?
+                    <div class="boton_fiting">
+                    <form method="POST" action="../BACKEND/borrarUser.php"><button class="botonEliminar" id="Si" value="0">Si</button></form>
+                    <button class="botonEliminar" onclick="cerrar_dialog()">No</button>
+                    </div>
+                </dialog>
+                <?php
+                }
+                ?>
+
             </div>
         </div>
         <div class="box_options_mobile">
@@ -97,6 +117,7 @@ include "../BACKEND/BD_PERFIL.php";
                         <p class="NumHilos"><?php echo $hilos ?></p>
                     </div>
                 </div>
+                <div class="box_OP">
                 <div class="menu_options informacion">
                     <img width="20px" src="image/i.png" alt="">
                     <p class="info2">Informacion</p>
@@ -106,40 +127,38 @@ include "../BACKEND/BD_PERFIL.php";
                         <a href="#"><img src="image/internet.png" alt=""><?php echo $link?></a>
                     </div>
                 </div>
+
+                <button  class="botonEliminar" onclick="eliminar_userMobile()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
+                <dialog class="dialog2" id="dialog2">
+                    ¿Estas seguro de querer eliminar tu cuenta?
+                    <div class="boton_fiting">
+                    <form method="POST" action="../BACKEND/borrarUser.php"><button class="botonEliminar" id="Si" value="0">Si</button></form>
+                    <button class="botonEliminar" onclick="cerrar_dialog2()">No</button>
+                    </div>
+                </dialog>
+                </div>
         </div>
     </div>
 
     <div class="parteCentral">
-        <?php while($hilo = mysqli_fetch_assoc($datoshilo))  { ?>
-            <div class="hiloForUsers" idhilo="<?php echo $hilo["ID"]?>">
-                     
-                  <div class="dpContInfo">                               
-                          <div class="dataUsers">
-                              <h1><?php echo $hilo["nombre_Hilos"]; ?></h1>
-                              <p><?php echo $hilo["descripcion"]; ?></p>
-                              <p class="fecha"><?php echo $hilo["fechaCreacionHilo"]; ?></p>  
-                          </div>
-                  </div>
-                      <div class="commentsAndPhoto">
-                              <div class="imgFriends">
-                                  <!-- <img src="image/pf.jpg" alt="" class="pfHeaderpf photoOne">
-                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf photoTwo">
-                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">
-                                  <img src="image/pf.jpg" alt="" class="pfHeaderpf">     -->
-                              </div>
-                              <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">43 comentarios</a>
-                      </div>
-                      <img src="image/mas (1).png" alt="more" class="configButton puntos ">
-                     </a>
-                     <button type="submit" class="eliminarHilo">eliminar</button>
-            </div>
-        <?php } ?>
+       
     </div>
-
+   <div class="caja1">
+   <div class="caja">
+        <form class="item1" id="form1">
+            <img class="x" src="image/salir.png">
+            <input id="titulohilo"  placeholder="Titulo del hilo">
+            <input id="descripcionhilo" placeholder="Descripcion del hilo">
+            <button class="guardar">guardar</button>
+        </form>
+    </div>
+   </div>
 </div>
 
     <script src="js/editarHilo.js"></script>
+    <script src="./js/botonEliminar.js"></script>
     <script src="js/perfil.js"></script>
+
+
 </body>
 </html>

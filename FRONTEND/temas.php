@@ -34,11 +34,13 @@
 
         <div class="list">
 
-            <ul>
-                    <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar">   Discusiones</li>
-                    <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar">  Tags</li>
-                    <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar">  Ayuda</li>
-                    <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar">  Ajustes</li>  
+        <ul>
+            <li class="listGroup"><a style="color:white;" href="sesion.php">Inicio</a></li>
+            <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
+            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+        </ul> 
             </ul>
         </div>
 
@@ -74,9 +76,9 @@
                                         <div class="dataUsers">
 
                                             <h1><?php echo $hilo["nombre_Hilos"]; ?></h1>
-                                            <p><?php echo $hilo["descripcion"]; ?></p>
+                                            <p class="des"><?php echo $hilo["descripcion"]; ?></p>
                                             <p class="fecha"><?php echo $hilo["fechaCreacionHilo"]; ?></p>
-                                            <p><?php echo $hilo["nombreUsuario"]; ?></p>
+                                            <p class="nameUser"><?php echo $hilo["nombreUsuario"]; ?></p>
                                             
                                         </div>
 
@@ -84,15 +86,23 @@
                                     <div class="commentsAndPhoto">
 
                                             <div class="imgFriends">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf photoOne">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf photoTwo">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf">
-                                                <img src="img/pf.jpg" alt="" class="pfHeaderpf">
+                                                <img src="./image/p1.jpg" alt="" class="pfHeaderpf photoOne">
+                                                <img src="./image/p2.jpg" alt="" class="pfHeaderpf photoTwo">
+                                                <img src="./image/p3.jpg" alt="" class="pfHeaderpf">
+                                                <img src="./image/p4.jpg" alt="" class="pfHeaderpf">
+                                                <img src="./image/p5.jpg" alt="" class="pfHeaderpf">
                                                 
                                             </div>
 
-                                            <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">43 comentarios</a>
+                                            <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">
+                                            <?php
+                                                $id = $hilo["ID"];
+                                                $query = "SELECT COUNT(*) AS total FROM mensajes WHERE hilo_ID = $id"; 
+                                                $comentarios = mysqli_query($conector, $query);
+                                                $comentariosArray = mysqli_fetch_assoc($comentarios);
+                                                echo $comentariosArray['total'];
+                                            ?>
+                                             comentarios</a>
                                     
 
                                     </div>

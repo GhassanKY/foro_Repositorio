@@ -5,7 +5,7 @@
 .searchbutton {
     display: none;
 
-    
+
 }
 
 /* Estilos letras */
@@ -15,11 +15,131 @@
 body {
     background-color: hsl(0, 0%, 93%);
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.mandos{
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #5e5e5e;
+} .mandos img{
+    margin-left: 7px;
+    width: 25px;
+} .mandos a{
+    text-decoration: none;
+    color: #747474;
+    display: flex;
+    align-items: center;
+}
+
+.eliminarHiloo{
+    background-image: url("../image/borrar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid rgba(244, 220, 245, 0);
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    background-size: 17px;
+    padding: 13px;
+    cursor: pointer;
+    transition: .5s;
+} .eliminarHiloo:hover{
+    border: 1px solid rgb(255, 136, 0);
+    transition: .5s;
+}
+.editarHilo{
+    position: absolute;
+    cursor: pointer;
+    border: none ;
+    border-radius: 5px;
+    top: 10px;
+    right:  45px;
+    padding: 13px;
+    background-image: url( "../image/lapiz1.png" );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+    transition: .5s;
+    border: 1px solid rgba(244, 220, 245, 0);
+    
+} .editarHilo:hover{
+    border: 1px solid rgb(255, 136, 0);
+    transition: .5s;
+}
+.item1{
+    position: relative;
+    width: 350px;
+    height: 300px;
+    border: 1px solid rgb(214, 214, 214);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    border-radius: 7px;
+    
+} .item1 input{
+    font-size: 16px;
+    padding-left: 10px;
+    width: 90%;
+    height: 40px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #f1f1f1;
+} .item1 button{
+    width: 90%;
+    height: 40px;
+    border: none;
+    background-color: #ff5100;
+    color: white;
+    font-size: 18px;
+    border-radius: 7px;
+    text-transform: capitalize;
+} .item1 .x{
+    position: absolute;
+    top: 10px;
+     left: 15px;
+     width: 20px;
+}
+
+.caja{
+    transition: .5s;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000034;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    display: none;
+}
+.caja-v{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+
+
+
+
 
 .datos{
    background-color: #f8f8f8;
@@ -38,14 +158,35 @@ body {
    padding: 30px 10px 30px 10px;
    opacity: 0;
    
+} 
+.datos {
+    background-color: #f8f8f8;
+    border-radius: 7px;
+    position: absolute;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    right: -60px;
+    z-index: 200;
+    max-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
+    height: 0;
+    padding: 30px 10px 30px 10px;
+    opacity: 0;
+
 }
-.datos-v{
+
+.datos-v {
+
     opacity: 1;
     transition: .3s;
     height: auto;
 }
-.datos a{
-   
+
+.datos a {
+
     color: #001f86;
     margin-bottom: 10px;
     display: flex;
@@ -56,9 +197,12 @@ body {
     border-radius: 10px;
     width: auto;
     overflow: auto;
-} .datos a img{
+}
+
+.datos a img {
     margin-right: 10px;
 }
+
 .searchbutton {
     position: fixed;
     right: 130px;
@@ -66,14 +210,16 @@ body {
     width: 20px;
 
 }
-.nombres{
+
+.nombres {
     font-size: 14px;
     height: 100%;
     width: 50%;
 }
-    .list{
-        left: -200px;
-    }
+
+.list {
+    left: -200px;
+}
 
 
 
@@ -85,20 +231,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
     border-radius: 0 0 15px 15px;
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 90%, rgba(237 237 237) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 90%, rgba(237 237 237) 100%);
     box-shadow: rgba(82, 82, 82, 0.09) 0px 2px 1px, rgba(88, 88, 88, 0.09) 0px 4px 2px, rgba(97, 97, 97, 0.09) 0px 8px 4px, rgba(83, 83, 83, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .barradedatos {
-    width:90vw;
+    width: 80vw;
     position: relative;
     height: 92px;
-    margin: 120px auto 50px auto;
+    margin: 40px auto 50px auto;
     display: flex;
     align-items: center;
-    border-radius:15px;
+    border-radius: 15px;
     background-color: #FFB74D;
     box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px !important;
     justify-content: space-between;
@@ -107,11 +254,12 @@ body {
     padding-right: 20px;
 }
 
-.barradedatos h2{
+.barradedatos h2 {
     margin-left: 10px;
     text-transform: capitalize;
 }
-.img1{
+
+.img1 {
     border: #000000 1px solid;
 }
 
@@ -158,14 +306,16 @@ body {
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    border: 4px solid hsl(0, 0%, 93%) ;
+    border: 4px solid hsl(0, 0%, 93%);
     object-fit: cover;
     object-position: center;
-    
+
 }
-.box_options_mobile{
+
+.box_options_mobile {
     display: none;
 }
+
 .menu_options {
     display: flex;
     flex-direction: row;
@@ -174,10 +324,12 @@ body {
     position: relative;
     /* border: 1px solid black; */
 }
-.o2{
+
+.o2 {
     width: 60px;
     /* border: 1px solid rgb(255, 0, 0); */
 }
+
 .box_options {
     display: flex;
     width: 50%;
@@ -192,36 +344,40 @@ body {
     align-items: center;
     justify-content: space-around;
 }
-.icon{
+
+.icon {
     position: relative;
     margin-left: 7px;
 }
-.i2{
-  width: 25px;
-  position: absolute;
-  top: -22px;
-  right: -10px;
+
+.i2 {
+    width: 25px;
+    position: absolute;
+    top: -22px;
+    right: -10px;
 }
-.NumComentarios{
+
+.NumComentarios {
     font-weight: 600;
     color: #202020;
 }
 
-.icon2{
+.icon2 {
     position: absolute;
-   
+
     margin-left: 15px;
     top: -18px;
     right: 10px;
 }
-.i1{
+
+.i1 {
     width: 20px;
     position: absolute;
     top: -2px;
     right: -6px;
-  }
+}
 
-  .NumHilos{
+.NumHilos {
     font-weight: 600;
     color: #1d1d1d;
     font-size: 12px;
@@ -229,7 +385,8 @@ body {
     margin-top: 1px;
 
 }
-.informacion1{
+
+.informacion1 {
     padding: 10px 15px;
     background-color: #413d3923;
     border-radius: 8px;
@@ -237,9 +394,10 @@ body {
     justify-content: space-around;
     width: 11vw;
     cursor: pointer;
-    border:none;
+    border: none;
 }
-.informacion{
+
+.informacion {
     padding: 10px 15px;
     background-color: #413d3923;
     border-radius: 8px;
@@ -249,17 +407,17 @@ body {
     cursor: pointer;
 }
 
-.hiloForUsers a{
+.hiloForUsers a {
     text-decoration: none;
     margin-top: 15px;
 }
 
-.boton_fiting{
+.boton_fiting {
     display: flex;
     justify-content: space-evenly;
 }
 
-dialog{
+dialog {
     display: none;
     margin: auto;
     height: 25vh;
@@ -269,11 +427,21 @@ dialog{
     padding: 15px;
 }
 
-.iconoTrash{
+.iconoTrash {
     width: 20px;
 }
 
-
+.botonEliminar {
+    padding: 10px 15px;
+    background-color: #413d3923;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    width: 11vw;
+    cursor: pointer;
+    border: none;
+    align-items: center;
+}
 
 
 
@@ -299,7 +467,8 @@ dialog{
     padding: 10px 15px;
     margin-bottom: 17px;
 }
-.editar{
+
+.editar {
     background-color: #f8f8f8;
     border: 1px solid rgb(151, 151, 151);
     padding: 20px;
@@ -312,20 +481,26 @@ dialog{
     position: fixed;
     top: 80px;
 }
+
 .dpContInfo {
     display: flex;
 }
+
 .dataUsers {
-    margin-left: 20px;
+    margin-left: 0px;
 }
-.dataUsers h1{
+
+.dataUsers h1 {
     font-size: 23px;
 }
-.fecha{
+
+.fecha {
     font-size: 12px;
-    margin-top: 3px;
-    color: rgb(136, 136, 136);
+    margin-top: 15px;
+    color: rgb(255, 115, 0);
+    
 }
+
 .commentsAndPhoto {
     display: flex;
     align-items: flex-end;
@@ -335,11 +510,13 @@ dialog{
 .commentsAndPhoto p {
     margin-right: 7px;
 }
+
 .configButton {
     width: 17px;
 
     height: 17px;
 }
+
 .puntos {
     position: absolute;
     right: 15px;
@@ -357,28 +534,36 @@ dialog{
         margin: 0;
         align-items: center;
     }
+
     .feature-v {
         width: 67%;
         right: 77px;
         top: 83px;
         border: 1px solid black;
     }
+
     .pfHeaderpf {
         display: none;
     }
-    .photoOne, .photoTwo {
+
+    .photoOne,
+    .photoTwo {
         display: block;
     }
+
     .hiloForUsers {
         width: 95%;
     }
-    .dataUsers h1  {
+
+    .dataUsers h1 {
         font-size: 20px;
     }
+
     .dataUsers {
         margin: 0;
         margin-right: 10px;
     }
+
     .commentsAndPhoto {
         display: flex;
         flex-direction: column;
@@ -386,17 +571,21 @@ dialog{
         align-items: flex-start;
         justify-content: flex-end;
     }
+
     .imgFriends {
         padding: 0;
         margin: 0;
     }
+
     .commentsAndPhoto p {
         font-size: 14px;
         margin-top: 4px;
     }
+
     .configButton {
         display: none;
     }
+
     .puntos {
         display: block;
     }
@@ -426,7 +615,7 @@ dialog{
 
 @media screen and (max-width: 1025px) {
 
-    dialog {
+    .dialog2 {
         display: none;
         margin: auto;
         height: 25vh;
@@ -434,15 +623,18 @@ dialog{
         justify-content: space-evenly;
         border: none;
         padding: 15px;
+        position: absolute;
+        z-index: 300;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     }
 
-    .i1{
-    width: 20px;
-    position: absolute;
-    top: -17px;
-    right: -21px;
-}
-    
+    .i1 {
+        width: 20px;
+        position: absolute;
+        top: -17px;
+        right: -21px;
+    }
+
 
     .i2 {
         width: 23px;
@@ -450,14 +642,16 @@ dialog{
         top: -34px;
         right: -21px;
     }
-    
+
     .box_options {
         display: none;
     }
-    .datos{
+
+    .datos {
         display: none;
     }
-    .datos2{
+
+    .datos2 {
         background-color: #f8f8f8;
         border-radius: 7px;
         position: absolute;
@@ -473,29 +667,34 @@ dialog{
         height: 0;
         padding: 30px 10px 30px 10px;
         opacity: 0;
-        
-     }
-     .datos2-v{
-         opacity: 1;
-         transition: .3s;
-         height: auto;
-     }
-     .datos2 a{
-        
-         color: #001f86;
-         margin-bottom: 10px;
-         display: flex;
-         align-items: center;
-         padding: 10px 10px;
-         background-color: white;
-         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-         border-radius: 10px;
-         width: auto;
-         overflow: auto;
-     } .datos2 a img{
-         margin-right: 10px;
-     }
-     .box_options_mobile {
+
+    }
+
+    .datos2-v {
+        opacity: 1;
+        transition: .3s;
+        height: auto;
+    }
+
+    .datos2 a {
+
+        color: #001f86;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        padding: 10px 10px;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 10px;
+        width: auto;
+        overflow: auto;
+    }
+
+    .datos2 a img {
+        margin-right: 10px;
+    }
+
+    .box_options_mobile {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -503,7 +702,8 @@ dialog{
         position: relative;
         width: 100%;
     }
-    .o2{
+
+    .o2 {
         width: 50px;
     }
 
@@ -515,6 +715,7 @@ dialog{
         color: #282d33;
         justify-content: space-evenly;
     }
+
     .informacion {
         padding: 10px 15px;
         background-color: #413d3923;
@@ -526,12 +727,13 @@ dialog{
         border: none;
         margin-bottom: 5px;
     }
+
     .barradedatos {
         padding-left: 0;
         width: 75%;
         margin-left: 0;
         height: 92px;
-        margin: 100px 0 60px 60px;
+        margin: 25px 0 60px 60px;
         display: flex;
         align-items: center;
         border-radius: 15px;
@@ -554,22 +756,45 @@ dialog{
     }
 
 
-    .hiloForUsers{
+    .hiloForUsers {
         flex-direction: column;
     }
+
+    .botonEliminar {
+        padding: 10px 15px;
+        background-color: #413d3923;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-around;
+        width: 150px;
+        cursor: pointer;
+        border: none;
+        align-items: center;
+        position: relative;
+        z-index: 200;
+      
+    }
+
+    .box_OP {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 @media screen and (min-width: 1025px) {
     .box_options_mobile {
         border: 1px solid red;
     }
+
     @media screen and (min-width: 600px) {
 
-    
 
-        .o2{
+
+        .o2 {
             width: 50px;
         }
-        
+
     }
 }

@@ -16,7 +16,8 @@ $datosUsuario = mysqli_query($conector, "SELECT *
 $Si = $_POST['si'] ?? null;
 $id_User = $n;
 
+
 mysqli_query($conector, "UPDATE usuarios SET borrar_user = '$Si' WHERE id = '$id_User'");
 mysqli_close($conector);
+header('location: ./sesionDestroy.php');
 
-header('location: ../FRONTEND/login.php');
