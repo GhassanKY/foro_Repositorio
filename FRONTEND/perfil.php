@@ -34,12 +34,14 @@ include "../BACKEND/BD_PERFIL.php";
                         <li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
                     <a href="../BACKEND/sesionDestroy.php"><li class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
+                   
                 </ol>
             </div>
         </nav>
     </header>
     <div class="list">
         <ul>
+            <li><a style="color:white;" href="sesion.php">Inicio</a></li>
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
             <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>

@@ -19,15 +19,18 @@ $link = $_POST["link"] ?? null;
 $imagen = $_FILES["foto"]['name'] ?? null;
 $ruta = $_FILES["foto"] ['tmp_name'] ?? null;
 echo $id;
-$destino = "../image/".$imagen;
+$destino = "image/".$imagen;
+$destinoCopia = "../FRONTEND/image/".$imagen;
+
 
 if(is_uploaded_file($ruta)){
-  copy($ruta, $destino);
+  copy($ruta, $destinoCopia);
 } else{
-
+  $destinoCopia = "../FRONTEND/image/".$imagen;
   $destino = $foto;
 
 }
+
 
 
 

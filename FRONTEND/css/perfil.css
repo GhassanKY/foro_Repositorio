@@ -468,7 +468,7 @@ dialog {
 }
 
 .dataUsers {
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .dataUsers h1 {
@@ -477,8 +477,9 @@ dialog {
 
 .fecha {
     font-size: 12px;
-    margin-top: 3px;
-    color: rgb(136, 136, 136);
+    margin-top: 15px;
+    color: rgb(255, 115, 0);
+    
 }
 
 .commentsAndPhoto {

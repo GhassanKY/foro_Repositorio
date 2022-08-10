@@ -36,7 +36,7 @@ function hilo(){
                     <div class="dataUsers">
                         <h1>${element.titulo}</h1>
                         <p>${element.descripcion}</p>
-                        <p class="fecha">${element.fecha}fecha</p>  
+                        <p class="fecha">${element.fecha}</p>  
                     </div>
             </div>
                 <div class="commentsAndPhoto">
