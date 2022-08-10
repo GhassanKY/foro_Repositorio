@@ -3,12 +3,18 @@
 
                 $buscar = $_POST["buscar"] ?? null;
                 $buscador = mysqli_query($conector, "SELECT hilos.*, usuarios.* 
-                                                    FROM hilos 
+                                                    FROM hilos
                                                     JOIN usuarios 
-                                                    ON usuarios.id = hilos.usuario 
+                                                    ON usuarios.id = hilos.usuario
                                                     WHERE hilos.nombre_Hilos
                                                     LIKE LOWER('%".$buscar."%')
+<<<<<<< HEAD
                                                     ORDER BY hilos.ID DESC");
+=======
+                                                    ORDER BY hilos.ID DESC
+                                                    ");
+                                                    
+>>>>>>> 7115940ba64c37429185dfccd0bd53f3a2846aad
 
                 while ($hilo = mysqli_fetch_assoc($buscador)) {    ?>
                        <?php $id2 = $hilo["ID"] ?>
