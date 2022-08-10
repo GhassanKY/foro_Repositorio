@@ -14,9 +14,7 @@ include "../BACKEND/BD_SESION.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Document</title>
     <style>
-        .hilo {
-            border-bottom: 1px solid black;
-        }
+       
     </style>
 </head>
 
@@ -46,9 +44,12 @@ include "../BACKEND/BD_SESION.php";
                     <a href="editarperfil.php">
                         <li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
-                    <a href="../BACKEND/sesionDestroy.php">
-                        <li class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li>
-                    </a>
+                        <form action="../BACKENd/fecha-sesion.php" method="POST">
+                            <input type="hidden" name="fecha-sesion" value="1">
+                            <!-- <a href="../BACKEND/sesionDestroy.php"> -->
+                                <button class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</button>
+                            <!-- </a> -->
+                        </form>
                 </ol>
             </div>
 

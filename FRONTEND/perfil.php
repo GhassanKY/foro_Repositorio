@@ -122,9 +122,9 @@ include "../BACKEND/BD_PERFIL.php";
                     <img width="20px" src="image/i.png" alt="">
                     <p class="info2">Informacion</p>
                     <div class="datos2">
-                        <a href="#"><img src="image/gmail.png" alt=""><?php echo $correo ?></a>
-                        <a href="#"><img src="image/whatsap.png" alt=""><?php echo $telefono?></a>
-                        <a href="#"><img src="image/internet.png" alt=""><?php echo $link?></a>
+                    <a href="mailto:<?php echo $correo ?>"><img src="image/gmail.png" alt=""><?php echo $correo ?></a>
+                        <a href="https://wa.me/<?php echo $telefono?>"><img src="image/whatsap.png" alt=""><?php echo $telefono?></a>
+                        <a href="<?php echo $link ?>"><img src="image/internet.png" alt=""><?php echo $link ?></a>
                     </div>
                 </div>
 

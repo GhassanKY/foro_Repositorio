@@ -15,7 +15,8 @@ if (!isset($_SESSION["welcome"])) {
     while ($fila = mysqli_fetch_assoc($datosUsuario)) {
         $n = $fila["id"];
         $foto = $fila["image_user"];
-        echo "<br>";
+        $fechaSesion = $fila["fecha_sesion"];
+       
     }
     //Datos de los temas para el select
     $datosTemas = mysqli_query($conector, " SELECT * FROM temas");
@@ -33,4 +34,10 @@ if (!isset($_SESSION["welcome"])) {
                                                     GROUP BY idTabla");
 
 }
+
+
+
+//fecha actual
+$fechaActual = date("Y-m-d H:i:s");
+
 ?>
