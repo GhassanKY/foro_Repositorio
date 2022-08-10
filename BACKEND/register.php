@@ -3,7 +3,7 @@
 
 include "conector.php";
 
-// header("location: ../index.html");
+;
 
 $mensaje = "";
 $nombre = $_POST["nombre"] ??  null;
@@ -44,7 +44,7 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
  
      echo '
      <script>
-       swal("el correo ya existe intente con otro");
+       alert("el correo ya existe intente con otro");
         window.location = "../FRONTEND/index.html";
      </script>
      ';
@@ -54,7 +54,7 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
     echo
     '
     <script>
-    swal("Registrado correctamente");
+    alert("Registrado correctamente");
      window.location = "../FRONTEND/index.html";
   </script>';
 }
