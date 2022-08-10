@@ -33,14 +33,16 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
   </header>
   <div class="list">
       <ul>
-          <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
-          <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
-          <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
-          <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+            <li><a style="color:white;" href="sesion.php">Inicio</a></li>
+            <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
+            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+        </ul>
       </ul>
   </div>
         <a href="sesion.php"><img class="salir1" src="image/salir.png" alt=""></a>
-            <form method="POST" action="../BACKEND/configuararPerfil.php"  enctype="multipart/form-data">
+            <form method="POST" action="../BACKEND/ConfiguararPerfil.php"  enctype="multipart/form-data">
                 <div class="parteCentral">
                   
                     <div class="img_name">
@@ -59,13 +61,13 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
                       <h3>Editar datos de usuario</h3>
                       <div class="cajaInput">
 
-                        <input name="nombre" type="text"  placeholder="Nuevo Nombre Completo"class="input" value="<?php echo $nombre ?>" required>
-                        <input name="telefono" type="number" placeholder="Nuevo Telefono" class="input" value="<?php echo $tel ?>" required>
-                        <input name="link" type="text" placeholder="Nuevo link" class="input" value="<?php echo $red ?>" required>
+                        <input name="nombre" type="text"  placeholder="Nuevo Nombre Completo"class="input" value="<?php echo $nombre ?>">
+                        <input name="telefono" type="number" placeholder="Nuevo Telefono" class="input" value="<?php echo $tel ?>">
+                        <input name="link" type="text" placeholder="Nuevo link" class="input" value="<?php echo $red ?>">
 
                       </div>
                       <div class="botones">
-                         <button class="guardar">Guardar Cambios</button>
+                         <a href="perfil.php?idPerfil=<?php echo $n ?>"><button class="guardar">Guardar Cambios</button></a>
                       </div>
                     </div>
                 </div>

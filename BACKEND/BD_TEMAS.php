@@ -13,7 +13,7 @@
         echo "<br>";
     }
     
-   
+    $c = null; 
     $datosUsuario = mysqli_query($conector, "SELECT *
                                         FROM usuarios
                                         WHERE correo = '$usuario';");

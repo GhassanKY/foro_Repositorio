@@ -15,11 +15,24 @@ $usuario = $_POST["usuario"]?? null ;
 $imagen = $_FILES['src-file1']['name'] ?? null;
 $ruta = $_FILES['src-file1'] ['tmp_name'] ?? null;
 $destino = "image/".$imagen;
+$destinoCopia = "../FRONTEND/image/".$imagen;
 
-copy($ruta, $destino) ?? null;
 
-$query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto,image_user)
-          VALUES('$correo','$usuario','$clave','$nombre','$destino')";
+
+
+if(is_uploaded_file($ruta)){
+  copy($ruta, $destinoCopia);
+} else{
+  $destinoCopia = "../FRONTEND/image/usu.jpg";
+  $destino = "image/usu.jpg";
+
+}
+
+
+;
+
+$query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto,image_user,telefono,link,borrar_user)
+          VALUES('$correo','$usuario','$clave','$nombre','$destino','vacio','vacio','1')";
 
 
 

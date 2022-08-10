@@ -34,11 +34,13 @@
 
         <div class="list">
 
-            <ul>
-                    <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar">   Discusiones</li>
-                    <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar">  Tags</li>
-                    <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar">  Ayuda</li>
-                    <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar">  Ajustes</li>  
+        <ul>
+            <li><a style="color:white;" href="sesion.php">Inicio</a></li>
+            <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
+            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+        </ul> 
             </ul>
         </div>
 
@@ -74,9 +76,9 @@
                                         <div class="dataUsers">
 
                                             <h1><?php echo $hilo["nombre_Hilos"]; ?></h1>
-                                            <p><?php echo $hilo["descripcion"]; ?></p>
+                                            <p class="des"><?php echo $hilo["descripcion"]; ?></p>
                                             <p class="fecha"><?php echo $hilo["fechaCreacionHilo"]; ?></p>
-                                            <p><?php echo $hilo["nombreUsuario"]; ?></p>
+                                            <p class="nameUser"><?php echo $hilo["nombreUsuario"]; ?></p>
                                             
                                         </div>
 

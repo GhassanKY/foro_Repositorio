@@ -113,6 +113,7 @@ nav {
     cursor: pointer;
     object-fit: cover;
     object-position: center;
+    margin: 0;
 }
  
 
@@ -124,7 +125,8 @@ nav {
         top: 15px;
     }
     .headerLogo{
-    display: none;
+    display: block;
+    z-index: 500;
     }
     .list {
         display: block;
@@ -138,7 +140,17 @@ nav {
         transition: .5s;
         z-index: 1000;
     }
-
+    
+    .list li a{
+        list-style: none;
+        margin-bottom: 15px;
+        text-decoration: none;
+    }
+    .list li {
+        list-style: none;
+        margin-bottom: 25px;
+        text-decoration: none;
+    }
     .form-control{
         z-index: 0;
         margin: 10px auto;
