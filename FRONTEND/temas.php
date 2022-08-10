@@ -21,11 +21,20 @@
 
             <div class="imgHeader">
                 <img src="<?php echo $foto ?>" alt="" class="pfHeader">
-                        <ol class="PopLR">
-                            <a href="perfil.php?idPerfil=<?php echo $n ?>"><li class="perfil1"><img src="image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li></a>
-                            <a href="editarperfil.php"><li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li></a>
-                            <a href="../BACKEND/sesionDestroy.php"><li class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</li></a>
-                        </ol>
+                <ol class="PopLR">
+                    <a href="perfil.php?idPerfil=<?php echo $n ?>">
+                        <li class="perfil1"><img src="image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
+                    </a>
+                    <a href="editarperfil.php">
+                        <li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
+                    </a>
+                        <form action="../BACKENd/fecha-sesion.php" method="POST">
+                            <input type="hidden" name="fecha-sesion" value="1">
+                            <!-- <a href="../BACKEND/sesionDestroy.php"> -->
+                                <button class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</button>
+                            <!-- </a> -->
+                        </form>
+                </ol>
             </div>
 
         </nav>
