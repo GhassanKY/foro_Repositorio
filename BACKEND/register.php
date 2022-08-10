@@ -44,7 +44,7 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
  
      echo '
      <script>
-       alert("el correo ya existe intente con otro");
+       swal("el correo ya existe intente con otro");
         window.location = "../FRONTEND/index.html";
      </script>
      ';
@@ -54,7 +54,7 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
     echo
     '
     <script>
-    alert("Registrado correctamente");
+    swal("Registrado correctamente");
      window.location = "../FRONTEND/index.html";
   </script>';
 }
@@ -64,20 +64,17 @@ $verificarCorreo = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo 
 $ejecutar = mysqli_query($conector,$query);
 
 
-// if($ejecutar){
-//     echo
-//     '<script>
-//     alert(registrado correctamente);
-//     window.location = "../sesion.php"
-//  </script>';
-    
-// } else{
-//     '<script>
-//     alert(el correo ya existe);
-//     window.location = "../sesion.php"
-//     </script>';
-// }
-
-
-
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>

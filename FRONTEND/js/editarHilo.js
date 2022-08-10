@@ -81,15 +81,15 @@ function hilo(){
     $(document).on("click", ".eliminarHiloo", function(){
         let element = $(this)[0].parentElement
         let id = $(element).attr("idhilo")
-        $.post("../BACKEND/eliminarHilo.php", {id}, function (response){
-            hilo();
-        })
-        
+        if(confirm("Seguro que desea eliminar el hilo") == true){
+                $.post("../BACKEND/eliminarHilo.php", {id}, function (response){
+                    hilo();
+                })
+        }
 
     });
 
-
-
+  
     //editar
     $(document).on("click", ".editarHilo", function(){
     let element = $(this)[0].parentElement
@@ -101,6 +101,7 @@ function hilo(){
         caja.classList.toggle("caja-v");
 
             $(document).on("click", ".guardar", function(){
+               
                 let element = $(this)[0].parentElement
                 let id = $(element).attr("idhilo1")
                 // console.log(id)
@@ -119,7 +120,6 @@ function hilo(){
                                 })
                         e.preventDefault();
                         });
-
             });
 
 
@@ -134,6 +134,13 @@ function hilo(){
 let x = document.querySelector(".x")
 let cuadroEditarHilo = document.querySelector(".caja")
 x.addEventListener("click", () => {
+    cuadroEditarHilo.classList.toggle("caja-v");
+})
+
+
+let guardar = document.querySelector(".guardar");
+
+guardar.addEventListener("click", () => {
     cuadroEditarHilo.classList.toggle("caja-v");
 })
 

@@ -58,7 +58,7 @@ include "../BACKEND/BD_SESION.php";
 
     <div class="list">
         <ul>
-            <li><a style="color:white;" href="sesion.php">Inicio</a></li>
+            <li><a style="display:none;" href="sesion.php">Inicio</a></li>
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
             <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
@@ -87,7 +87,7 @@ include "../BACKEND/BD_SESION.php";
                 <div class="form1">
                     <form class="form0" class="cajaNuevoHilo" method="POST" action="../BACKEND/infoTemas.php?id=<?php echo $n ?>">
                         <img class="x" src="image/cross.png" alt="">
-                        <input class="input1" name="namehilo" type="text" placeholder="Nombre de tu hilo">
+                        <input class="input1" name="namehilo" type="text" placeholder="Nombre de tu hilo" required>
                         <textarea class="textarea1" name="descripcionHilo" placeholder="Descripcion hilo de debate"></textarea>
                         <p class="temap">Elige un tema</p>
                         <div class="div2">

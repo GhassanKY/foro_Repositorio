@@ -380,11 +380,22 @@ right: 20px;
         padding: 15px;
         width: 100%;
     }
+    .form-control{
+        margin-bottom: 10px;
+        transition: 0s;
+        left: 0;
+        right: 0;
+        margin: 0;
+    }
     .feature-v {
-        width: 67%;
-        right: 77px;
-        top: 83px;
+        transition: .2s;
+        width: 61%;
+        margin: 0;
+        margin-top: 10px;
+        left: -20px;
+        top: 1px;
         border: 1px solid black;
+        z-index: 1000;
     }
     .fatherHilos {
         width: 100%;

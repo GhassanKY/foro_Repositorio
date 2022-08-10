@@ -229,6 +229,9 @@ body{
         top: 83px;
         border: 1px solid black;
     }
+    .buttonReciente {
+        width: 100%;
+    }
     .pfHeaderpf {
         display: none;
     }

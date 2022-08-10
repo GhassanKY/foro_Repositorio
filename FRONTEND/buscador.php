@@ -7,7 +7,8 @@
                                                     JOIN usuarios 
                                                     ON usuarios.id = hilos.usuario 
                                                     WHERE hilos.nombre_Hilos
-                                                    LIKE LOWER('%".$buscar."%')");
+                                                    LIKE LOWER('%".$buscar."%')
+                                                    ORDER BY hilos.ID DESC");
 
                 while ($hilo = mysqli_fetch_assoc($buscador)) {    ?>
                        <?php $id2 = $hilo["ID"] ?>

@@ -1,3 +1,8 @@
+document.querySelector(".prueba").addEventListener("click", ()=>{
+    alert("prueba");
+    console.log("prueba");
+})
+
 //Ejecutando funciones
 document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
 document.getElementById("btn__registrarse").addEventListener("click", register);

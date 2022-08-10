@@ -12,7 +12,15 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
     <title>Editarperfil</title>
     <link rel="stylesheet" href="css/editarperfil.css">
 </head>
-<body>
+<body> 
+    <div class="mandos">
+        <a href="perfil.php?idPerfil=<?php echo $n  ?>"><div class="face">
+          <img src="image/izq.png" alt=""><p>PERFIL</p>
+        </div></a>
+        <a href="sesion.php"><div class="homme">
+          <p>HOMME</p><img src="image/der.png" alt="">
+        </div></a>
+    </div>
   <header>
     <nav>
         <img src="image/menu.png" alt="Menu" class="imgMenu">
@@ -33,7 +41,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
   </header>
   <div class="list">
       <ul>
-            <li><a style="color:white;" href="sesion.php">Inicio</a></li>
+            <li class="listGroup"><a style="color:white;" href="sesion.php">Inicio</a></li>
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
             <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
@@ -41,7 +49,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
         </ul>
       </ul>
   </div>
-        <a href="sesion.php"><img class="salir1" src="image/salir.png" alt=""></a>
+       
             <form method="POST" action="../BACKEND/ConfiguararPerfil.php"  enctype="multipart/form-data">
                 <div class="parteCentral">
                   
@@ -67,7 +75,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
 
                       </div>
                       <div class="botones">
-                         <a href="perfil.php?idPerfil=<?php echo $n ?>"><button class="guardar">Guardar Cambios</button></a>
+                         <button class="guardar">Guardar Cambios</button>
                       </div>
                     </div>
                 </div>

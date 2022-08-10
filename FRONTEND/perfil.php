@@ -18,7 +18,9 @@ include "../BACKEND/BD_PERFIL.php";
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="mandos">
+      <a href="sesion.php"><p>HOMME</p><img src="image/der.png" alt=""></a>
+    </div>
     <header>
         <nav>
             <img src="image/menu.png" alt="Menu" class="imgMenu">
@@ -41,7 +43,7 @@ include "../BACKEND/BD_PERFIL.php";
     </header>
     <div class="list">
         <ul>
-            <li><a style="color:white;" href="sesion.php">Inicio</a></li>
+            <li class="listGroup"><a style="color:white;" href="sesion.php">Inicio</a></li>
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
             <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
