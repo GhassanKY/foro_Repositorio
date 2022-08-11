@@ -11,6 +11,13 @@ header{
     left: 0;
     z-index: 500;
 }
+
+.exit{
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    font-size: 14px;
+}
 nav {
     border: 1px solid black;
     height: 60px;
