@@ -21,11 +21,13 @@ $datosUsuario = mysqli_query($conector, "SELECT *
                                         ON hilos.usuario = usuarios.id
                                         JOIN mensajes
                                         ON mensajes.hilo_ID = hilos.ID
+                                        WHERE usuarios.id = $id                          
+                                        GROUP BY usuarios.id
                                     ");
 
     while($fila = mysqli_fetch_assoc($datosUsuario)){
         $id1 = $fila["id"];
-        $foto = $fila["image_user"];
+        $fotoPerfil = $fila["image_user"];
         $nombreCompleto = $fila["nombreCompleto"];
         $nombreUsuario = $fila["nombreUsuario"];
         $correo = $fila["correo"];
@@ -49,13 +51,13 @@ $datosUsuario = mysqli_query($conector, "SELECT *
     
 
 //    obtengo los datos completos del hilo nombre, descripcion, fecha de creacion...
-    $fotoperfil = mysqli_query($conector, "   SELECT *
-                                             FROM usuarios
-                                             WHERE usuarios.id = $id
-                                            "); 
-    while ($fila = mysqli_fetch_assoc($fotoperfil)) {
+    // $fotoperfil = mysqli_query($conector, "   SELECT *
+    //                                          FROM usuarios
+    //                                          WHERE usuarios.id = $id
+    //                                         "); 
+    // while ($fila = mysqli_fetch_assoc($fotoperfil)) {
         
-        $fotoPerfil = $fila["image_user"];
+    //     $fotoPerfil = $fila["image_user"];
         
-        }               
+    //     }               
 ?>
