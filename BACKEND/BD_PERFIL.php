@@ -14,7 +14,9 @@ $datosUsuario = mysqli_query($conector, "SELECT *
         $fotoSesion = $fila["image_user"];
         
         }
+
      //Hago una consulta que me da los datos del usuario y el numero de comentarios...
+     $comentarios = 0;
     $datosUsuario = mysqli_query($conector, "SELECT hilos.ID, usuarios.*, count(mensajes.texto) AS comentarios
                                         FROM hilos
                                         JOIN usuarios
@@ -26,14 +28,8 @@ $datosUsuario = mysqli_query($conector, "SELECT *
                                     ");
 
     while($fila = mysqli_fetch_assoc($datosUsuario)){
-        $id1 = $fila["id"];
-        $fotoPerfil = $fila["image_user"];
-        $nombreCompleto = $fila["nombreCompleto"];
-        $nombreUsuario = $fila["nombreUsuario"];
-        $correo = $fila["correo"];
-        $link =  $fila["link"];
-        $telefono = $fila["telefono"];
-        $comentarios = $fila["comentarios"];
+        
+        $comentarios = $fila["comentarios"] ?? null;
 
     } 
 
@@ -51,13 +47,19 @@ $datosUsuario = mysqli_query($conector, "SELECT *
     
 
 //    obtengo los datos completos del hilo nombre, descripcion, fecha de creacion...
-    // $fotoperfil = mysqli_query($conector, "   SELECT *
-    //                                          FROM usuarios
-    //                                          WHERE usuarios.id = $id
-    //                                         "); 
-    // while ($fila = mysqli_fetch_assoc($fotoperfil)) {
+    $fotoperfil = mysqli_query($conector, "   SELECT *
+                                             FROM usuarios
+                                             WHERE usuarios.id = $id
+                                            "); 
+    while ($fila = mysqli_fetch_assoc($fotoperfil)) {
         
-    //     $fotoPerfil = $fila["image_user"];
+        $fotoPerfil = $fila["image_user"];
+        $nombreUsuario = $fila["nombreUsuario"];
+        $id1 = $fila["id"];
+        $nombreCompleto = $fila["nombreCompleto"];
+        $correo = $fila["correo"];
+        $link =  $fila["link"];
+        $telefono = $fila["telefono"];
         
-    //     }               
+        }               
 ?>
