@@ -73,7 +73,7 @@ nav {
     
 }
 .PopLR li:hover{
-    color: yellow;
+    color: rgb(255, 187, 0);
     cursor: pointer;
 }
 
