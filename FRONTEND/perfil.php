@@ -47,7 +47,8 @@ include "../BACKEND/BD_PERFIL.php";
     </header>
     <div class="list">
         <ul>
-            <li class="listGroup"><a style="color:white;" href="sesion.php">Inicio</a></li>
+
+            <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
             <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>

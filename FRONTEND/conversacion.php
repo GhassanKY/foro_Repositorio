@@ -81,9 +81,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 
 
     <section class="sectionInfo">
-                    <div class="buttonReciente">
-                        <button class="buttonAggComments">Agregar comentario</button>
-                    </div>
+                   
         <div class="publication" >
                     <div class="fatherHilos">                               
                             <div class="hilos">
@@ -93,10 +91,15 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 if ($activos == 1){
 ?>
 
+<div class="buttonReciente">
+                        <button class="buttonAggComments">Agregar comentario</button>
+                    </div>
+                    
                 <div class="formTxtarea">
 
                         <form method="post" action="../BACKEND/infoMensajes.php" class="txtComments">
-                            <textarea name="editorMSJ" id="ckeditor" class="ckeditor" placeholder="..."  >
+
+                            <textarea name="editorMSJ" id="ckeditor" class="ckeditor txtComments" placeholder="..."  >
                         
                         </textarea>
                             <input name="idHilo" type="hidden" value="<?php echo $id; ?>">
@@ -118,8 +121,7 @@ if ($activos == 1){
             <input name="name_hilo" type="hidden" value="<?php echo "$id" ?>">
             <button name="close_hilo" value="0">Si</button>
         </form>
-        <button>Si</button>
-        <button>No</button>
+        <button onclick="cerrar_dialog()">No</button>
         </div>
     </dialog>
 <?php } ?>
