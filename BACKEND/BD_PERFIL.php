@@ -15,7 +15,7 @@ $datosUsuario = mysqli_query($conector, "SELECT *
         
         }
 
-     //Hago una consulta que me da los datos del usuario y el numero de comentarios...
+     //Hago una consulta que me da el numero de comentarios...
      $comentarios = 0;
     $datosUsuario = mysqli_query($conector, "SELECT hilos.ID, usuarios.*, count(mensajes.texto) AS comentarios
                                         FROM hilos

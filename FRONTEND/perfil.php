@@ -29,7 +29,7 @@ include "../BACKEND/BD_PERFIL.php";
             <div class="imgHeader">
                 <img src="<?php echo $fotoSesion; ?>" alt="" class="pfHeader">
                 <ol class="PopLR">
-                    <a href="perfil.php?idPerfil=<?php echo $n ?>">
+                    <a href="perfil.php?idPerfil=<?php echo $idSesion ?>">
                         <li class="perfil1"><img src="image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
                     </a>
                     <a href="editarperfil.php">
