@@ -219,6 +219,9 @@ left: -300px;
 
 
 @media (max-width:900px) {
+    .parteCentral{
+        background-color: #66666600;
+    }
     .list-v {
         width: 100%;
         left: 0px;
@@ -241,6 +244,7 @@ left: -300px;
         width: 100%;
       }
     .parteCentral{
+        background-color: #282d3300;
         flex-direction: column;
         height: auto;
         width: 450px;
@@ -276,14 +280,47 @@ left: -300px;
 @media (max-width:500px) {
    .parteCentral{
     width: 95%;
+    box-shadow: none;
+    background-color: #282d3300;
    }
    .formFile{
     margin-left: 70px;
   }
    .cajaInput .input{
     height: 50px;
+    border: 1px solid rgb(182, 182, 182);
    }
    .userOptions h3{
     font-size: 20px;
    }
+
+   
+}
+
+
+body.oscuro{
+    background-color: #292b31;
+    transition: .2s;
+}
+.oscuro .parteCentral{
+    background-color: #454749;
+}
+
+.oscuro .perfil{
+    border: 3px solid #292b31 ;
+}
+
+.oscuro .actualizaimg p{
+    color: white;
+}
+
+.oscuro .cajaInput input{
+    background-color: #868686;
+    color: white;
+} .oscuro .cajaInput input::placeholder{
+    counter-reset: rgb(202, 202, 202);
+}
+
+.oscuro .userOptions h3{
+    border: none;
 }

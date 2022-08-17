@@ -20,7 +20,7 @@ botoninfo.addEventListener('click', () => {
 })
 
 botoninfo2.addEventListener('click', () => {
-   
+   document.querySelector(".datos").style.display = "none";
 	datos2.classList.toggle("datos2-v");
     
 })
@@ -31,19 +31,21 @@ menu.addEventListener('click', () => {
 
 
 
+//modo noche
+
 load();
 
-noche.addEventListener("click", () =>{
-    body.classList.toggle("oscuro");
-    store(body.classList.contains("oscuro"))
-});
-
-
 function load(){
-    const modeNoche = localStorage.getItem("modonoche")
+
+	let body = document.querySelector("body");
+	const modeNoche = localStorage.getItem("modonoche");
+
     if(!modeNoche){
         store(false)
     } else if(modeNoche == "true"){
-        body.classList.toggle("oscuro");
+		body.classList.toggle("oscuro");
+		prueba.classList.toggle("prueba")
     }
 }
+
+	

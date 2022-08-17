@@ -103,7 +103,7 @@
                                                 
                                             </div>
 
-                                            <a style="color:black;" href="conversacion.php?id=<?php echo $hilo["ID"]?>">
+                                            <a class="coment" href="conversacion.php?id=<?php echo $hilo["ID"]?>">
                                             <?php
                                                 $id = $hilo["ID"];
                                                 $query = "SELECT COUNT(*) AS total FROM mensajes WHERE hilo_ID = $id"; 

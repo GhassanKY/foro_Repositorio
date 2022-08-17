@@ -270,3 +270,43 @@ body{
         display: block;
     }
 }
+
+
+
+
+
+
+/* MODO OSCURO */
+
+body.oscuro{
+    background-color: #292b31;
+    transition: .2s;
+}
+.oscuro .hiloForUsers{
+    border: 1px solid rgb(121, 121, 121);
+}
+.oscuro .body{
+    background: #292b31;
+}
+
+.oscuro .dataUsers{
+   color: white;
+}
+
+.oscuro .coment{
+    color: white;
+}
+
+.oscuro .titulo{
+    color: white;
+}
+
+.oscuro .botonTemas{
+    background-color: #4e4f52;
+    color: white;
+    border: none;
+}
+
+.oscuro .puntos{
+    display: none;
+}

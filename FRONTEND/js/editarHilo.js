@@ -42,7 +42,7 @@ function hilo(){
                 <div class="commentsAndPhoto">
                         <div class="imgFriends">
                         </div>
-                        <a style="color:black;" href="conversacion.php?id=${element.idhilo}">43 comentarios</a>
+                        <a class="date" href="conversacion.php?id=${element.idhilo}">43 comentarios</a>
                 </div>
                 <img src="image/mas (1).png" alt="more" class="configButton puntos ">
             </a>

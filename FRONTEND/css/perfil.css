@@ -21,6 +21,9 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+.date{
+    color: black;
+}
 .mandos{
     margin-top: 70px;
     width: 100%;
@@ -800,6 +803,62 @@ dialog {
 
 
 
-.oscuro body{
-    background-color: #000000;
+body.oscuro{
+    background-color: #292b31;
+    color: white;
 }
+.oscuro .parteCentral{
+    background: linear-gradient(0deg, #292b31 90%, #292b31 100%);
+    padding-top: 0;
+ }
+
+ .oscuro .hiloForUsers{
+    background-color: #3d3f44;
+    border: none;
+ }
+
+ .oscuro .editarHilo{
+    background-color: #4d4d4d;
+ }
+
+ .oscuro .date{
+    color: white;
+ }
+
+ .oscuro .item1{
+    background: #6a6a6b;
+    border: none;
+ }
+
+ .oscuro #descripcionhilo{
+    background-color: #4b4c53;
+    color: white;
+ } .oscuro #descripcionhilo::placeholder{
+    color: rgb(230, 230, 230);
+ }
+
+ .oscuro #titulohilo{
+    background-color: #4b4c53;
+    color: white;
+ } .oscuro #titulohilo::placeholder{
+    color: rgb(230, 230, 230);
+ }
+
+ .box_options_mobile p{
+    color: white;
+ }
+
+ .oscuro .botonEliminar{
+    background-color: #5e5e5e;
+    color: white;
+ }
+@media (min-width:500px){
+    .oscuro .botonEliminar{
+        background-color: #3f3f3f4f;
+        color: white;
+     }
+}
+ .oscuro .informacion{
+    background-color: #5e5e5e;
+ }
+

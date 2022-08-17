@@ -30,3 +30,23 @@ pfHeader.addEventListener('click', () => {
 
 
 
+
+//modo noche
+
+load();
+
+function load(){
+
+	let body = document.querySelector("body");
+	const modeNoche = localStorage.getItem("modonoche");
+
+    if(!modeNoche){
+        store(false)
+    } else if(modeNoche == "true"){
+		body.classList.toggle("oscuro");
+		prueba.classList.toggle("prueba")
+    }
+}
+
+
+
