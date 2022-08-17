@@ -309,8 +309,12 @@ right: 20px;
     margin-bottom: 0px;
     border-top: 1px solid rgba(223, 223, 223, 0.503);
     transform: .7s;
+    position: relative;
+    z-index: 100;
 }
 .hilo2{
+    position: relative;
+    z-index: 100;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -320,6 +324,7 @@ right: 20px;
 
     border-top: 3px solid rgb(255, 255, 255);
     background-color: rgb(228, 229, 238);
+    
 
 
     border-top: 3px solid rgb(255, 255, 255);
@@ -480,7 +485,7 @@ body.oscuro{
     transition: .2s;
 }
 .oscuro .hilo2{
-    background-color: #2a2b2c;
+    background-color: #2a2b2c83;
     border-top: 3px solid #414349;
     transition: .2s;
 }
@@ -501,7 +506,7 @@ body.oscuro{
     color: rgba(255, 255, 255, 0.466);
 } 
 .oscuro .select1{
-    background-color: #414349;
+    background-color: #41434981;
     border: 1px solid black;
     color: white;
 }

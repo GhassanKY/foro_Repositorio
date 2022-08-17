@@ -29,3 +29,21 @@ menu.addEventListener('click', () => {
     desplegable.classList.toggle("list-v")
 })
 
+
+
+load();
+
+noche.addEventListener("click", () =>{
+    body.classList.toggle("oscuro");
+    store(body.classList.contains("oscuro"))
+});
+
+
+function load(){
+    const modeNoche = localStorage.getItem("modonoche")
+    if(!modeNoche){
+        store(false)
+    } else if(modeNoche == "true"){
+        body.classList.toggle("oscuro");
+    }
+}

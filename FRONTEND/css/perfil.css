@@ -797,3 +797,9 @@ dialog {
 
     }
 }
+
+
+
+.oscuro body{
+    background-color: #000000;
+}
