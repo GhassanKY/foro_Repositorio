@@ -10,12 +10,12 @@
     text-decoration: none;
     
 }
-
-.fondo-imagen{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+.noche{
+    background-color: #f79400;
+}
+body {
+    background-color: #edeff1;
+    transition: .5s;
 }
 
 
@@ -280,6 +280,8 @@ right: 20px;
 }
 .fatherHilos {
     width: 80%;
+    padding-top: 0px;
+    overflow: hidden;
     padding-top: 10px;
     transition: .7s;
     display: flex;
@@ -310,9 +312,15 @@ right: 20px;
     padding: 7px 25px;
     margin-bottom: 0px;
     transform: .7s;
+
+    border-top: 3px solid rgb(255, 255, 255);
+    background-color: rgb(228, 229, 238);
+
+
     border-bottom: 3px solid rgb(255, 255, 255);
     background-color: rgba(242, 243, 248, 0.662);
 }
+
 
 .date{
     font-size: 12px;
@@ -431,4 +439,61 @@ right: 20px;
         margin-top: 20px;
     }
     
+}
+
+
+
+
+
+/* MODO OSCURO */
+
+body.oscuro{
+    background-color: #292b31;
+    transition: .2s;
+}
+.oscuro .fatherHilos{
+    background-color: #414349;
+    transition: 0s;
+} .oscuro .fatherHilos p{
+    color: white;
+}
+.oscuro .titleHilo{
+    color: white;
+}
+.oscuro .date{
+    color: white;
+}
+.oscuro .botonTemas{
+    background-color: #414349;
+    color: white;
+    border: none;
+}
+.oscuro .hilos{
+    transition: .2s;
+}
+.oscuro .hilo2{
+    background-color: #2a2b2c;
+    border-top: 3px solid #414349;
+    transition: .2s;
+}
+
+.oscuro .form0{
+    background-color: #414349;
+}
+.oscuro .input1{
+    background-color: #292b31;
+    color: white;
+} .oscuro .input1::placeholder{
+    color: white;
+}
+.oscuro .textarea1{
+    background-color: #292b31;
+    color: rgba(255, 255, 255, 0.473);
+} .oscuro .textarea1::placeholder{
+    color: rgba(255, 255, 255, 0.466);
+} 
+.oscuro .select1{
+    background-color: #414349;
+    border: 1px solid black;
+    color: white;
 }

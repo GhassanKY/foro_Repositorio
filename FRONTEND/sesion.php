@@ -54,12 +54,15 @@ include "../BACKEND/BD_SESION.php";
 
 
     <div class="list">
+        
         <ul>
+            <button id="noche">jljkllj</button>
             <li><a style="display:none;" href="sesion.php">Inicio</a></li>
-            <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
-            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
-            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
-            <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+
+            <a href="temas.php?id=1"><li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li></a>
+            <!-- <a href="sidebar.php?id=1"><li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li></a> -->
+            <a href="sidebar.php?id=2"><li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li></a>
+            <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul>
         </ul>
     </div>
@@ -67,6 +70,7 @@ include "../BACKEND/BD_SESION.php";
 
     <section class="sectionInfo">
         <div class="buttonReciente">
+            <!-- <p><?php // echo $numeroPublicacionesNuevas  ?> Publiciones nuevas</p> -->
 
             <!-- BOTONES DE LOS TEMAS -->
             <button class="botonTemas">Temas <img src="image/a.png" alt=""></button>

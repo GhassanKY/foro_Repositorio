@@ -11,9 +11,12 @@ const PopLR = document.querySelector(".PopLR");
 let menu = document.querySelector(".imgMenu");
 let desplegable = document.querySelector(".list");
 let configButton = document.querySelector(".configButton")
+let noche= document.querySelector("#noche");
+let body = document.querySelector("body");
+
 
 lupa.addEventListener('click', () => {
-	item.classList.toggle("feature-v");
+    item.classList.toggle("feature-v");
 });
 
 
@@ -26,9 +29,13 @@ menu.addEventListener('click', () => {
     desplegable.classList.toggle("list-v")
 })
 
+
+
 botontema.addEventListener("click", ()=>{
      divtema.classList.toggle("temas-v");
 })
+
+
 
 x.addEventListener("click", ()=>{
     form.classList.toggle("form-v");
@@ -37,3 +44,34 @@ x.addEventListener("click", ()=>{
 boton1.addEventListener("click", ()=>{
     form.classList.toggle("form-v");
 })
+    
+
+
+
+
+
+
+//modo noche
+
+load();
+
+noche.addEventListener("click", () =>{
+    body.classList.toggle("oscuro");
+    modonoche(body.classList.contains("oscuro"))
+});
+
+
+function load(){
+    const modeNoche = localStorage.getItem("modonoche")
+    if(!modeNoche){
+        modeNoche(false)
+    } else if(modeNoche == "true"){
+        body.classList.toggle("oscuro");
+    }
+}
+
+
+function modonoche(value){
+    localStorage.setItem("modonoche", value);
+}
+

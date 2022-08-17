@@ -38,7 +38,6 @@
     padding: 5px 4px;
     color: gray;
     opacity: .8;
-    margin-top: 25px;
 }
 .buttonClose:hover {
     color: white;
@@ -66,7 +65,7 @@
 
 .titleDiv {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;    width: 74%;
-    margin: 41px auto;
+    margin: 25px auto;
     border-radius: 4px;
     padding: 10px 10px;
 }
@@ -186,9 +185,6 @@ ul {
 .comments-container {
     margin: 0px auto 15px;
     width: 768px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
  
 .comments-container h1 {
@@ -444,66 +440,5 @@ ul {
     }
     .reply-list .comment-box {
         width: 320px;
-    }
-    .comments-container h1 {
-        font-size: 20px;
-    }
-
-    .descripTxt{
-    font-size: 11px;
-    color: #716f6f;
-    }
-    .dateOfComments {
-        display: none;
-        color: gray;
-        opacity: 0.6;
-    }
-    .photoComment
-    {
-        border-radius: 20px;
-        height: 40px;
-        width: 40px;
-    }
-
-    .comment-head
-    {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .comment-content
-    {
-        display: block !important;
-    }
-
-    .comment-main-level
-    {
-        display: flex;
-    }
-    .hilos
-    {
-        padding: 2px !important;
-    }
-
-}
-
-@media only screen and (min-width: 1200px)
-{
-    .comment-box, .comments-list
-    {
-        width: 680px;
-    }
-    .comment-content
-    {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-around;
-    }
-    
-    .dateComents
-    {
-        width: 100%;
-        text-align: right;
     }
 }

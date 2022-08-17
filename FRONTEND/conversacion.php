@@ -91,7 +91,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 if ($activos == 1){
 ?>
 
-<div class="buttonReciente">
+                    <div class="buttonReciente">
                         <button class="buttonAggComments">Agregar comentario</button>
                     </div>
                     
