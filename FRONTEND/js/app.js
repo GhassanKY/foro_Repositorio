@@ -1,13 +1,17 @@
 const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
+const image_none = document.querySelector(".fondo-img");
+
 
 sign_up_btn.addEventListener("click", () => {
   container.classList.add("sign-up-mode");
+  image_none.classList.toggle("fondo-img-none");
 });
 
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
+  image_none.classList.toggle("fondo-img-none");
 });
 
 

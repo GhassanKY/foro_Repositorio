@@ -34,7 +34,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
     <header>
         <nav>
             <img src="image/menu.png" alt="Menu" class="imgMenu">
-            <img src="image/logo.png" alt="Logo" class="headerLogo">
+            <a href="sesion.php"><img src="./img/letras.svg" alt="Logo" class="headerLogo"></a>
             <img src="image/lupa.png" alt="Lupa" class="searchbutton">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
 

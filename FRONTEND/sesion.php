@@ -24,11 +24,11 @@ include "../BACKEND/BD_SESION.php";
     <form class="d-flex">
     <input class="form-control" id="buscar" name="buscar" onkeyup="buscar_ahora($('#buscar').val());" type="search" placeholder="buscar" aria-label="Search">
     </form>
-
+<img src="./img/fondoReparado.svg" class="fondo-imagen">
     <header>
         <nav>
             <img src="image/menu.png" alt="Menu" class="imgMenu">
-            <img src="image/logo.png" alt="Logo" class="headerLogo">
+            <img src="./img/letras.svg" alt="Logo" class="headerLogo" href="sesion.php">
             <img src="image/lupa.png" alt="Lupa" class="searchbutton">
 
             <div class="imgHeader">
