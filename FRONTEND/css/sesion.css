@@ -10,9 +10,15 @@
     text-decoration: none;
     
 }
-body {
-    background-color: #edeff1;
+
+.fondo-imagen{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
 }
+
+
 /* seccion informacion */
 .eliminarHilo{
     background-color: red;
@@ -30,9 +36,7 @@ body {
     width: 80%;
     justify-content: space-between;
     margin-left: 10px;
-    margin-top: 60px;
-    /* border: 1px solid red; */
-
+    margin-top: 120px;
 }
 .divTema{
     transform: scaleY(0);
@@ -286,7 +290,7 @@ right: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     margin-bottom: 0px;
     padding-bottom: 0px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.503);
     /* background-image: linear-gradient(180deg, #edeff1 5px, rgb(255, 255, 255) 82px ); */
     box-shadow: rgba(82, 82, 82, 0.09) 0px 2px 1px, rgba(88, 88, 88, 0.09) 0px 4px 2px, rgba(97, 97, 97, 0.09) 0px 8px 4px, rgba(83, 83, 83, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
@@ -296,7 +300,7 @@ right: 20px;
     justify-content: space-between;
     padding: 7px 25px;
     margin-bottom: 0px;
-    border-bottom: 1px solid rgba(223, 223, 223, 0.788);
+    border-bottom: 1px solid rgba(223, 223, 223, 0.503);
     transform: .7s;
 }
 .hilo2{
@@ -307,7 +311,7 @@ right: 20px;
     margin-bottom: 0px;
     transform: .7s;
     border-bottom: 3px solid rgb(255, 255, 255);
-    background-color: rgb(242, 243, 248);
+    background-color: rgba(242, 243, 248, 0.662);
 }
 
 .date{

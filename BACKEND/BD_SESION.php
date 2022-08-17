@@ -1,6 +1,10 @@
 <?php
 include "../BACKEND/conector.php";
-session_start();
+
+if(!isset($_SESSION)){
+    session_start();
+}
+
 $usuario = $_SESSION["welcome"];
 $idHilo;
 if (!isset($_SESSION["welcome"])) {

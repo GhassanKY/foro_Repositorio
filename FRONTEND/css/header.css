@@ -19,13 +19,12 @@ header{
     font-size: 16px;
 }
 nav {
-    border: 1px solid black;
-    height: 60px;
-    background-color: #282d33;
-    z-index: 600;
-    position: fixed;
-    top: 0%;
-    width: 100%;
+        height: 60px;
+        z-index: 600;
+        position: fixed;
+        top: 0%;
+        width: 100%;
+        background-image: linear-gradient(-45deg, #D451FD 0%, #ff7535 100%);
 }
 
 .imgMenu {
@@ -37,10 +36,10 @@ nav {
 }
 
 .headerLogo {
-    width: 40px;
+    width: 169px;
     position: fixed;
-    left: 20px;
-    top: 10px;
+    left: 18px;
+    top: -47px;
 }
 .PopLR {
     position: fixed;
