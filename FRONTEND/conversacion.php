@@ -91,7 +91,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 if ($activos == 1){
 ?>
 
-<div class="buttonReciente">
+                    <div class="buttonReciente">
                         <button class="buttonAggComments">Agregar comentario</button>
                     </div>
                     
@@ -164,7 +164,7 @@ if ($activos == 1){
                                        <li>
                                                 <div class='comment-main-level'>
                                                     <!-- Avatar -->
-                                                    <div class='comment-avatar'><img src='<?php echo $foto; ?>' alt='photo'></div> 
+                                                    <div class='comment-avatar'><img src='<?php echo $hilo["image_user"]; ?>' alt='photo'></div> 
                                                     <!-- Contenedor del Comentario -->
                                                         <div class='comment-box'>
                                                             <div class='comment-head'>
