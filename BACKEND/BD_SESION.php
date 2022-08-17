@@ -49,8 +49,7 @@ while ($fila = mysqli_fetch_assoc($nuevasPublicaciones)) {
 //fecha actual
 $fechaActual = date("Y-m-d H:i:s");
 
-=======
-<?php
+
 include "../BACKEND/conector.php";
 if(!isset($_SESSION)) 
 { 
@@ -95,5 +94,5 @@ if (!isset($_SESSION["welcome"])) {
 //fecha actual
 $fechaActual = date("Y-m-d H:i:s");
 
->>>>>>> 0959dfda6df725f39280b5bab7ddf9ce8f41f721
+
 ?>
