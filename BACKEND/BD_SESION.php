@@ -35,7 +35,15 @@ if (!isset($_SESSION["welcome"])) {
 
 }
 
+//consulta para saber cuantas publicaciones nuevas hay
+$nuevasPublicaciones = mysqli_query($conector, "SELECT COUNT(*) as num
+                                                FROM hilos 
+                                                WHERE fechaCreacionHilo > '$fechaSesion' ");
 
+while ($fila = mysqli_fetch_assoc($nuevasPublicaciones)) {
+    $numeroPublicacionesNuevas = $fila["num"];
+   
+}
 
 //fecha actual
 $fechaActual = date("Y-m-d H:i:s");

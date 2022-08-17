@@ -68,9 +68,9 @@ include "../BACKEND/BD_SESION.php";
         </ul>
     </div>
 
-
     <section class="sectionInfo">
         <div class="buttonReciente">
+            <!-- <p><?php // echo $numeroPublicacionesNuevas  ?> Publiciones nuevas</p> -->
 
             <!-- BOTONES DE LOS TEMAS -->
             <button class="botonTemas">Temas <img src="image/a.png" alt=""></button>
