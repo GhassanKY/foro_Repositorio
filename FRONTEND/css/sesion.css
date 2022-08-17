@@ -8,7 +8,7 @@
     font-family: sans-serif;
     scroll-behavior: smooth;
     text-decoration: none;
-    
+    list-style: none;
 }
 .noche{
     background-color: #f79400;
@@ -308,7 +308,6 @@ right: 20px;
     padding: 7px 25px;
     margin-bottom: 0px;
     border-top: 1px solid rgba(223, 223, 223, 0.503);
-    background-color: white;
     transform: .7s;
 }
 .hilo2{

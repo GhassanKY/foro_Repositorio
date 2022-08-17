@@ -11,7 +11,7 @@ const PopLR = document.querySelector(".PopLR");
 let menu = document.querySelector(".imgMenu");
 let desplegable = document.querySelector(".list");
 let configButton = document.querySelector(".configButton")
-let noche= document.querySelector("#noche");
+let noche = document.querySelector("#noche");
 let body = document.querySelector("body");
 
 
@@ -57,21 +57,21 @@ load();
 
 noche.addEventListener("click", () =>{
     body.classList.toggle("oscuro");
-    modenoche(body.classList.contains("oscuro"))
+    store(body.classList.contains("oscuro"))
 });
 
 
 function load(){
     const modeNoche = localStorage.getItem("modonoche")
     if(!modeNoche){
-        modeNoche(false)
+        store(false)
     } else if(modeNoche == "true"){
         body.classList.toggle("oscuro");
     }
 }
 
 
-function modenoche(value){
+function store(value){
     localStorage.setItem("modonoche", value);
 }
 
