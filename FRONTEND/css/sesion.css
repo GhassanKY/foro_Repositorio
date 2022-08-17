@@ -464,9 +464,13 @@ body.oscuro{
     background-color: #292b31;
     transition: .2s;
 }
+.oscuro .sectionInfo{
+    margin-left: 135px;
+}
 .oscuro .fatherHilos{
     background-color: #414349;
     transition: 0s;
+    margin-left: 0;
 } .oscuro .fatherHilos p{
     color: white;
 }

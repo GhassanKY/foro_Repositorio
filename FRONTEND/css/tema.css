@@ -292,6 +292,11 @@ body.oscuro{
     background: #292b31;
 }
 
+.oscuro .principalDiv{
+    
+    margin-left: 160px;
+}
+
 .oscuro .dataUsers{
    color: white;
 }
