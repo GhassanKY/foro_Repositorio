@@ -22,11 +22,7 @@ include "../BACKEND/BD_SESION.php";
 
 
     <form class="d-flex">
-
     <input class="form-control" id="buscar" name="buscar" onkeyup="buscar_ahora($('#buscar').val());" type="search" placeholder="buscar" aria-label="Search">
-
-    <button class="btn btn-outline-success" type="submit">Buscar</button>
-
     </form>
 
     <header>
@@ -61,18 +57,23 @@ include "../BACKEND/BD_SESION.php";
         
         <ul>
             <li><a style="display:none;" href="sesion.php">Inicio</a></li>
-            <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
-            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
-            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
-            <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+
+            <a href="temas.php?id=1"><li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li></a>
+            <!-- <a href="sidebar.php?id=1"><li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li></a> -->
+            <a href="sidebar.php?id=2"><li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li></a>
+            <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul>
         </ul>
     </div>
 
+
     <section class="sectionInfo">
         <div class="buttonReciente">
+<<<<<<< HEAD
         <button id="noche">jljkllj</button>
             <!-- <p><?php // echo $numeroPublicacionesNuevas  ?> Publiciones nuevas</p> -->
+=======
+>>>>>>> 50a1e782e5599785fd98cf9eb873231467f0676b
 
             <!-- BOTONES DE LOS TEMAS -->
             <button class="botonTemas">Temas <img src="image/a.png" alt=""></button>

@@ -81,11 +81,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 
 
     <section class="sectionInfo">
-
-                    <div class="buttonReciente">
-                        <button class="buttonAggComments">Agregar comentario</button>
-                    </div>
-
+                   
         <div class="publication" >
                     <div class="fatherHilos">                               
                             <div class="hilos">
@@ -95,13 +91,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 if ($activos == 1){
 ?>
 
-
-                <div class="formTxtarea">
-
-                        <form method="post" action="../BACKEND/infoMensajes.php" class="txtComments">
-                            <textarea name="editorMSJ" id="ckeditor" class="ckeditor" placeholder="..."  >
-
-<div class="buttonReciente">
+                    <div class="buttonReciente">
                         <button class="buttonAggComments">Agregar comentario</button>
                     </div>
                     
@@ -110,7 +100,6 @@ if ($activos == 1){
                         <form method="post" action="../BACKEND/infoMensajes.php" class="txtComments">
 
                             <textarea name="editorMSJ" id="ckeditor" class="ckeditor txtComments" placeholder="..."  >
-
                         
                         </textarea>
                             <input name="idHilo" type="hidden" value="<?php echo $id; ?>">
@@ -132,12 +121,7 @@ if ($activos == 1){
             <input name="name_hilo" type="hidden" value="<?php echo "$id" ?>">
             <button name="close_hilo" value="0">Si</button>
         </form>
-
-        <button>Si</button>
-        <button>No</button>
-
         <button onclick="cerrar_dialog()">No</button>
-
         </div>
     </dialog>
 <?php } ?>
@@ -180,7 +164,7 @@ if ($activos == 1){
                                        <li>
                                                 <div class='comment-main-level'>
                                                     <!-- Avatar -->
-                                                    <div class='comment-avatar'><img src='<?php echo $foto; ?>' alt='photo'></div> 
+                                                    <div class='comment-avatar'><img src='<?php echo $hilo["image_user"]; ?>' alt='photo'></div> 
                                                     <!-- Contenedor del Comentario -->
                                                         <div class='comment-box'>
                                                             <div class='comment-head'>
