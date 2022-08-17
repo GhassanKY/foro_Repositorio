@@ -8,8 +8,7 @@ function cerrar_dialog(){
 
 
 function eliminar_userMobile(){
-    var dialog = document.getElementById('dialog2').style.display = 'block';
-
+    var dialog = document.getElementById('dialog2').style.display = 'flex';
 }
 function cerrar_dialog2(){
     var dialog = document.getElementById('dialog2').style.display = 'none';

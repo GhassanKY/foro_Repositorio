@@ -22,11 +22,7 @@ include "../BACKEND/BD_SESION.php";
 
 
     <form class="d-flex">
-
     <input class="form-control" id="buscar" name="buscar" onkeyup="buscar_ahora($('#buscar').val());" type="search" placeholder="buscar" aria-label="Search">
-
-    <button class="btn btn-outline-success" type="submit">Buscar</button>
-
     </form>
 
     <header>
