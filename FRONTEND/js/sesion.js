@@ -57,7 +57,7 @@ load();
 
 noche.addEventListener("click", () =>{
     body.classList.toggle("oscuro");
-    modonoche(body.classList.contains("oscuro"))
+    modenoche(body.classList.contains("oscuro"))
 });
 
 
@@ -71,7 +71,7 @@ function load(){
 }
 
 
-function modonoche(value){
+function modenoche(value){
     localStorage.setItem("modonoche", value);
 }
 
