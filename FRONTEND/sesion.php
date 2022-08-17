@@ -56,6 +56,7 @@ include "../BACKEND/BD_SESION.php";
     <div class="list">
         
         <ul>
+            <button id="noche">jljkllj</button>
             <li><a style="display:none;" href="sesion.php">Inicio</a></li>
 
             <a href="temas.php?id=1"><li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li></a>
@@ -69,11 +70,7 @@ include "../BACKEND/BD_SESION.php";
 
     <section class="sectionInfo">
         <div class="buttonReciente">
-<<<<<<< HEAD
-        <button id="noche">jljkllj</button>
             <!-- <p><?php // echo $numeroPublicacionesNuevas  ?> Publiciones nuevas</p> -->
-=======
->>>>>>> 50a1e782e5599785fd98cf9eb873231467f0676b
 
             <!-- BOTONES DE LOS TEMAS -->
             <button class="botonTemas">Temas <img src="image/a.png" alt=""></button>
