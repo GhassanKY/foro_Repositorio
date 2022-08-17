@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 include "../BACKEND/conector.php";
 session_start();
