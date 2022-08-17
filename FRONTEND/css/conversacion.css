@@ -1,25 +1,15 @@
 .hilosCopy {
-<<<<<<< HEAD
-  
-    
-
     margin-bottom: 19px;
     border-bottom: 1px solid rgba(223, 223, 223, 0.788);
     transform: .7s;
-    
-    
 }
-
-=======
-    margin-bottom: 19px;
-    border-bottom: 1px solid rgba(223, 223, 223, 0.788);
-    transform: .7s;
+.divHiloResp {
+    width: 93%;
 }
 
 .searchbutton {
     display: none;
 }
->>>>>>> 0959dfda6df725f39280b5bab7ddf9ce8f41f721
 .buttonAggComments {
     border: none;
     color: #fff;
@@ -37,11 +27,7 @@
     background-color: #fff;
     border: 1px solid #FFB74D;
 }
-<<<<<<< HEAD
-.textComments {
-=======
 .txtComments {
->>>>>>> 0959dfda6df725f39280b5bab7ddf9ce8f41f721
     display: none;
     transition: .5s;
 }
@@ -52,6 +38,7 @@
     padding: 5px 4px;
     color: gray;
     opacity: .8;
+    margin-top: 25px;
 }
 .buttonClose:hover {
     color: white;
@@ -79,11 +66,7 @@
 
 .titleDiv {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;    width: 74%;
-<<<<<<< HEAD
-    margin: 25px auto;
-=======
     margin: 41px auto;
->>>>>>> 0959dfda6df725f39280b5bab7ddf9ce8f41f721
     border-radius: 4px;
     padding: 10px 10px;
 }
@@ -203,6 +186,9 @@ ul {
 .comments-container {
     margin: 0px auto 15px;
     width: 768px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
  
 .comments-container h1 {
@@ -319,7 +305,7 @@ ul {
  * Caja del Comentario
  ---------------------------*/
 .comments-list .comment-box {
-    width: 680px;
+    
     float: right;
     position: relative;
     /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -407,9 +393,7 @@ ul {
     -webkit-border-radius: 0 0 4px 4px;
     -moz-border-radius: 0 0 4px 4px;
     border-radius: 0 0 4px 4px;
-}
-.comentPrincipsd {
-    width: 50%;
+    word-wrap: break-word;
 }
 
 
@@ -444,18 +428,82 @@ ul {
  ========================*/
  @media only screen and (max-width: 1200px) {
     .comments-container {
-        width: 360px;
+        width: 100%;
     }
  
     .comments-list .comment-box {
-        width: 357px;
-        margin-top: 12px;
+        width: 100%;
     }
     .comment-box:after {
         display: none;
     }
  
+    .hilo
+    {
+        width: 74%;
+    }
     .reply-list .comment-box {
         width: 320px;
+    }
+    .comments-container h1 {
+        font-size: 20px;
+    }
+
+    .descripTxt{
+    font-size: 11px;
+    color: #716f6f;
+    }
+    .dateOfComments {
+        display: none;
+        color: gray;
+        opacity: 0.6;
+    }
+    .photoComment
+    {
+        border-radius: 20px;
+        height: 40px;
+        width: 40px;
+    }
+
+    .comment-head
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .comment-content
+    {
+        display: block !important;
+    }
+
+    .comment-main-level
+    {
+        display: flex;
+    }
+    .hilos
+    {
+        padding: 2px !important;
+    }
+
+}
+
+@media only screen and (min-width: 1200px)
+{
+    .comment-box, .comments-list
+    {
+        width: 680px;
+    }
+    .comment-content
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+    
+    .dateComents
+    {
+        width: 100%;
+        text-align: right;
     }
 }
