@@ -19,7 +19,7 @@ if(mysqli_num_rows($validar) > 0){
 } else{
     echo
     "<script>
-       alert('Usuario no existe');
+       alert('La contraseña o el usuario son incorrectos.');
        window.location = '../FRONTEND/index.html'
     </script>";
 }

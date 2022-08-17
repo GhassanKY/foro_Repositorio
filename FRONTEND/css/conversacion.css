@@ -3,6 +3,9 @@
     border-bottom: 1px solid rgba(223, 223, 223, 0.788);
     transform: .7s;
 }
+.divHiloResp {
+    width: 93%;
+}
 
 .searchbutton {
     display: none;
@@ -35,7 +38,6 @@
     padding: 5px 4px;
     color: gray;
     opacity: .8;
-    margin: 15px 0 0 0;
 }
 .buttonClose:hover {
     color: white;
@@ -183,9 +185,6 @@ ul {
 .comments-container {
     margin: 0px auto 15px;
     width: 768px;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
 }
  
 .comments-container h1 {
@@ -302,7 +301,7 @@ ul {
  * Caja del Comentario
  ---------------------------*/
 .comments-list .comment-box {
-    width: 680px;
+    
     float: right;
     position: relative;
     /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -390,9 +389,7 @@ ul {
     -webkit-border-radius: 0 0 4px 4px;
     -moz-border-radius: 0 0 4px 4px;
     border-radius: 0 0 4px 4px;
-}
-.comentPrincipsd {
-    width: 50%;
+    word-wrap: break-word;
 }
 
 
@@ -427,17 +424,20 @@ ul {
  ========================*/
  @media only screen and (max-width: 1200px) {
     .comments-container {
-        width: 360px;
+        width: 100%;
     }
  
     .comments-list .comment-box {
-        width: 357px;
-        margin-top: 12px;
+        width: 100%;
     }
     .comment-box:after {
         display: none;
     }
  
+    .hilo
+    {
+        width: 74%;
+    }
     .reply-list .comment-box {
         width: 320px;
     }
