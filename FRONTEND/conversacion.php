@@ -81,9 +81,13 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 
 
     <section class="sectionInfo">
+<<<<<<< HEAD
                     <div class="buttonReciente">
                         <button class="buttonAggComments">Agregar comentario</button>
                     </div>
+=======
+                   
+>>>>>>> 0959dfda6df725f39280b5bab7ddf9ce8f41f721
         <div class="publication" >
                     <div class="fatherHilos">                               
                             <div class="hilos">
@@ -93,10 +97,22 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 if ($activos == 1){
 ?>
 
+<<<<<<< HEAD
                 <div class="formTxtarea">
 
                         <form method="post" action="../BACKEND/infoMensajes.php" class="txtComments">
                             <textarea name="editorMSJ" id="ckeditor" class="ckeditor" placeholder="..."  >
+=======
+<div class="buttonReciente">
+                        <button class="buttonAggComments">Agregar comentario</button>
+                    </div>
+                    
+                <div class="formTxtarea">
+
+                        <form method="post" action="../BACKEND/infoMensajes.php" class="txtComments">
+
+                            <textarea name="editorMSJ" id="ckeditor" class="ckeditor txtComments" placeholder="..."  >
+>>>>>>> 0959dfda6df725f39280b5bab7ddf9ce8f41f721
                         
                         </textarea>
                             <input name="idHilo" type="hidden" value="<?php echo $id; ?>">
@@ -118,8 +134,12 @@ if ($activos == 1){
             <input name="name_hilo" type="hidden" value="<?php echo "$id" ?>">
             <button name="close_hilo" value="0">Si</button>
         </form>
+<<<<<<< HEAD
         <button>Si</button>
         <button>No</button>
+=======
+        <button onclick="cerrar_dialog()">No</button>
+>>>>>>> 0959dfda6df725f39280b5bab7ddf9ce8f41f721
         </div>
     </dialog>
 <?php } ?>

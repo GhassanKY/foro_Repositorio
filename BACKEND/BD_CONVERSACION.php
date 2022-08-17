@@ -1,6 +1,9 @@
 <?php
 include "../BACKEND/conector.php";
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 $usuario = $_SESSION["welcome"];
 $datosUsuario = mysqli_query($conector, "SELECT *
                                         FROM usuarios
