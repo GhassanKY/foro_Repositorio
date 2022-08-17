@@ -14,7 +14,7 @@
     background-color: #f79400;
 }
 body {
-    background-color: #edeff1;
+    background-color: #f6f8fa;
     transition: .5s;
 }
 .fondo-imagen{
@@ -324,7 +324,7 @@ right: 20px;
 
 
     border-top: 3px solid rgb(255, 255, 255);
-    background-color: rgba(242, 243, 248, 0.662);
+    background-color: rgba(234, 235, 241, 0.662);
 }
 
 
