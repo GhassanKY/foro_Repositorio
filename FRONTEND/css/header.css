@@ -19,9 +19,8 @@ header{
     font-size: 16px;
 }
 nav {
-    border: 1px solid black;
     height: 60px;
-    background-color: #282d33;
+    background-color: #292b31;
     z-index: 600;
     position: fixed;
     top: 0%;
