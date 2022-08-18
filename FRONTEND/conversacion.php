@@ -87,6 +87,22 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
                             <div class="hilos">
                                 <div class='comments-container'>
 
+
+
+
+
+
+ <!-- Activar hilo -->
+ <?php if ($activos == 0 && !empty($info)){ ?>
+<form method="POST" action="../BACKEND/activarHilo.php">
+<input name="activar_name_hilo" type="hidden" value="<?php echo "$id" ?>">
+<input name="activar_hilo" type="hidden" value="1">
+<button class="buttonClose">Activar hilo</button>
+</form>
+<?php } ?>
+
+
+
 <?php
 if ($activos == 1){
 ?>
