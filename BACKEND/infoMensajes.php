@@ -18,7 +18,7 @@ $texto = $_POST['editorMSJ'];
 
 
 if (!empty($UserID_Mensaje) || !empty($HiloID_Mensaje) || !empty($texto)) {
-    $SELECT = "SELECT texto from mensajes where texto = ? limit 1"; //Consulta de seguridad
+    $SELECT = "SELECT texto from mensajes where texto = ? limit 7"; //Consulta de seguridad
     $INSERT = "INSERT INTO mensajes (texto, usuario_ID, hilo_ID) values(?,?,?)"; //Insertar datos
 
     $stmt = $conector->prepare($SELECT);
@@ -28,7 +28,7 @@ if (!empty($UserID_Mensaje) || !empty($HiloID_Mensaje) || !empty($texto)) {
     $stmt->store_result();
     $rnum = $stmt->num_rows;
     //Insertamos los valores en la tabla estos valores ($nombre, $precio, $m2, $ascensor, $garaje,$descripcion,$destino)
-    if ($rnum == 0) {
+    if ($rnum < 7) {
         $stmt->close();
         $stmt = $conector->prepare($INSERT);
         $stmt->bind_param("sss", $texto, $UserID_Mensaje, $HiloID_Mensaje);
@@ -36,7 +36,8 @@ if (!empty($UserID_Mensaje) || !empty($HiloID_Mensaje) || !empty($texto)) {
         header("location: ../FRONTEND/conversacion.php?id=$HiloID_Mensaje");
         echo "Mensaje enviado con exito";
     } else {
-        echo "vaya no puedes enviar el mismo mensaje mas de 1 vez :/";
+        echo "<h1>No hagas mas spam hijo de tu xingada madre >:c</h1>";
+        header("refresh: 3 ../FRONTEND/conversacion.php?id=$HiloID_Mensaje");
         $stmt->close();
         $conector->close();
     }
@@ -44,3 +45,4 @@ if (!empty($UserID_Mensaje) || !empty($HiloID_Mensaje) || !empty($texto)) {
     echo "No puedes enviar un mensaje si el campo esta vacio :/";
     die();
 }
+?>
