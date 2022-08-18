@@ -283,7 +283,14 @@ left: -300px;
     .guardar{
         height: 40px;
     }
+
+    .fondo-imagen{
+        width: 40%;
+        
+    }
+
 }
+
 
 
 @media (max-width:500px) {
