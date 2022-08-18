@@ -26,7 +26,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
     <link rel="stylesheet" href="css/conversacion.css">
     <link rel="stylesheet" href="css/lista.css">
     <link rel="stylesheet" href="css/sesion.css">
-    <link rel="stylesheet" href="css/button.css">
+
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <!-- Iconos -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -83,30 +83,27 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
     <section class="sectionInfo">
                    
         <div class="publication" >
-                    <div class="fatherHilos">                               
-                            <div class="hilos">
+                    <div class="hilosGrand">                               
+                            <div class="hilosModifi">
                                 <div class='comments-container'>
 
 <?php
 if ($activos == 1){
 ?>
 
-                    <div class="buttonReciente importanteButtonReciente">
+                    <div class="buttoncambiado">
                         <button class="buttonAggComments">Agregar comentario</button>
                     </div>
                     
-                <div class="formTxtarea">
+                    <div class="formTxtarea">
 
                         <form method="post" action="../BACKEND/infoMensajes.php" class="txtComments">
-
-                            <textarea name="editorMSJ" id="ckeditor" class="ckeditor txtComments" placeholder="..."  >
-                        
-                        </textarea>
+                            <textarea name="editorMSJ" id="ckeditor" class="ckeditor txtCommentss" placeholder="..."  >
+                            </textarea>
                             <input name="idHilo" type="hidden" value="<?php echo $id; ?>">
                             <input type="submit" name="asd" value="Agregar comentario" class="submitButton">
-                           
                         </form>
-                </div>
+                    </div>
 
 <?php
  if (!empty($info)){
@@ -219,18 +216,12 @@ if ($activos == 1){
                                     <!-- </ul> -->
 
             
-            <!-- <?php if ($hilo["id"] == $idSesion) { ?>
-                <button>Editar</button>
+            <?php if ($hilo["id"] == $idSesion) { ?>
                 <form action="../BACKEND/editarComentario.php" method="POST">
                     <input type="hidden" value="<?php echo $id; ?>" name="idTabla">
                     <input type="hidden" value="<?php echo $hilo["ID"]; ?>" name="idTexto">
                     <input type="hidden" value="editar" name="accion">
-                    <textarea name="textoHilo" id="ckeditor" class="ckeditor">
-                  <?php echo $hilo["texto"]; ?>
-                </textarea>
-                    <button>Guardar Cambios</button>
-                    <button class="eliminar">Eliminar</button>
-                </form> -->
+                </form>
 
             <?php } ?>
        
@@ -248,13 +239,15 @@ if ($activos == 1){
 
 
 
-
-
-    <script src="./ckeditor/ckeditor.js"></script>
-    <script src="./js/desactivarHilo.js"></script>
-    <script src="./js/sesion.js"></script>
-    <script src="./js/commets.js"></script>
-    <script src="./js/buscador.js"></script>
+    <script src="js/buscador.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/commets.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="js/desactivarHilo.js"></script>
+    <script src="js/sesion.js"></script>
+    
+    
+ 
    
 </body>
 
