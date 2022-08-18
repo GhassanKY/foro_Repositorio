@@ -12,6 +12,8 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
     echo "<br>";
 }
 
+$codiGod = $_GET["id"];
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +32,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <!-- Iconos -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<!-- Estilos -->
+    <!-- Estilos -->
     <header>
         <nav>
             <img src="image/menu.png" alt="Menu" class="imgMenu">
@@ -48,28 +50,30 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
                         <li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
                     <form action="../BACKENd/fecha-sesion.php" method="POST">
-                            <input type="hidden" name="fecha-sesion" value="1">
-                            <!-- <a href="../BACKEND/sesionDestroy.php"> -->
-                                <button class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</button>
-                            <!-- </a> -->
-                        </form>
-                      
+                        <input type="hidden" name="fecha-sesion" value="1">
+                        <!-- <a href="../BACKEND/sesionDestroy.php"> -->
+                        <button class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</button>
+                        <!-- </a> -->
+                    </form>
+
                 </ol>
             </div>
 
         </nav>
     </header>
-        <!--barra lateral  -->
-        <div class="list">
+    <!--barra lateral  -->
+    <div class="list">
 
-            <ul>
-                    <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
-                    <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar">   Discusiones</li>
-                    <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar">  Tags</li>
-                    <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar">  Ayuda</li>
-                    <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar">  Ajustes</li>  
-            </ul>
-        </div>
+        <ul>
+            <a href="sesion.php">
+                <li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar"> Inicio</li>
+            </a>
+            <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
+            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+        </ul>
+    </div>
 
 <body>
     <!-- <a href="temas.php?id=1"><button>Aviones</button></a>
@@ -81,176 +85,180 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 
 
     <section class="sectionInfo">
-                   
-        <div class="publication" >
-                    <div class="hilosGrand">                               
-                            <div class="hilosModifi">
-                                <div class='comments-container'>
+
+        <div class="publication">
+            <div class="hilosGrand">
+                <div class="hilosModifi">
+                    <div class='comments-container'>
+
+                        <?php
+                        if ($activos == 1) {
+                        ?>
+
+                            <div class="buttoncambiado">
+                                <button class="buttonAggComments">Agregar comentario</button>
+                            </div>
+
+                            <div class="formTxtarea">
 
 
 
 
+                                <form method="post" action="../BACKEND/infoMensajes.php" class="txtComments">
 
+                                    <div class="mandos">
+                                        <a href="conversacion.php?id=<?php echo $codiGod ?>">
+                                            <div class="face">
+                                                <img src="image/500horas.png" alt="buttonHome" class="buttonHome">
+                                            </div>
+                                        </a>
 
- <!-- Activar hilo -->
- <?php if ($activos == 0 && !empty($info)){ ?>
-<form method="POST" action="../BACKEND/activarHilo.php">
-<input name="activar_name_hilo" type="hidden" value="<?php echo "$id" ?>">
-<input name="activar_hilo" type="hidden" value="1">
-<button class="buttonClose">Activar hilo</button>
-</form>
-<?php } ?>
-
-
-
-<?php
-if ($activos == 1){
-?>
-
-                    <div class="buttoncambiado">
-                        <button class="buttonAggComments">Agregar comentario</button>
-                    </div>
-                    
-                    <div class="formTxtarea">
-
-                        <form method="post" action="../BACKEND/infoMensajes.php" class="txtComments">
-                            <textarea name="editorMSJ" id="ckeditor" class="ckeditor txtCommentss" placeholder="..."  >
+                                        <textarea name="editorMSJ" id="ckeditor" class="ckeditor txtCommentss" placeholder="...">
                             </textarea>
-                            <input name="idHilo" type="hidden" value="<?php echo $id; ?>">
-                            <input type="submit" name="asd" value="Agregar comentario" class="submitButton">
-                        </form>
-                    </div>
-
-<?php
- if (!empty($info)){
-  ?>
-<button onclick="desactivar_hilo()" class="buttonClose">Cerrar Hilo</button>
-
-    <dialog id="dialog_hilo">
-        <p>¿Estas seguro de querer desactivar este hilo?</p>
-        <p>Al desactivar este hilo no permites que alguien <br> escriba un nuevo mensaje</p>
-        <div class="desactivar_Hilo">
-        <form method="POST" action="../BACKEND/desactivarHilo.php">
-            <input name="name_hilo" type="hidden" value="<?php echo "$id" ?>">
-            <button name="close_hilo" value="0">Si</button>
-        </form>
-        <button onclick="cerrar_dialog()">No</button>
-        </div>
-    </dialog>
-<?php } ?>
-<?php
-}
-?>
-    <!-- creador de hilo, titulo principal, y una breve descripción -->
-
-    <?php while ($fila = mysqli_fetch_assoc($nombreHilo)) {   ?>
-                
-                <div class="titleDiv">
-                            <div class="publicateFor">
-                                <p class="publicatedForTxt">Publicado por u/<?php echo $fila["nombreUsuario"]; ?></p>
+                                        <input name="idHilo" type="hidden" value="<?php echo $id; ?>">
+                                        <input type="submit" name="asd" value="Agregar comentario" class="submitButton">
+                                </form>
                             </div>
+
+
+
+                            <?php
+                            if (!empty($info)) {
+                            ?>
+                                <button onclick="desactivar_hilo()" class="buttonClose">Cerrar Hilo</button>
+
+                                <dialog id="dialog_hilo">
+                                    <p>¿Estas seguro de querer desactivar este hilo?</p>
+                                    <p>Al desactivar este hilo no permites que alguien <br> escriba un nuevo mensaje</p>
+                                    <div class="desactivar_Hilo">
+                                        <form method="POST" action="../BACKEND/desactivarHilo.php">
+                                            <input name="name_hilo" type="hidden" value="<?php echo "$id" ?>">
+                                            <button name="close_hilo" value="0" class="buttonClose">Si</button>
+                                        </form>
+                                        <button onclick="cerrar_dialog()" class="buttonClose">No</button>
+                                    </div>
+                                </dialog>
+                            <?php } ?>
+                        <?php
+                        }
+                        ?>
+
+                        <!-- Activar hilo -->
+                        <?php if ($activos == 0 && !empty($info)) { ?>
+                            <form method="POST" action="../BACKEND/activarHilo.php">
+                                <input name="activar_name_hilo" type="hidden" value="<?php echo "$id" ?>">
+                                <input name="activar_hilo" type="hidden" value="1">
+                                <button class="buttonClose buttonOpen">Activar hilo</button>
+                            </form>
+                        <?php } ?>
+                        <!-- creador de hilo, titulo principal, y una breve descripción -->
+
+                        <?php while ($fila = mysqli_fetch_assoc($nombreHilo)) {   ?>
+
+                            <div class="titleDiv">
+                                <div class="publicateFor">
+                                    <p class="publicatedForTxt">Publicado por u/<?php echo $fila["nombreUsuario"]; ?></p>
+                                </div>
                                 <h1 class="titleTxt"><?php echo $fila["nombre_Hilos"]; ?></h1>
-                            <div class="descripDiv">
-                                <p class="descripTxt"><?php echo $fila["descripcion"]; ?></p>
+                                <div class="descripDiv">
+                                    <p class="descripTxt"><?php echo $fila["descripcion"]; ?></p>
+                                </div>
                             </div>
-                </div>
-    <?php } ?>
+                        <?php } ?>
 
 
-    <!--  -->
+                        <!--  -->
 
-    <?php while ($hilo = mysqli_fetch_assoc($datosHiloCompleto)) { ?>
-        <div class="hilo">
-       
-       
-            <!-- <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a> -->
-          
+                        <?php while ($hilo = mysqli_fetch_assoc($datosHiloCompleto)) { ?>
+                            <div class="hilo">
 
 
-           
+                                <!-- <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a> -->
 
 
-                            <ul id="comments-list reply-list" class="comments-list">
-                                 
-                                    
-                                    
-                                       <li>
-                                                <div class='comment-main-level'>
-                                                    <!-- Avatar -->
-                                                    <div class='comment-avatar'><img src='<?php echo $hilo["image_user"]; ?>' alt='photo'></div> 
-                                                    <!-- Contenedor del Comentario -->
-                                                        <div class='comment-box'>
-                                                            <div class='comment-head'>
-                                                                <h6 class='comment-name'><?php echo $hilo["nombreUsuario"]; ?><a href=''></a></h6>
-                                                        
-                                                                <i class='fa fa-reply' onclick="respuesta()"></i>
-
-                                                            <script>
-                                                                    function respuesta() {
-
-                                                                        alert("hola");
-                                                                    }
 
 
-                                                            </script>
 
-                                                                <i class='fa fa-heart'></i>
-                                                            </div>
-                                                                <div class='comment-content'>
-                                                                    <div class="comentPrincipsd">
-                                                                        <p class="comentInPublic"><?php echo $hilo["texto"]; ?></p> 
-                                                                    </div>
-                                                                        <div class="dateComents">
-                                                                            <p class="dateOfComments"><?php echo $hilo["fecha"]; ?></p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
+
+                                <ul id="comments-list reply-list" class="comments-list">
+
+
+
+                                    <li>
+                                        <div class='comment-main-level'>
+                                            <!-- Avatar -->
+                                            <div class='comment-avatar'><img src='<?php echo $hilo["image_user"]; ?>' alt='photo'></div>
+                                            <!-- Contenedor del Comentario -->
+                                            <div class='comment-box'>
+                                                <div class='comment-head'>
+                                                    <h6 class='comment-name'><?php echo $hilo["nombreUsuario"]; ?><a href=''></a></h6>
+
+                                                    <i class='fa fa-reply' onclick="respuesta()"></i>
+
+                                                    <script>
+                                                        function respuesta() {
+
+                                                            alert("hola");
+                                                        }
+                                                    </script>
+
+                                                    <i class='fa fa-heart'></i>
+                                                </div>
+                                                <div class='comment-content'>
+                                                    <div class="comentPrincipsd">
+                                                        <p class="comentInPublic"><?php echo $hilo["texto"]; ?></p>
                                                     </div>
+                                                    <div class="dateComents">
+                                                        <p class="dateOfComments"><?php echo $hilo["fecha"]; ?></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                                
-                                        </li>
 
-                                          <!-- Respuestas de los comentarios -->
-                                            <!-- <ul class='comments-list reply-list'>
+                                    </li>
+
+                                    <!-- Respuestas de los comentarios -->
+                                    <!-- <ul class='comments-list reply-list'>
                                            
                                                 <li>
                                                     <-- Avatar -->
-                                                    <!-- <div class='comment-avatar'><img src='../image/avatar_o.png' alt=''></div> -->
-                                                    <!-- Contenedor del Comentario -->
-                                                    <!-- <div class='comment-box'> -->
-                                                        <!-- <div class='comment-head'> -->
-                                                            <!-- <h6 class='comment-name'><a href=''>".$row2['username']."</a></h6> -->
+                                    <!-- <div class='comment-avatar'><img src='../image/avatar_o.png' alt=''></div> -->
+                                    <!-- Contenedor del Comentario -->
+                                    <!-- <div class='comment-box'> -->
+                                    <!-- <div class='comment-head'> -->
+                                    <!-- <h6 class='comment-name'><a href=''>".$row2['username']."</a></h6> -->
 
-                                                                <!-- <i class='fa fa-heart'></i>
+                                    <!-- <i class='fa fa-heart'></i>
                                                         </div>
                                                         <div class='comment-content'></div>
                                                     </div> -->
-                                                <!-- </li> --> 
-                                            
-                                            
-                                  
+                                    <!-- </li> -->
+
+
+
                                     <!-- </ul> -->
 
-            
-            <?php if ($hilo["id"] == $idSesion) { ?>
-                <form action="../BACKEND/editarComentario.php" method="POST">
-                    <input type="hidden" value="<?php echo $id; ?>" name="idTabla">
-                    <input type="hidden" value="<?php echo $hilo["ID"]; ?>" name="idTexto">
-                    <input type="hidden" value="editar" name="accion">
-                </form>
 
-            <?php } ?>
-       
-    <?php } ?>
+                                    <?php if ($hilo["id"] == $idSesion) { ?>
+                                        <form action="../BACKEND/editarComentario.php" method="POST">
+                                            <input type="hidden" value="<?php echo $id; ?>" name="idTabla">
+                                            <input type="hidden" value="<?php echo $hilo["ID"]; ?>" name="idTexto">
+                                            <input type="hidden" value="editar" name="accion">
+                                        </form>
+
+                                    <?php } ?>
+
+                                <?php } ?>
 
 
 
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div>
 
-        </section>
+    </section>
 
 
 
@@ -261,10 +269,10 @@ if ($activos == 1){
     <script src="ckeditor/ckeditor.js"></script>
     <script src="js/desactivarHilo.js"></script>
     <script src="js/sesion.js"></script>
-    
-    
- 
-   
+
+
+
+
 </body>
 
 </html>
