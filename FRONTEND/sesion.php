@@ -56,7 +56,7 @@ include "../BACKEND/BD_SESION.php";
     <div class="list">
         
         <ul>
-            <button id="noche">jljkllj</button>
+         
             <li><a style="display:none;" href="sesion.php">Inicio</a></li>
 
             <a href="temas.php?id=1"><li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li></a>
@@ -126,6 +126,7 @@ include "../BACKEND/BD_SESION.php";
         }
         buscar_ahora();
     </script>
+    <script src="js/temacolor.js"></script>
     <script src="js/sesion.js"></script>
     <script src="js/buscador.js"></script>
 </body>

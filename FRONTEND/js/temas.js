@@ -28,25 +28,35 @@ pfHeader.addEventListener('click', () => {
     PopLR.classList.toggle("PopLR-v");
 })
 
-
-
-
-//modo noche
-
-load();
-
+//funcion para cambiar color del tema
+function color(body,claveLocalStorage,color){
+	load();
+	
 function load(){
 
-	let body = document.querySelector("body");
-	const modeNoche = localStorage.getItem("modonoche");
+	let bod = document.querySelector(body);
+	const modeNoche = localStorage.getItem(claveLocalStorage);
 
     if(!modeNoche){
         store(false)
     } else if(modeNoche == "true"){
-		body.classList.toggle("oscuro");
-		prueba.classList.toggle("prueba")
+		bod.classList.toggle(color);
     }
 }
+}
+// OSCURO
+let body = "body";
+let modo = "modonoche";
+let colorOscuro = "oscuro";
+color(body,modo,colorOscuro);
+
+// AZUL
+let body1 = "body"
+let modoAzul = "modoazul";
+let colorAzul = "azul";
+color(body1,modoAzul,colorAzul);
+
+//VERDE
 
 
 

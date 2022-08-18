@@ -160,10 +160,10 @@ include "../BACKEND/BD_PERFIL.php";
    </div>
 </div>
 
+    <script src="./js/temacolor.js"></script>
     <script src="js/perfil.js"></script>
     <script src="js/editarHilo.js"></script>
     <script src="./js/botonEliminar.js"></script>
-
 
 </body>
 </html>

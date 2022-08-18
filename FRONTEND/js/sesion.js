@@ -12,7 +12,7 @@ let menu = document.querySelector(".imgMenu");
 let desplegable = document.querySelector(".list");
 let configButton = document.querySelector(".configButton")
 let noche = document.querySelector("#noche");
-let body = document.querySelector("body");
+
 
 
 lupa.addEventListener('click', () => {
@@ -22,7 +22,7 @@ lupa.addEventListener('click', () => {
 
 pfHeader.addEventListener('click', () => {
 
-	PopLR.classList.toggle("PopLR-v");t
+	PopLR.classList.toggle("PopLR-v");
     
 })
 menu.addEventListener('click', () => {
@@ -46,32 +46,7 @@ boton1.addEventListener("click", ()=>{
 })
     
 
+	
 
 
-
-
-
-//modo noche
-
-load();
-
-noche.addEventListener("click", () =>{
-    body.classList.toggle("oscuro");
-    store(body.classList.contains("oscuro"))
-});
-
-
-function load(){
-    const modeNoche = localStorage.getItem("modonoche")
-    if(!modeNoche){
-        store(false)
-    } else if(modeNoche == "true"){
-        body.classList.toggle("oscuro");
-    }
-}
-
-
-function store(value){
-    localStorage.setItem("modonoche", value);
-}
 

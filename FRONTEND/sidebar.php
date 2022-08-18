@@ -56,71 +56,49 @@ $cd = $_GET["id"];
         </div>
 
     </nav>
-  </header>
+</header>
   <div class="list">
-      <ul>
-      <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
-      <li><a style="display:none;" href="sesion.php">Inicio</a></li>
-
-<a href="temas.php?id=1"><li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li></a>
-<!-- <a href="sidebar.php?id=1"><li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li></a> -->
-<a href="sidebar.php?id=2"><li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li></a>
-<a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
+        <ul>
+            <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
+            <li><a style="display:none;" href="sesion.php">Inicio</a></li>
+            <a href="temas.php?id=1"><li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li></a>
+            <!-- <a href="sidebar.php?id=1"><li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li></a> -->
+            <a href="sidebar.php?id=2"><li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li></a>
+            <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul>
       </ul>
   </div>
        
            
-                <div class="divCentral ">
-                  
-                <?php if ($cd == 1) { ?>
+           <div class="divCentral ">
+                  <div class="modoNoche">
+                       <a class="color oroginal" href="sidebar.php"><button id="porDefecto">original</button></a>
+                       <a class="color noche" href="sidebar.php"><button id="noche">noche</button></a>
+                    </div>
+                    <a class="color azul" href="sidebar.php"><button id="azul">azul</button></a>
+                    <a class="color verde" href="sidebar.php"><button id="verde">verde</button></a>
+                    <a class="color turquesa" href="sidebar.php"><button id="turquesa">turquesa</button></a>
+                    <a class="color rojo" href="sidebar.php"><button id="rojo">rojo</button></a>
+                    <a class="color naranja" href="sidebar.php"><button id="naranja">naranja</button></a>
+                    <a class="color amarillo" href="sidebar.php"><button id="amarillo">amarillo</button></a>
+                    <a class="color rosado" href="sidebar.php"><button id="rosado">rosado</button></a>
+                    <a class="color morado" href="sidebar.php"><button id="morado">morado</button></a>
 
-
-                    <div class="temaDiv">
-                            <?php while ($temas1 = mysqli_fetch_assoc($datosTemas1)) { ?>
-                                <a href="temas.php?id=<?php echo $temas1['ID']; ?>" class="links">
-                                <div class="contentImg">
-                                    <img src="image/hash.png" alt="tags" class="tagname">
-                                    <p class="linktags"><?php echo $temas1['nombre']; ?></p>
-                                 </div>
-                                </a>
-                            <?php } ?>
-                     </div>
-                    
-
-
-
-
-
-                
-
-
-                <?php } elseif ($cd == 2) { ?>
-
-
-
-                        <p>ayuda</p>
-
-
-
-
-
-
-
-
-                <?php } elseif ($cd == 3) { ?>
-
-
-                <p>ajustes</p>
-                
-
-
-                
-                <?php } ?>
-                </div>
+            </div>
             
-            <script src="js/editarperfil.js"></script>
+           
 
     
+
+
+
+
+
+
+
+
+
+    <script src="js/editarperfil.js"></script>
+    <script src="js/coloresDelTema.js"></script>
 </body>        
 </html>

@@ -27,25 +27,4 @@ botoninfo2.addEventListener('click', () => {
 
 menu.addEventListener('click', () => {
     desplegable.classList.toggle("list-v")
-})
-
-
-
-//modo noche
-
-load();
-
-function load(){
-
-	let body = document.querySelector("body");
-	const modeNoche = localStorage.getItem("modonoche");
-
-    if(!modeNoche){
-        store(false)
-    } else if(modeNoche == "true"){
-		body.classList.toggle("oscuro");
-		prueba.classList.toggle("prueba")
-    }
-}
-
-	
+});

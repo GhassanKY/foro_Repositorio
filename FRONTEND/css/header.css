@@ -181,7 +181,48 @@ nav {
 
 
 
-
+/* MODO OSCURO */
 .oscuro nav{
     background-image: linear-gradient(-45deg, #292b31 0%,  #292b31 100%);
+}
+
+/* AZUL */
+.azul nav{
+    background-image: linear-gradient(-45deg, #008cff 0%,  #008cff 100%);
+}
+
+/* VERDE */
+.verde nav{
+    background-image: linear-gradient(-45deg, #00ff73 0%,  #00ff73 100%);
+}
+
+/* NARANJA */
+.naranja nav{
+    background-image: linear-gradient(-45deg, #ff5e00 0%,  #ff5e00 100%);
+}
+
+/* MORADO */
+.morado nav{
+    background-image: linear-gradient(-45deg, #e100ff 0%,  #e100ff 100%);
+}
+
+/* TURQUESA */
+.turquesa nav{
+    background-image: linear-gradient(-45deg, #00d8b4 0%,  #00d8b4 100%);
+}
+
+
+/* ROJO */
+.rojo nav{
+    background-image: linear-gradient(-45deg, #ff083e 0%,  #ff083e 100%);
+}
+
+/* ROSADO */
+.rosado nav{
+    background-image: linear-gradient(-45deg, #ff5185 0%,  #ff5185 100%);
+}
+
+/* AMARILLO */
+.amarillo nav{
+    background-image: linear-gradient(-45deg, #d0ff00 0%,  #d0ff00 100%);
 }

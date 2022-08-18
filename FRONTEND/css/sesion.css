@@ -467,6 +467,12 @@ body.oscuro{
 .oscuro .sectionInfo{
     margin-left: 135px;
 }
+
+@media ( max-width: 1000px ) {
+    .oscuro .sectionInfo{
+        margin-left: 0px;
+    } 
+}
 .oscuro .fatherHilos{
     background-color: #414349;
     transition: 0s;
@@ -513,4 +519,20 @@ body.oscuro{
     background-color: #41434981;
     border: 1px solid black;
     color: white;
+}
+
+
+
+/* azul */
+.azul .buttonCreate{
+    background-color: #008cff;
+}
+.azul .sectionInfo{
+    margin-left: 210px;
+}
+
+@media ( max-width: 1000px ) {
+    .azul .sectionInfo{
+        margin-left: 0px;
+    } 
 }

@@ -90,6 +90,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
                 </div>
              </form>
             <script src="js/editarperfil.js"></script>
+            <script src="js/temacolor.js"></script>
     
 </body>        
 </html>

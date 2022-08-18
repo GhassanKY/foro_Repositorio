@@ -128,5 +128,6 @@
                 </div>
          
 <script src="js/temas.js"></script>
+<script src="js/temacolor.js"></script>
 </body>
 </html>
