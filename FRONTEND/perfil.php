@@ -58,7 +58,7 @@ include "../BACKEND/BD_PERFIL.php";
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
             <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
-            <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+            <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul>
     </div>
 

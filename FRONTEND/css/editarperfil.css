@@ -21,9 +21,15 @@ left: -300px;
 
     width: 100%;
 }
+
+.fondo-imagen{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
 .mandos{
     width: 100%;
-    margin-top: 70px;
+    margin-top: 140px;
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
@@ -70,7 +76,7 @@ left: -300px;
     width: 700px;
     height: auto;
     padding-bottom: 20px;
-    margin: 130px auto;
+    margin: 60px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -228,8 +234,12 @@ left: -300px;
 
 
 @media (max-width:900px) {
+    .mandos{
+        margin-top: 80px;
+    }
     .parteCentral{
         background-color: #66666600;
+        margin-top: 110px;
     }
     .list-v {
         width: 100%;

@@ -31,7 +31,8 @@ $datosHiloCompleto = mysqli_query($conector, "SELECT hilos.ID, mensajes.*, usuar
                                             ON mensajes.hilo_ID = hilos.ID
                                             JOIN usuarios
                                             ON mensajes.usuario_ID = usuarios.id
-                                            WHERE hilos.ID = $id; ");
+                                            WHERE hilos.ID = $id
+                                            ORDER BY mensajes.ID DESC; ");
 
 
 $datosHilosFull = mysqli_query($conector, "SELECT * from hilos WHERE ID = $id");

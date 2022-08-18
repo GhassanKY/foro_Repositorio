@@ -33,7 +33,7 @@ include "../BACKEND/BD_SESION.php";
   <header>
     <nav>
         <img src="image/menu.png" alt="Menu" class="imgMenu">
-        <a href="sesion.php"><img src="image/logo.png" alt="Logo" class="headerLogo"></a>
+        <a href="sesion.php"><img src="./img/letras.svg" alt="Logo" class="headerLogo"></a>
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <img src="image/lupa.png" alt="Lupa" class="searchbutton">
 
@@ -72,7 +72,7 @@ include "../BACKEND/BD_SESION.php";
            
            <div class="divCentral ">
                     <div class="modoNoche">
-                        <h3>Elija un tema</h3>
+                        <h3 class="tituloTema">Elija un tema</h3>
                     </div>
                     <a class="color noche" href="sidebar.php"><button id="noche"></button></a>
                     <a class="color original" href="sidebar.php"><button id="porDefecto">Predeterminado</button></a>

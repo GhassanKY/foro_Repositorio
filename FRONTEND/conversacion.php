@@ -71,7 +71,7 @@ $codiGod = $_GET["id"];
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
             <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
-            <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+            <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul>
     </div>
 
@@ -187,7 +187,7 @@ $codiGod = $_GET["id"];
                                     <li>
                                         <div class='comment-main-level'>
                                             <!-- Avatar -->
-                                            <div class='comment-avatar'><img src='<?php echo $hilo["image_user"]; ?>' alt='photo'></div>
+                                            <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><div class='comment-avatar'><img src='<?php echo $hilo["image_user"]; ?>' alt='photo'></div></a>
                                             <!-- Contenedor del Comentario -->
                                             <div class='comment-box'>
                                                 <div class='comment-head'>
@@ -262,7 +262,7 @@ $codiGod = $_GET["id"];
 
 
 
-
+    <script src="./js/temacolor.js"></script>
     <script src="js/buscador.js"></script>
     <script src="js/sesion.js"></script>
     <script src="js/commets.js"></script>

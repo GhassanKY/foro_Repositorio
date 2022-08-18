@@ -3,6 +3,13 @@
     border-bottom: 1px solid rgba(223, 223, 223, 0.788);
     transform: .7s;
 }
+.cke_chrome {
+    display: block;
+    padding: 0px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .buttonHome {
     width: 30px;
     margin: 10px 0;
@@ -552,5 +559,189 @@ ul {
        
     }
     
+
+
+
+
+
+    .hilosGrand{
+        
+        background-color: rgba(32, 41, 41, 0);
+        box-shadow: none;
+    }
      
+}
+
+
+
+@media only screen and (max-width: 700px) {
+
+    .cke_chrome {
+        display: block;
+        padding: 0px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .hilosGrand{
+        border: none;
+        background-color: rgba(32, 41, 41, 0);
+        box-shadow: none;
+        width: 100%;
+    }
+
+   .form-v{
+    background-color: white;
+    padding: 0 20px;
+   }
+   .cke_ckeditor{
+    margin: 10px;
+   }
+}
+
+
+
+
+
+
+
+
+.oscuro body{
+     background-color: #283035;
+}
+
+.oscuro .hilosModifi{
+    background-color:#28303500;
+    box-shadow: none;
+    border-top: 0;
+}
+
+.oscuro .hilosGrand{
+    box-shadow: none;
+    background-color:#28303500;
+    border-top: 0;
+}
+
+
+.oscuro .comment-head{
+    background-color: #535a61;
+    color: white;
+}
+.oscuro .comment-content{
+    background-color: #515a63;
+    color: white;
+}
+.oscuro .comment-name{
+    color: white;
+}
+
+.oscuro .dateOfComments{
+    color: white;
+}
+.oscuro .comment-box:after {
+    border-color: #ff000000 #4b5258;
+}
+
+.oscuro .comment-avatar{
+    border: none;
+}
+
+
+.oscuro .publicatedForTxt{
+    color: white;
+    font-size: 12px;
+}
+
+.oscuro .titleTxt{
+    color: white;
+    font-size: 35px;
+    text-align: start;
+}
+
+.oscuro .titleDiv{
+    background-color: #384249;
+    text-align: left;
+}
+
+.oscuro .descripTxt{
+    color: white;
+    font-size: 20px;
+}
+
+.oscuro .buttonClose{
+   color:white;
+   background-color: #384249;
+}
+
+
+.oscuro .buttonOpen{
+    color:white;
+ }
+
+
+
+
+ .azul .buttonAggComments{
+    background-color: #03658c;
+ } .azul .buttonAggComments:hover{
+    color:#03658c;
+    background-color: white;
+    border: 1px solid #03658c;
+ }
+
+
+ .verde .buttonAggComments{
+    background-color: #03658c;
+ } .verde .buttonAggComments:hover{
+    color:#03658c;
+    background-color: white;
+    border: 1px solid #03658c;
+ }
+
+
+ .turquesa .buttonAggComments{
+    background-color: #00c4ce;
+ } .turquesa .buttonAggComments:hover{
+    color:#03658c;
+    background-color: white;
+    border: 1px solid #00c4ce;
+ }
+
+
+ .rojo .buttonAggComments{
+    background-color: #ff95c7;
+ } .rojo .buttonAggComments:hover{
+    color:#ff9eea;
+    background-color: white;
+    border: 1px solid #ff93bc;
+ }
+
+
+
+ .rosado .buttonAggComments{
+    background-color: #ff95c7;
+ } .rosado .buttonAggComments:hover{
+    color:#ff9eea;
+    background-color: white;
+    border: 1px solid #ff93bc;
+ }
+
+
+ .morado .buttonAggComments{
+    background-color: #ff95c7;
+ } .morado .buttonAggComments:hover{
+    color:#ff9eea;
+    background-color: white;
+    border: 1px solid #ff93bc;
+ }
+
+
+ .oscuro .comments-list:before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: #ffb000;
+    position: absolute;
+    left: 32px;
+    top: 0;
 }

@@ -15,7 +15,7 @@
 <header>
         <nav>
             <img src="image/menu.png" alt="Menu" class="imgMenu">
-            <a href="sesion.php"><img src="image/logo.png" alt="Logo" class="headerLogo"></a>
+            <a href="sesion.php"><img src="./img/letras.svg" alt="Logo" class="headerLogo"></a>
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
             <img src="image/lupa.png" alt="Lupa" class="searchbutton">
 

@@ -24,6 +24,12 @@ body {
 .date{
     color: black;
 }
+.fondo-imagen{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
 .mandos{
     margin-top: 70px;
     width: 100%;

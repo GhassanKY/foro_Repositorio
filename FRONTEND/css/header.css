@@ -59,6 +59,7 @@ nav {
 }
 .PopLR-v a{
     color: #fff;
+    text-align: none;
 }
 
 .PopLR img {
@@ -154,8 +155,12 @@ nav {
         transition: .5s;
         z-index: 1000;
     }
-    
-    .list li a{
+    .list-v a{
+        list-style: none;
+        margin-bottom: 15px;
+        text-decoration: none;
+    }
+    .list ul a{
         list-style: none;
         margin-bottom: 15px;
         text-decoration: none;
