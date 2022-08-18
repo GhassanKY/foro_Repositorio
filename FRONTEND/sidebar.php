@@ -72,7 +72,7 @@ $cd = $_GET["id"];
            
            <div class="divCentral ">
                   <div class="modoNoche">
-                       <a class="color oroginal" href="sidebar.php"><button id="porDefecto">original</button></a>
+                       <a class="color original" href="sidebar.php"><button id="porDefecto">original</button></a>
                        <a class="color noche" href="sidebar.php"><button id="noche">noche</button></a>
                     </div>
                     <a class="color azul" href="sidebar.php"><button id="azul">azul</button></a>

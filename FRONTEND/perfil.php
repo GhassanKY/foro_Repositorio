@@ -24,7 +24,7 @@ include "../BACKEND/BD_PERFIL.php";
     <header>
         <nav>
             <img src="image/menu.png" alt="Menu" class="imgMenu">
-            <a href="sesion.php"><img src="image/logo.png" alt="Logo" class="headerLogo"></a>
+            <a href="sesion.php"><img src="./img/letras.svg" alt="Logo" class="headerLogo" href="sesion.php"></a>
             <img src="image/lupa.png" alt="Lupa" class="searchbutton">
             <div class="imgHeader">
                 <img src="<?php echo $fotoSesion; ?>" alt="" class="pfHeader">
