@@ -13,6 +13,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
     <link rel="stylesheet" href="css/editarperfil.css">
 </head>
 <body> 
+  
     <div class="mandos">
         <a href="perfil.php?idPerfil=<?php echo $n  ?>"><div class="face">
           <img src="image/izq.png" alt=""><p>PERFIL</p>
@@ -24,7 +25,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
   <header>
     <nav>
         <img src="image/menu.png" alt="Menu" class="imgMenu">
-        <a href="sesion.php"><img src="image/logo.png" alt="Logo" class="headerLogo"></a>
+        <a href="sesion.php"><img src="./img/letras.svg" alt="Logo" class="headerLogo" href="sesion.php"></a>
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <img src="image/lupa.png" alt="Lupa" class="searchbutton">
 
@@ -61,6 +62,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
        
             <form method="POST" action="../BACKEND/ConfiguararPerfil.php"  enctype="multipart/form-data">
                 <div class="parteCentral">
+                  
                   
                     <div class="img_name">
                       <img class="perfil" id="file" src="<?php echo $foto ?>" alt="">
