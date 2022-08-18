@@ -315,6 +315,7 @@ body {
 }
 
 .box_options_mobile {
+    color: black;
     display: none;
 }
 
@@ -844,8 +845,8 @@ body.oscuro{
     color: rgb(230, 230, 230);
  }
 
- .box_options_mobile p{
-    color: white;
+ .oscuro .box_options_mobile p{
+    color: rgb(255, 255, 255);
  }
 
  .oscuro .botonEliminar{
@@ -865,7 +866,6 @@ body.oscuro{
 
 
 /* AZUL */
-
-.azul nav{
-    background-color: #001f86;
-}
+.azul .informacion{
+    background-color: #5e5e5e;
+ }

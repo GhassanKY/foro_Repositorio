@@ -1,12 +1,12 @@
 .divCentral {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px ;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px ; */
     width: 95%;
-    max-width: 600px;
+    max-width: 520px;
     margin: 10px auto;
     padding: 10px 10px;
     border-radius: 15px;
     border: none;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
     display: flex;
     align-content: center;
     justify-content: center;
@@ -14,30 +14,124 @@
 }
 
 .color button{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 20px;
     margin: 10px;
     border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .modoNoche{
     width: 100%;
-    display: flex;
-    justify-content: center;
+    padding: 20px 0 20px 15px;
 } .modoNoche button{
     width: 150px;
     height: 150px;
     border: none;
 }
 
+.original button{
+    background-image:linear-gradient(rgb(233, 62, 255),rgb(255, 165, 47));
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
-
-.oscuro .original{
-    display: none;
+.noche button{
+    background-image: url(../image/luna.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 
 
+
+
+#porDefecto{
+    color: white;
+    font-size: 10px;
+    
+}
+
+
+
+
+
+
+
+#azul{
+    background-image: linear-gradient(-45deg,#59ff7d -35% , #005092 );
+}
+
+
+
+
+
+
+
+
+#verde{
+    background-image: linear-gradient(-45deg, #ff4bd8 -35%,  #00ff9d);
+}
+
+
+
+
+
+
+
+#turquesa{
+    background-image: linear-gradient(-45deg, #00ffa7 -35%, #007aff);
+}
+
+
+
+
+
+#rojo{
+    background-image: linear-gradient(-45deg, #ff79f8 -35%,  #ff4970);
+}
+
+
+
+
+
+
+#naranja{
+    background-image: linear-gradient(-45deg, #ff5295 -35%,  #ff833b);
+}
+
+
+
+
+
+
+
+
+
+#amarillo{
+    background-image: linear-gradient(-45deg, #d0ff00 -35%,  #ff3c00 );
+}
+
+
+
+
+
+
+
+
+#rosado{
+    background-image: linear-gradient(-45deg, #8733cc -35%,  #ff6492);
+}
+
+
+
+
+
+
+#morado{
+    background-image: linear-gradient(-45deg, #ff7dd4 -35%,  #846eff);
+}
 
 
 

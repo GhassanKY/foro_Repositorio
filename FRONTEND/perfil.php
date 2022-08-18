@@ -10,6 +10,11 @@ include "../BACKEND/BD_PERFIL.php";
     <script src="https://kit.fontawesome.com/ba10ce0731.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="css/perfil.css">
+
+
+
+    
+    
     <style>
          .d{
           border-bottom: 1px solid black;  

@@ -526,6 +526,9 @@ body.oscuro{
 /* azul */
 .azul .buttonCreate{
     background-color: #008cff;
+} .azul .buttonCreate:hover{
+    color: white;
+    border: none;
 }
 .azul .sectionInfo{
     margin-left: 210px;
@@ -535,4 +538,235 @@ body.oscuro{
     .azul .sectionInfo{
         margin-left: 0px;
     } 
+}
+
+.azul .nameUser{
+      color: #008cff;
+}
+
+.azul .enviar1{
+    background-color: #008cff;
+}
+
+
+
+
+
+
+
+
+/* verde */
+.verde .buttonCreate{
+    background-color: #a08ec2;
+} .verde .buttonCreate:hover{
+    color: white;
+    border: none;
+}
+.verde .sectionInfo{
+    margin-left: 210px;
+}
+
+@media ( max-width: 1000px ) {
+    .verde .sectionInfo{
+        margin-left: 0px;
+    } 
+}
+
+.verde .nameUser{
+      color: #0077e6fd;
+}
+
+.verde .enviar1{
+    background-color: #a08ec2;
+}
+
+
+
+
+
+/* turquesa */
+.turquesa .buttonCreate{
+    background-color: #00a589;
+} .turquesa .buttonCreate:hover{
+    color: white;
+    border: none;
+}
+.turquesa .sectionInfo{
+    margin-left: 210px;
+}
+
+@media ( max-width: 1000px ) {
+    .turquesa .sectionInfo{
+        margin-left: 0px;
+    } 
+}
+
+.turquesa .nameUser{
+      color: #33333a;
+}
+
+.turquesa .enviar1{
+    background-color: #00d8b4;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* naranja */
+.naranja .buttonCreate{
+    background-color: #ff6474
+} .naranja .buttonCreate:hover{
+    color: white;
+    border: none;
+}
+.naranja .sectionInfo{
+    margin-left: 210px;
+}
+
+@media ( max-width: 1000px ) {
+    .naranja .sectionInfo{
+        margin-left: 0px;
+    } 
+}
+
+.naranja .nameUser{
+      color: #4d4d4d;
+}
+
+.naranja .enviar1{
+    background-color: #ff6474
+}
+
+
+
+
+
+
+
+
+
+
+/* rojo */
+.rojo .buttonCreate{
+    background-color: #ff0040;
+} .rojo .buttonCreate:hover{
+    color: white;
+    border: none;
+}
+.rojo .sectionInfo{
+    margin-left: 210px;
+}
+
+@media ( max-width: 1000px ) {
+    .rojo .sectionInfo{
+        margin-left: 0px;
+    } 
+}
+
+.rojo .nameUser{
+      color: #505050;
+}
+
+.rojo .enviar1{
+    background-color: #ff0040;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* rosado */
+.rosado .buttonCreate{
+    background-color: #ff396a;
+} .rosado .buttonCreate:hover{
+    color: white;
+    border: none;
+}
+.rosado .sectionInfo{
+    margin-left: 210px;
+}
+
+@media ( max-width: 1000px ) {
+    .rosado .sectionInfo{
+        margin-left: 0px;
+    } 
+}
+
+.rosado .nameUser{
+      color: #474747;
+}
+
+.rosado .enviar1{
+    background-color: #ff81a0;
+}
+
+
+
+
+
+
+
+/* morado */
+.morado .buttonCreate{
+    background-color: #ad00bd;
+} .morado .buttonCreate:hover{
+    color: white;
+    border: none;
+}
+.morado .sectionInfo{
+    margin-left: 210px;
+}
+
+@media ( max-width: 1000px ) {
+    .morado .sectionInfo{
+        margin-left: 0px;
+    } 
+}
+
+.morado .nameUser{
+      color: #0072be;
+}
+
+.morado .enviar1{
+    background-color: #f700ff;
+}
+
+
+
+/* amarillo */
+.amarillo .buttonCreate{
+    background-color: #d1c300;
+} .amarillo .buttonCreate:hover{
+    color: rgb(63, 63, 63);
+    border: none;
+}
+.amarillo .sectionInfo{
+    margin-left: 210px;
+}
+
+@media ( max-width: 1000px ) {
+    .amarillo .sectionInfo{
+        margin-left: 0px;
+    } 
+}
+
+.amarillo .nameUser{
+      color: #ff7300;
+}
+
+.amarillo .enviar1{
+    background-color: #ced100;
 }

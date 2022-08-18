@@ -2,7 +2,7 @@
 
 include "../BACKEND/BD_SESION.php";
 
-$cd = $_GET["id"];
+// $cd = $_GET["id"];
 
 
 
@@ -71,18 +71,19 @@ $cd = $_GET["id"];
        
            
            <div class="divCentral ">
-                  <div class="modoNoche">
-                       <a class="color original" href="sidebar.php"><button id="porDefecto">original</button></a>
-                       <a class="color noche" href="sidebar.php"><button id="noche">noche</button></a>
+                    <div class="modoNoche">
+                        <h3>Elija un tema</h3>
                     </div>
-                    <a class="color azul" href="sidebar.php"><button id="azul">azul</button></a>
-                    <a class="color verde" href="sidebar.php"><button id="verde">verde</button></a>
-                    <a class="color turquesa" href="sidebar.php"><button id="turquesa">turquesa</button></a>
-                    <a class="color rojo" href="sidebar.php"><button id="rojo">rojo</button></a>
-                    <a class="color naranja" href="sidebar.php"><button id="naranja">naranja</button></a>
-                    <a class="color amarillo" href="sidebar.php"><button id="amarillo">amarillo</button></a>
-                    <a class="color rosado" href="sidebar.php"><button id="rosado">rosado</button></a>
-                    <a class="color morado" href="sidebar.php"><button id="morado">morado</button></a>
+                    <a class="color noche" href="sidebar.php"><button id="noche"></button></a>
+                    <a class="color original" href="sidebar.php"><button id="porDefecto">Predeterminado</button></a>
+                    <a class="color azul" href="sidebar.php"><button id="azul"></button></a>
+                    <a class="color verde" href="sidebar.php"><button id="verde"></button></a>
+                    <a class="color turquesa" href="sidebar.php"><button id="turquesa"></button></a>
+                    <a class="color rojo" href="sidebar.php"><button id="rojo"></button></a>
+                    <a class="color naranja" href="sidebar.php"><button id="naranja"></button></a>
+                    <a class="color amarillo" href="sidebar.php"><button id="amarillo"></button></a>
+                    <a class="color rosado" href="sidebar.php"><button id="rosado"></button></a>
+                    <a class="color morado" href="sidebar.php"><button id="morado"></button></a>
 
             </div>
             

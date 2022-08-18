@@ -75,8 +75,8 @@ let colorturquesa = "turquesa";
 colores(botonturquesa,colorturquesa,body);
 
 let boton1 = "#porDefecto";
-let modo = "ninguno";
-let color = "ninguno";
+let modo = "porDefecto";
+let color = "porDefecto";
 colores(boton1,color,body);
 
 
