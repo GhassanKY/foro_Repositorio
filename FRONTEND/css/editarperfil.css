@@ -55,6 +55,15 @@ left: -300px;
     color: #666666;
 }
 
+.fondo-imagen{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index:-1;
+    width: 60%;
+    
+}
+
 /*Editar perfil*/
 .parteCentral{
      position: relative;

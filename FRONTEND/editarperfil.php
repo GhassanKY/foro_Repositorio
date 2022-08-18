@@ -61,6 +61,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
   </div>
        
             <form method="POST" action="../BACKEND/ConfiguararPerfil.php"  enctype="multipart/form-data">
+            <img src="./img/fondoReparado.svg" class="fondo-imagen">
                 <div class="parteCentral">
                   
                   
@@ -91,6 +92,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
                     </div>
                 </div>
              </form>
+             <img src="./img/fondoReparado.svg" class="fondo-imagen">
             <script src="js/editarperfil.js"></script>
             <script src="js/temacolor.js"></script>
     
