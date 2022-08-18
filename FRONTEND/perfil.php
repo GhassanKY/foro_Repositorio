@@ -18,6 +18,7 @@ include "../BACKEND/BD_PERFIL.php";
     <title>Document</title>
 </head>
 <body>
+
     <div class="mandos">
       <a href="sesion.php"><p>HOMME</p><img src="image/der.png" alt=""></a>
     </div>
@@ -159,6 +160,8 @@ include "../BACKEND/BD_PERFIL.php";
     </div>
    </div>
 </div>
+<img src="./img/fondoReparado.svg" class="fondo-imagen">
+
 
     <script src="./js/temacolor.js"></script>
     <script src="js/perfil.js"></script>

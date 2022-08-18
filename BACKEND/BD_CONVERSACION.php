@@ -16,7 +16,7 @@ while ($fila = mysqli_fetch_assoc($datosUsuario)) {
 
 $id = $_GET["id"];
 //Obtengo el nombre de quien creo el hilo
-$nombreHilo = mysqli_query($conector, "SELECT hilos.*, usuarios.nombreUsuario
+$nombreHilo = mysqli_query($conector, "SELECT hilos.*, usuarios.nombreUsuario, usuarios.borrar_user
                                         FROM hilos
                                         JOIN usuarios
                                         ON usuarios.id = hilos.usuario
