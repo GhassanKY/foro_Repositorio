@@ -5,6 +5,7 @@ include "../BACKEND/BD_SESION.php";
 
 $datosUsuario = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo = '$usuario';");
 
+$desactivado = "[usuario desactivado]";
 
 while ($fila = mysqli_fetch_assoc($datosUsuario)) {
     $n = $fila["id"];
@@ -143,11 +144,22 @@ if ($activos == 1){
 ?>
     <!-- creador de hilo, titulo principal, y una breve descripción -->
 
-    <?php while ($fila = mysqli_fetch_assoc($nombreHilo)) {   ?>
+    <?php while ($fila = mysqli_fetch_assoc($nombreHilo)) {   
+        ?>
                 
                 <div class="titleDiv">
                             <div class="publicateFor">
-                                <p class="publicatedForTxt">Publicado por u/<?php echo $fila["nombreUsuario"]; ?></p>
+                                <p class="publicatedForTxt">Publicado por u/<?php 
+                                $activo = $fila["borrar_user"];
+                                if($activo == 1)
+                                {
+                                    echo $fila["nombreUsuario"];
+                                }
+                                else
+                                {
+                                    echo $desactivado;
+                                }
+                                 ?></p>
                             </div>
                                 <h1 class="titleTxt"><?php echo $fila["nombre_Hilos"]; ?></h1>
                             <div class="descripDiv">
@@ -159,15 +171,12 @@ if ($activos == 1){
 
     <!--  -->
 
-    <?php while ($hilo = mysqli_fetch_assoc($datosHiloCompleto)) { ?>
+    <?php while ($hilo = mysqli_fetch_assoc($datosHiloCompleto)) {?>
         <div class="hilo">
        
        
             <!-- <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><button>Visitar perfil</button></a> -->
           
-
-
-           
 
 
                             <ul id="comments-list reply-list" class="comments-list">
@@ -181,7 +190,18 @@ if ($activos == 1){
                                                     <!-- Contenedor del Comentario -->
                                                         <div class='comment-box'>
                                                             <div class='comment-head'>
-                                                                <h6 class='comment-name'><?php echo $hilo["nombreUsuario"]; ?><a href=''></a></h6>
+                                                                <h6 class='comment-name'><?php 
+                                                                $activo = $hilo["borrar_user"];
+                                                                if($activo == 1)
+                                                                {
+                                                                    echo $hilo["nombreUsuario"];
+                                                                }
+                                                                else
+                                                                {
+                                                                    echo $desactivado;
+                                                                }
+                                                               
+                                                                ?><a href=''></a></h6>
                                                         
                                                                 <i class='fa fa-reply' onclick="respuesta()"></i>
 
