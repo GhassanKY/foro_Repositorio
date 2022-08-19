@@ -14,7 +14,7 @@ include "../BACKEND/BD_SESION.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Document</title>
     <style>
-       
+
     </style>
 </head>
 
@@ -22,7 +22,7 @@ include "../BACKEND/BD_SESION.php";
 
 
     <form class="d-flex">
-    <input class="form-control" id="buscar" name="buscar" onkeyup="buscar_ahora($('#buscar').val());" type="search" placeholder="buscar" aria-label="Search">
+        <input class="form-control" id="buscar" name="buscar" onkeyup="buscar_ahora($('#buscar').val());" type="search" placeholder="buscar" aria-label="Search">
     </form>
     <img src="./img/fondoReparado.svg" class="fondo-imagen">
     <header>
@@ -40,12 +40,12 @@ include "../BACKEND/BD_SESION.php";
                     <a href="editarperfil.php">
                         <li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
-                        <form action="../BACKENd/fecha-sesion.php" method="POST">
-                            <input type="hidden" name="fecha-sesion" value="1">
-                            <!-- <a href="../BACKEND/sesionDestroy.php"> -->
-                                <button class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</button>
-                            <!-- </a> -->
-                        </form>
+                    <form action="../BACKENd/fecha-sesion.php" method="POST">
+                        <input type="hidden" name="fecha-sesion" value="1">
+                        <!-- <a href="../BACKEND/sesionDestroy.php"> -->
+                        <button class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</button>
+                        <!-- </a> -->
+                    </form>
                 </ol>
             </div>
 
@@ -54,15 +54,21 @@ include "../BACKEND/BD_SESION.php";
 
 
     <div class="list">
-        
+
         <ul>
-         
+
             <li><a style="display:none;" href="sesion.php">Inicio</a></li>
 
-            <a href="temas.php?id=1"><li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li></a>
+            <a href="temas.php?id=1">
+                <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
+            </a>
             <!-- <a href="sidebar.php?id=1"><li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li></a> -->
-            <a href="sidebar.php?id=2"><li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li></a>
-            <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
+            <a href="sidebar.php?id=2">
+                <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            </a>
+            <a href="sidebar.php?id=3">
+                <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+            </a>
         </ul>
         </ul>
     </div>
@@ -70,7 +76,8 @@ include "../BACKEND/BD_SESION.php";
 
     <section class="sectionInfo">
         <div class="buttonReciente">
-            <!-- <p><?php // echo $numeroPublicacionesNuevas  ?> Publiciones nuevas</p> -->
+            <!-- <p><?php // echo $numeroPublicacionesNuevas  
+                    ?> Publiciones nuevas</p> -->
 
             <!-- BOTONES DE LOS TEMAS -->
             <button class="botonTemas">Temas <img src="image/a.png" alt=""></button>
@@ -114,7 +121,9 @@ include "../BACKEND/BD_SESION.php";
     </section>
     <script type="text/javascript">
         function buscar_ahora(buscar) {
-            var parametros = {"buscar":buscar};
+            var parametros = {
+                "buscar": buscar
+            };
             $.ajax({
                 data: parametros,
                 type: 'POST',
