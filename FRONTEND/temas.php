@@ -70,7 +70,8 @@
             </div>
 
 
-        <div class="body">  
+        <div class="body"> 
+         
          <?php while($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
 
 
@@ -126,7 +127,7 @@
 
 
                 </div>
-         
+                <img src="./img/fondoReparado.svg" class="fondo-imagen">
 <script src="js/temas.js"></script>
 <script src="js/temacolor.js"></script>
 </body>

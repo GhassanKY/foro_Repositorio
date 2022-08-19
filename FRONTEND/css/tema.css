@@ -102,6 +102,13 @@ body{
   
 }
 
+.fondo-imagen{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+}
+
 @keyframes swing-in-top-fwd {
     0% {
       -webkit-transform: rotateX(-100deg);
