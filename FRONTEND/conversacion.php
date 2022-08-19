@@ -5,6 +5,7 @@ include "../BACKEND/BD_SESION.php";
 
 $datosUsuario = mysqli_query($conector, "SELECT * FROM usuarios WHERE correo = '$usuario';");
 
+$desactivado = "[usuario desactivado]";
 
 while ($fila = mysqli_fetch_assoc($datosUsuario)) {
     $n = $fila["id"];
@@ -157,7 +158,17 @@ $codiGod = $_GET["id"];
 
                             <div class="titleDiv">
                                 <div class="publicateFor">
-                                    <p class="publicatedForTxt">Publicado por u/<?php echo $fila["nombreUsuario"]; ?></p>
+                                    <p class="publicatedForTxt">Publicado por u/<?php 
+                                $activo = $fila["borrar_user"];
+                                if($activo == 1)
+                                {
+                                    echo $fila["nombreUsuario"];
+                                }
+                                else
+                                {
+                                    echo $desactivado;
+                                }
+                                 ?></p>
                                 </div>
                                 <h1 class="titleTxt"><?php echo $fila["nombre_Hilos"]; ?></h1>
                                 <div class="descripDiv">
@@ -191,7 +202,19 @@ $codiGod = $_GET["id"];
                                             <!-- Contenedor del Comentario -->
                                             <div class='comment-box'>
                                                 <div class='comment-head'>
-                                                    <h6 class='comment-name'><?php echo $hilo["nombreUsuario"]; ?><a href=''></a></h6>
+                                                    <h6 class='comment-name'>
+                                                    <?php 
+                                                    $activo = $hilo["borrar_user"];
+                                                    if($activo == 1)
+                                                    {
+                                                        echo $hilo["nombreUsuario"];
+                                                    }
+                                                    else
+                                                    {
+                                                        echo $desactivado;
+                                                    }
+                                                    ?>
+                                                        <a href=''></a></h6>
 
                                                     <i class='fa fa-reply' onclick="respuesta()"></i>
 
