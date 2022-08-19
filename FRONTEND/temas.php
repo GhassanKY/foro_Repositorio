@@ -96,11 +96,23 @@
                                     <div class="commentsAndPhoto">
 
                                             <div class="imgFriends">
-                                                <img src="./image/p1.jpg" alt="" class="pfHeaderpf photoOne">
-                                                <img src="./image/p2.jpg" alt="" class="pfHeaderpf photoTwo">
-                                                <img src="./image/p3.jpg" alt="" class="pfHeaderpf">
-                                                <img src="./image/p4.jpg" alt="" class="pfHeaderpf">
-                                                <img src="./image/p5.jpg" alt="" class="pfHeaderpf">
+                                                <?php
+                                                    $id = $hilo["ID"];
+                                                    $queryUsers = "SELECT * FROM mensajes WHERE hilo_ID = $id";
+                                                    $mensaje = mysqli_query($conector, $queryUsers);
+                                                    $count = 0;
+                                                    while(($mensajeArray = mysqli_fetch_assoc($mensaje)) && $count < 5)
+                                                    {
+                                                        $idUsuario = $mensajeArray['usuario_ID'];
+                                                        $queryFoto = "SELECT image_user FROM usuarios WHERE id= $idUsuario";
+                                                        $foto = mysqli_query($conector, $queryFoto);
+                                                        $fotoArray = mysqli_fetch_assoc($foto);
+                                                        $fotoSrc = $fotoArray['image_user'];
+                                                        echo "<img src='$fotoSrc' alt='' class='pfHeaderpf'>";
+                                                        $count++;
+                                                    }
+                                                ?>
+                                               
                                                 
                                             </div>
 
