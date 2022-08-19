@@ -46,7 +46,7 @@
         <ul>
              <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
             <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
-            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+            <!-- <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li> -->
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
             <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul> 
@@ -70,7 +70,8 @@
             </div>
 
 
-        <div class="body">  
+        <div class="body"> 
+         
          <?php while($hilo = mysqli_fetch_assoc($datosHilos)) { ?>
 
 
@@ -95,11 +96,23 @@
                                     <div class="commentsAndPhoto">
 
                                             <div class="imgFriends">
-                                                <img src="./image/p1.jpg" alt="" class="pfHeaderpf photoOne">
-                                                <img src="./image/p2.jpg" alt="" class="pfHeaderpf photoTwo">
-                                                <img src="./image/p3.jpg" alt="" class="pfHeaderpf">
-                                                <img src="./image/p4.jpg" alt="" class="pfHeaderpf">
-                                                <img src="./image/p5.jpg" alt="" class="pfHeaderpf">
+                                                <?php
+                                                    $id = $hilo["ID"];
+                                                    $queryUsers = "SELECT * FROM mensajes WHERE hilo_ID = $id";
+                                                    $mensaje = mysqli_query($conector, $queryUsers);
+                                                    $count = 0;
+                                                    while(($mensajeArray = mysqli_fetch_assoc($mensaje)) && $count < 5)
+                                                    {
+                                                        $idUsuario = $mensajeArray['usuario_ID'];
+                                                        $queryFoto = "SELECT image_user FROM usuarios WHERE id= $idUsuario";
+                                                        $foto = mysqli_query($conector, $queryFoto);
+                                                        $fotoArray = mysqli_fetch_assoc($foto);
+                                                        $fotoSrc = $fotoArray['image_user'];
+                                                        echo "<img src='$fotoSrc' alt='' class='pfHeaderpf'>";
+                                                        $count++;
+                                                    }
+                                                ?>
+                                               
                                                 
                                             </div>
 
@@ -126,7 +139,7 @@
 
 
                 </div>
-         
+                <img src="./img/fondoReparado.svg" class="fondo-imagen">
 <script src="js/temas.js"></script>
 <script src="js/temacolor.js"></script>
 </body>
