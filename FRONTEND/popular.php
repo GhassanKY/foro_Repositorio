@@ -1,5 +1,5 @@
 <?php
-include "../BACKEND/BD_SESION.php";
+include "../BACKEND/populares.php";
 
 
 ?>
@@ -12,13 +12,11 @@ include "../BACKEND/BD_SESION.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/sesion.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <title>Document</title>
     <style>
-       .p{
+        .p{
             border-bottom: 1px solid rgb(56, 56, 56);
             padding: 7px;
         }
-
         .item4 a{
             text-decoration: none;
             color: #505153;
@@ -29,6 +27,13 @@ include "../BACKEND/BD_SESION.php";
         .oscuro .p{
             border-bottom: 1px solid rgb(214, 51, 255);
         }
+        .searchbutton{
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+    <style>
+       
     </style>
 </head>
 
@@ -85,7 +90,7 @@ include "../BACKEND/BD_SESION.php";
     <section class="sectionInfo">
         <div class="buttonReciente">
             <!-- <p><?php // echo $numeroPublicacionesNuevas  ?> Publiciones nuevas</p> -->
-
+            
             <!-- BOTONES DE LOS TEMAS -->
             <button class="botonTemas">Temas <img src="image/a.png" alt=""></button>
             <div class="divTema">
@@ -93,15 +98,17 @@ include "../BACKEND/BD_SESION.php";
                     <a href="temas.php?id=<?php echo $temas1['ID']; ?>">
                         <p><?php echo $temas1['nombre']; ?></p>
                     </a>
-                <?php } ?>
-            </div>
-
+                    <?php } ?>
+                </div>
+                
             <div class="item4">
-                    <p class="p">Principal</p>
-                    <p><a href="popular.php">Popular</a></p>
+                    <p><a href="sesion.php">Principal</a></p>
+                    <p class="p">popular</p>
             </div>
 
             <button class="buttonCreate">Iniciar Nueva Discusión </button>
+             
+
 
             <!-- CAJA DE PUBLICAR EL NUEVO HILO -->
             <div class="cajaPublicarNuevo">
@@ -124,31 +131,66 @@ include "../BACKEND/BD_SESION.php";
                 </div>
             </div>
         </div>
-
+        
         <div class="publication">
             <div id="fatherHilos" class="fatherHilos">
+
+                            <?php while ($hilo = mysqli_fetch_assoc($populares)) {    ?>
+                                <?php $id2 = $hilo["ID"] ?>
+                                        <div class="hilos">
+                                            <div class="informationPublic">
+                                                <div class="imgDiv">
+                                                    <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>" style="color:black;" class="vperfil"><img src="<?php echo $hilo["image_user"]; ?>" alt="" class="pfHeader"></a>
+                                                </div>
+                                                <a href="conversacion.php?id=<?php echo $id2 ?>">
+                                                    <div class="txtHilo">
+                                                        <p class="titleHilo"><?php echo $hilo["nombre_Hilos"]; ?></p>
+                                                        <p><?php echo $hilo["descripcion"]; ?></p>
+                                                        <div class="boxInfo">
+                                                            <p class="date"><?php echo $hilo["fechaCreacionHilo"]; ?></p>
+                                                            <img src="image/fecha.png" alt="date" class="calendar">
+                                                        </div>
+                                                        <p class="nameUser"><?php echo $hilo["nombreUsuario"]; ?></p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="comments">
+                                            <?php
+                                                    $id = $hilo["ID"];
+                                                    $queryUsers = "SELECT * FROM mensajes WHERE hilo_ID = $id";
+                                                    $mensaje = mysqli_query($conector, $queryUsers);
+                                                    $count = 0;
+                                                    while(($mensajeArray = mysqli_fetch_assoc($mensaje)) && $count < 5)
+                                                    {
+                                                        $idUsuario = $mensajeArray['usuario_ID'];
+                                                        $queryFoto = "SELECT image_user FROM usuarios WHERE id= $idUsuario";
+                                                        $foto = mysqli_query($conector, $queryFoto);
+                                                        $fotoArray = mysqli_fetch_assoc($foto);
+                                                        $fotoSrc = $fotoArray['image_user'];
+                                                        echo "<a href='conversacion.php?id=$id2'><img src='$fotoSrc' alt='' class='pfHeaderpf'></a>";
+                                                        $count++;
+                                                    }
+                                            ?>
+                                                
+                                            <?php
+                                                $query = "SELECT COUNT(*) AS total FROM mensajes WHERE hilo_ID = $id2"; 
+                                                $comentarios = mysqli_query($conector, $query);
+                                                $comentariosArray = mysqli_fetch_assoc($comentarios);
+                                            
+                                            ?> <p class="pComentarios"><?php echo $comentariosArray['total'] ;?> Comentarios</p>
+
+                                                
+                                            </div>
+                                    </div>
+                            <?php } ?>   
 
 
             </div>
         </div>
     </section>
-    <script type="text/javascript">
-        function buscar_ahora(buscar) {
-            var parametros = {"buscar":buscar};
-            $.ajax({
-                data: parametros,
-                type: 'POST',
-                url: 'buscador.php',
-                success: function(data) {
-                    document.getElementById("fatherHilos").innerHTML = data;
-                }
-            });
-        }
-        buscar_ahora();
-    </script>
     <script src="js/temacolor.js"></script>
     <script src="js/sesion.js"></script>
-    <script src="js/buscador.js"></script>
+    <!-- <script src="js/buscador.js"></script> -->
 </body>
 
 </html>

@@ -6,6 +6,14 @@ let datos = document.querySelector(".datos");
 let datos2 = document.querySelector(".datos2");
 let desplegable = document.querySelector(".list");
 let menu = document.querySelector(".imgMenu");
+let fotoPerfil = document.querySelector(".img_user");
+let divfotoPerfil = document.querySelector(".divFotoPerfil");
+
+
+fotoPerfil.addEventListener("click", ()=> {
+	fotoPerfil.classList.toggle("fotoPerfilAmpliada");
+	divfotoPerfil.classList.toggle("divAmpliado");
+})
 
 pfHeader.addEventListener('click', () => {
 

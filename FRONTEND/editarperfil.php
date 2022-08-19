@@ -51,9 +51,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
   </header>
   <div class="list">
       <ul>
-      <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
-            <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
-            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
+            <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
             <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul>
@@ -69,7 +67,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
                       <img class="perfil" id="file" src="<?php echo $foto ?>" alt="">
                       <div class="actualizaimg">
                          <input type="hidden" value="<?php echo $n ?>" name="id">
-                        <input name="foto" type="file" placeholder="actualiza tu foto" id="costumFile" aria-label="Archivo" onchange="vista_preliminar(event)">
+                        <input name="foto" type="file" placeholder="actualiza tu foto" id="costumFile" aria-label="Archivo" onchange="vista_preliminar(event)"  enctype='multipart/form-data'>
                         <label for="costumFile" class="formFile">Cambiar foto</label>
                         <p class="icono"><img src="image/usuario.png" alt=""> <?php echo $nombre ?></p>
                         <p class="icono"><img src="image/whatsapp.png" alt=""> <?php echo $tel ?></p>

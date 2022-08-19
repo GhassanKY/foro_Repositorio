@@ -55,8 +55,6 @@ include "../BACKEND/BD_PERFIL.php";
         <ul>
 
             <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
-            <li class="listGroup"><img src="image/chat.png" alt="Chat" class="imgBar"> Discusiones</li>
-            <li class="listGroup"><img src="image/tag.png" alt="Chat" class="imgBar"> Tags</li>
             <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
             <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul>
@@ -65,7 +63,9 @@ include "../BACKEND/BD_PERFIL.php";
     <div>
         <div class="barradedatos">
             <div class="user_image">
+                <div class="divFotoPerfil">
                     <img class="img_user" src="<?php echo $fotoPerfil ?>">
+                </div>
                 <div class="nombres">
                     <h2><?php echo $nombreUsuario ?></h2>
                 </div>

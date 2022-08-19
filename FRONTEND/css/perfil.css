@@ -355,7 +355,27 @@ body {
     align-items: center;
     justify-content: space-around;
 }
-
+.divAmpliado{
+    position: fixed;
+    z-index: 1000;
+    background-color: #000000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.fotoPerfilAmpliada{
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    border: none;
+    border-radius: 0px;
+    
+} 
 .icon {
     position: relative;
     margin-left: 7px;
@@ -607,6 +627,8 @@ dialog {
         width: 100%;
         left: 0px;
         transition: .5s;
+        z-index: 1000;
+        height: 100vh;
     }
 
     .fondo-imagen{

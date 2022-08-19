@@ -32,15 +32,32 @@
                                 </a>
                             </div>
                             <div class="comments">
-
+                            <div class="fotoComentarios">
+                            <?php
+                                    $id = $hilo["ID"];
+                                    $queryUsers = "SELECT * FROM mensajes WHERE hilo_ID = $id";
+                                    $mensaje = mysqli_query($conector, $queryUsers);
+                                    $count = 0;
+                                    while(($mensajeArray = mysqli_fetch_assoc($mensaje)) && $count < 5)
+                                    {
+                                        $idUsuario = $mensajeArray['usuario_ID'];
+                                        $queryFoto = "SELECT image_user FROM usuarios WHERE id= $idUsuario ORDER BY id ASC ";
+                                        $foto = mysqli_query($conector, $queryFoto);
+                                        $fotoArray = mysqli_fetch_assoc($foto);
+                                        $fotoSrc = $fotoArray['image_user'];
+                                        echo "<a href='conversacion.php?id=$id2'><img src='$fotoSrc' alt='' class='pfHeaderpf'></a>";
+                                        $count++;
+                                    }
+                            ?>
+                            </div>
                             <?php
                                 $query = "SELECT COUNT(*) AS total FROM mensajes WHERE hilo_ID = $id2"; 
                                 $comentarios = mysqli_query($conector, $query);
                                 $comentariosArray = mysqli_fetch_assoc($comentarios);
                                
-                            ?> <p><?php echo $comentariosArray['total'] ;?></p>
+                            ?> <p class="pComentarios"><?php echo $comentariosArray['total'] ;?> Comentarios</p>
 
-                                <a href="conversacion.php?id=<?php echo $id2; ?>"><img src="image/chateando.png" alt="comments" class="comments"></a>
+                              
                             </div>
                         </div>
 
@@ -65,15 +82,31 @@
                                 </a>
                             </div>
                             <div class="comments">
-
+                            <?php
+                                    $id = $hilo["ID"];
+                                    $queryUsers = "SELECT * FROM mensajes WHERE hilo_ID = $id";
+                                    $mensaje = mysqli_query($conector, $queryUsers);
+                                    $count = 0;
+                                    while(($mensajeArray = mysqli_fetch_assoc($mensaje)) && $count < 5)
+                                    {
+                                        $idUsuario = $mensajeArray['usuario_ID'];
+                                        $queryFoto = "SELECT image_user FROM usuarios WHERE id= $idUsuario";
+                                        $foto = mysqli_query($conector, $queryFoto);
+                                        $fotoArray = mysqli_fetch_assoc($foto);
+                                        $fotoSrc = $fotoArray['image_user'];
+                                        echo "<a href='conversacion.php?id=$id2'><img src='$fotoSrc' alt='' class='pfHeaderpf'></a>";
+                                        $count++;
+                                    }
+                            ?>
+                                
                             <?php
                                 $query = "SELECT COUNT(*) AS total FROM mensajes WHERE hilo_ID = $id2"; 
                                 $comentarios = mysqli_query($conector, $query);
                                 $comentariosArray = mysqli_fetch_assoc($comentarios);
                                
-                            ?> <p><?php echo $comentariosArray['total'] ;?></p>
+                            ?> <p class="pComentarios"><?php echo $comentariosArray['total'] ;?> Comentarios</p>
 
-                                <a href="conversacion.php?id=<?php echo $id2 ?>"><img src="image/chateando.png" alt="comments" class="comments"></a>
+                                
                             </div>
                         </div>
                        <?php } ?>

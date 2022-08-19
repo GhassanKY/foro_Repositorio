@@ -11,6 +11,7 @@ if (!isset($_SESSION["welcome"])) {
     header("location: index.html");
 } else {
 
+    
     //Datos del usuario que inicio sesion
     $datosUsuario = mysqli_query($conector, "SELECT *
                                              FROM usuarios

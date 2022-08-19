@@ -30,13 +30,12 @@
             </div>
             <input type="submit" value="Iniciar sesion" class="btn solid" />
           </form>
-          <form action="../BACKEND/register.php" class="sign-up-form" class="formulario__login" method="POST">
+          <form action="../BACKEND/register.php" class="sign-up-form" class="formulario__login" method="POST" enctype='multipart/form-data'>
             <!-- <h2 class="title">Registrarse</h2> -->
 
 
             <div class="foto"><img  class="preliminar" src="image/usu2.jpg" id="file"></div>
-            <input id="file-arch" type="file" name="src-file1" aria-label="Archivo" onchange="vista_preliminar(event)">
-
+            <input id="file-arch" type="file"  enctype='multipart/form-data' name="src-file1" aria-label="Archivo" onchange="vista_preliminar(event)">
 
             <div class="input-field">
               <i class="fas fa-user"></i>
