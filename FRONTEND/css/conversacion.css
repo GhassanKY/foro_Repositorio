@@ -78,7 +78,7 @@ dialog::backdrop {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     padding: 7px 8px;
     transition: .5s;
-    margin: 0 auto;
+    margin: 12px auto;
     width: 100%;
 }
 .importanteButtonReciente {
@@ -630,6 +630,8 @@ ul {
 .oscuro .comment-content{
     background-color: #515a63;
     color: white;
+    display: flex;
+    justify-content: space-between;
 }
 .oscuro .comment-name{
     color: white;
