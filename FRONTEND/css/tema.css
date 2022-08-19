@@ -279,6 +279,11 @@ body{
     .puntos {
         display: block;
     }
+
+    .fondo-imagen{
+        
+        width: 150%;
+    }
 }
 
 
