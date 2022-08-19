@@ -27,8 +27,19 @@ function hilo(){
 
 
         let hilo = "";
-         data["hilo"].forEach(element => {
-         
+        data["hilo"].forEach(element => {
+
+            //consulta numero de comentarios
+            $id3 = element.idhil
+            $.post("../BACKEND/numComentarios.php", {$id3}, function (response){
+                let dataComentarios = JSON.parse(response);
+                console.log(dataComentarios);
+            });
+
+
+
+
+
             hilo += `
 
             <div class="hiloForUsers" idhilo="${element.idhilo}">    

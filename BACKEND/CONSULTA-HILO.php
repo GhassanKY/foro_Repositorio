@@ -37,6 +37,7 @@ while($row = mysqli_fetch_array($datoshilo)){
          "fecha" => $row["fechaCreacionHilo"],
          "idusuario" => $row["id"],
          "foto" => $row["image_user"]
+         
         
 ];
     }

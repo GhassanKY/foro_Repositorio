@@ -26,7 +26,8 @@ body{
     padding-bottom: 60px;
     border-radius: 7px;
     margin-bottom: 50px;
-    
+    background: linear-gradient(rgb(255 255 255 / 73%) 90%, rgb(237 237 237 / 73%) 100%);
+       
 }
 .searchbutton {
     display: none;
@@ -100,6 +101,14 @@ body{
     -webkit-animation: swing-in-top-fwd .3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
     animation: swing-in-top-fwd .3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
   
+}
+
+.fondo-imagen{
+    z-index: -1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 60%;
 }
 
 @keyframes swing-in-top-fwd {
@@ -271,6 +280,11 @@ body{
     }
     .puntos {
         display: block;
+    }
+
+    .fondo-imagen{
+        
+        width: 150%;
     }
 }
 
