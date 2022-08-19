@@ -281,7 +281,7 @@ $codiGod = $_GET["id"];
             </div>
 
     </section>
-
+    <img src="./img/fondoReparado.svg" class="fondo-imagen">
 
 
     <script src="./js/temacolor.js"></script>
