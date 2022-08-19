@@ -24,11 +24,7 @@ body {
 .date{
     color: black;
 }
-.fondo-imagen{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-}
+
 
 .mandos{
     margin-top: 70px;
@@ -612,6 +608,12 @@ dialog {
         left: 0px;
         transition: .5s;
     }
+
+    .fondo-imagen{
+        
+        width: 150%;
+    }
+    
 }
 
 
