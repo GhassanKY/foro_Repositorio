@@ -14,7 +14,6 @@ include "../BACKEND/BD_SESION.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Document</title>
     <style>
-<<<<<<< HEAD
        .p{
             border-bottom: 1px solid rgb(56, 56, 56);
             padding: 7px;
@@ -30,9 +29,6 @@ include "../BACKEND/BD_SESION.php";
         .oscuro .p{
             border-bottom: 1px solid rgb(214, 51, 255);
         }
-=======
-
->>>>>>> c1d76b33df9bcb00ea23e5e5df973cc71edc3531
     </style>
 </head>
 
