@@ -215,7 +215,7 @@ $codiGod = $_GET["id"];
                                                     }
                                                     ?>
                                                         <a href=''></a></h6>
-
+ 
                                                     <i class='fa fa-reply' onclick="respuesta()"></i>
 
                                                     <script>
@@ -282,7 +282,7 @@ $codiGod = $_GET["id"];
             </div>
 
     </section>
-
+    <img src="./img/fondoReparado.svg" class="fondo-imagen">
 
 
     <script src="./js/temacolor.js"></script>

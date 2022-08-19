@@ -86,7 +86,7 @@ include "../BACKEND/BD_SESION.php";
                     <a class="color morado" href="sidebar.php"><button id="morado"></button></a>
 
             </div>
-            
+            <img src="./img/fondoReparado.svg" class="fondo-imagen">    
            
 
     
