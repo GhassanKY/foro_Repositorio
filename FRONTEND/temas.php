@@ -28,7 +28,7 @@
                     <a href="editarperfil.php">
                         <li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
                     </a>
-                        <form action="../BACKENd/fecha-sesion.php" method="POST">
+                        <form action="../BACKEND/fecha-sesion.php" method="POST">
                             <input type="hidden" name="fecha-sesion" value="1">
                             <!-- <a href="../BACKEND/sesionDestroy.php"> -->
                                 <button class="exit"><img src="image/exit.png" alt="Exit" class="buttonExit buttonPop"> Salir</button>
