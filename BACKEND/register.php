@@ -7,60 +7,27 @@ $mensaje = "";
 $nombre = $_POST["nombre"] ??  null;
 $correo = $_POST["correo"] ??  null;
 $clave = $_POST["clave"] ??  null;
-<<<<<<< HEAD
+
 $usuario = $_POST["usuario"]?? null;
-=======
+
 $usuario = $_POST["usuario"] ?? null;
-// $destino = $_POST["src-file1"] ?? null;
-//agregar imagen
 
 $imagen = $_FILES['src-file1']['name'] ?? null;
->>>>>>> c1d76b33df9bcb00ea23e5e5df973cc71edc3531
 
 if (!empty($imagen)) {
   $ruta = $_FILES['src-file1']['tmp_name'] ?? null;
   $destino = "../FRONTEND/image/" . $imagen ?? null;
 
-<<<<<<< HEAD
-$imagen = $_FILES['src-file1']['name'] ?? null; 
 
-if (!empty($imagen)) {
-  $ruta = $_FILES['src-file1']['tmp_name'] ?? null;
-  $destino = "../FRONTEND/image/" . $imagen ?? null;
-
-=======
->>>>>>> c1d76b33df9bcb00ea23e5e5df973cc71edc3531
   copy($ruta, $destino) ?? null;
 } else {
   $ruta = "../FRONTEND/image/usu.jpg";
   $destino = "../FRONTEND/image/usu.jpg" ?? null;
   copy($ruta, $destino) ?? null;
 };
-<<<<<<< HEAD
 
 
-// // $destino = $_POST["src-file1"] ?? null;
-// //agregar imagen
-// $imagen = $_FILES['src-file1']['name'] ?? null;
-// $ruta = $_FILES['src-file1'] ['tmp_name'] ?? null;
-// $destino = "image/".$imagen;
-// $destinoCopia = "../FRONTEND/image/".$imagen;
 
-// print_r($ruta);
-// copy($ruta, $destinoCopia);
-
-
-// if(is_uploaded_file($ruta)){
-// } else{
-//   $destinoCopia = "../FRONTEND/image/usu.jpg";
-//   $destino = "image/usu.jpg";
-
-// }
-
-
-// ;
-=======
->>>>>>> c1d76b33df9bcb00ea23e5e5df973cc71edc3531
 
 $query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto,image_user,telefono,link,borrar_user)
           VALUES('$correo','$usuario','$clave','$nombre','$destino','vacio','vacio','1')";

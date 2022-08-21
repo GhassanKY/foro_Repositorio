@@ -66,11 +66,19 @@ $codiGod = $_GET["id"];
     <div class="list">
 
         <ul>
-            <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar"> Inicio</li> </a>
-            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
-            <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
+            <a href="sesion.php">
+                <li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar"> Inicio</li>
+            </a>
+            <!-- <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li> -->
+            <a href="sidebar.php?id=3">
+                <li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li>
+            </a>
         </ul>
     </div>
+
+    
+
+
 
 <body>
     <!-- <a href="temas.php?id=1"><button>Aviones</button></a>
@@ -154,17 +162,14 @@ $codiGod = $_GET["id"];
 
                             <div class="titleDiv">
                                 <div class="publicateFor">
-                                    <p class="publicatedForTxt">Publicado por u/<?php 
-                                $activo = $fila["borrar_user"];
-                                if($activo == 1)
-                                {
-                                    echo $fila["nombreUsuario"];
-                                }
-                                else
-                                {
-                                    echo $desactivado;
-                                }
-                                 ?></p>
+                                    <p class="publicatedForTxt">Publicado por u/<?php
+                                                                                $activo = $fila["borrar_user"];
+                                                                                if ($activo == 1) {
+                                                                                    echo $fila["nombreUsuario"];
+                                                                                } else {
+                                                                                    echo $desactivado;
+                                                                                }
+                                                                                ?></p>
                                 </div>
                                 <h1 class="titleTxt"><?php echo $fila["nombre_Hilos"]; ?></h1>
                                 <div class="descripDiv">
@@ -194,24 +199,24 @@ $codiGod = $_GET["id"];
                                     <li>
                                         <div class='comment-main-level'>
                                             <!-- Avatar -->
-                                            <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>"><div class='comment-avatar'><img src='<?php echo $hilo["image_user"]; ?>' alt='photo'></div></a>
+                                            <a href="perfil.php?idPerfil=<?php echo $hilo["id"]; ?>">
+                                                <div class='comment-avatar'><img src='<?php echo $hilo["image_user"]; ?>' alt='photo'></div>
+                                            </a>
                                             <!-- Contenedor del Comentario -->
                                             <div class='comment-box'>
                                                 <div class='comment-head'>
                                                     <h6 class='comment-name'>
-                                                    <?php 
-                                                    $activo = $hilo["borrar_user"];
-                                                    if($activo == 1)
-                                                    {
-                                                        echo $hilo["nombreUsuario"];
-                                                    }
-                                                    else
-                                                    {
-                                                        echo $desactivado;
-                                                    }
-                                                    ?>
-                                                        <a href=''></a></h6>
- 
+                                                        <?php
+                                                        $activo = $hilo["borrar_user"];
+                                                        if ($activo == 1) {
+                                                            echo $hilo["nombreUsuario"];
+                                                        } else {
+                                                            echo $desactivado;
+                                                        }
+                                                        ?>
+                                                        <a href=''></a>
+                                                    </h6>
+
                                                     <i class='fa fa-reply' onclick="respuesta()"></i>
 
                                                     <script>
@@ -288,7 +293,7 @@ $codiGod = $_GET["id"];
     <script src="ckeditor/ckeditor.js"></script>
     <script src="js/desactivarHilo.js"></script>
     <script src="js/sesion.js"></script>
-
+    <script src="js/help.js"></script>
 
 
 

@@ -1,0 +1,102 @@
+.dialog {
+    z-index: 700;
+    display: none;
+    transition: .5s;
+    height: auto;
+    width: 0;
+    left: -100%;
+}
+
+.dialog-v {
+    display: block;
+    width: 80%;
+    height: auto;
+    transition: .5s;
+    margin: 84px 0;
+    top: 0;
+    left: 210px;
+    position: absolute;
+    z-index: 3400;
+    background: white;
+    padding: 10px 10px;
+    border-radius: 12px;
+    opacity: .9;
+}
+.dialog-v::backdrop {
+    background-color: black;
+    opacity: .6;
+}
+
+.dialog-v h1 {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px 10px;
+    font-family: monospace;
+    margin-bottom: 50px;
+
+}
+.dialog-v p {
+    margin: 28px 10px;
+}
+.dialog-v h2 {
+    margin: 50px 10px;
+}
+.imgPc {
+    width: 77vw;
+}
+.imgMovil {
+    width: 88vw;
+}
+.buttonHomeCOming {
+    position: absolute;
+    top: 9px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px 10px;
+    background: black;
+    width: 4vw;
+    left: 11px;
+}
+
+@media ( max-width: 1000px ) {
+    .dialog-v {
+        display: block;
+        width: 93%;
+        height: auto;
+        transition: .5s;
+        margin: 63px 0;
+        top: 0;
+        left: 15px;
+        position: absolute;
+        z-index: 3400;
+        background: white;
+        padding: 10px 10px;
+        border-radius: 12px;
+        opacity: .9;
+    }
+    .buttonHomeCOming {
+        position: absolute;
+        top: 16px;
+        border: 1px solid black;
+        border-radius: 50%;
+        padding: 10px 10px;
+        background: black;
+        width: 43px;
+        left: 9px;
+    }
+    .dialog-v h1 {
+        text-align: center;
+        font-size: 30px;
+        padding: 10px 10px;
+        font-family: monospace;
+        margin-bottom: 50px;
+        margin-left: 38px;
+    }
+}
+
+
+
+.slide-in-left{-webkit-animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both}
+
+
+@-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
