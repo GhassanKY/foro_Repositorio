@@ -49,7 +49,7 @@ include "../BACKEND/BD_SESION.php";
                 <img src="<?php echo $foto; ?>" alt="" class="pfHeader">
                 <ol class="PopLR">
                     <a href="perfil.php?idPerfil=<?php echo $n ?>">
-                        <li class="perfil1"><img src="image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop">Perfil</li>
+                        <li class="perfil1"><img src="image/icousuario.jpg" width="20px" alt="perfil" class="buttonPerfil buttonPop"> Perfil</li>
                     </a>
                     <a href="editarperfil.php">
                         <li class="settings"><img src="image/config.png" alt="settings" class="buttonSettings buttonPop"> Editar perfil</li>
@@ -127,8 +127,41 @@ include "../BACKEND/BD_SESION.php";
                 <p>Una vez que hagas click en (Agregar Comentario), tu comentario automaticamente se subira a la conversacion</p>
                 <li><img src="./img/comentarioRealizado.svg" alt="" srcset="" class="imgPc"></li>
 
+                <h1>Como entrar a tu perfil</h1>
 
+                <p>Para acceder a tu tu informacion, solo tienes que hacer click a tu foto en la parte superior derecha y seleccionar el apartado (perfil), veras toda tu información, ademas de los hilos creados.</p>
+                <img src="./img/image_01.svg" alt="perfil" class="imgPc">
                 
+                <h2>Elimación de cuenta</h2>
+
+
+                    <p>Para la correcta eliminación de tu cuenta, deberas hacer click en el boton (Elimar cuenta)</p>
+                    <p>Al eliminar tu cuenta sera borrada de manera de permanente y no podras iniciar sesión nuevamente.</p>
+                    <img src="./img/image_02.svg" alt="borrado" class="imgPc">
+
+
+                    <h2>Información de tu cuenta</h2>
+
+                    <p>Al hacer click en boton de información, se desplegara 3 apartados con tu correo, numero de telefono y red social.</p>
+
+                    <img src="./img/image_03.svg" alt="informacion" class="imgPc">
+
+                    <h1>Como Editar tu Perfil</h1>
+
+                    <p>Para poder editar información correspondiente a tu perfil, tienes que hacer click a tu foto en la parte superior derecha y seleccionar el apartado (Editar perfil), donde podras editar información a tu gusto.</p>
+
+                    <p>En este apartado puedes cambiar la imagen de tu perfil, el numero de telefono agregado y el link a una red social (facebook).</p>
+
+                    <img src="./img/image_04.svg" alt="configuracion" class="imgPc">
+
+
+                    <h1>Configuración de temas</h1>
+
+                    <p>Para acceder a este apartado basta con hacer click en la barra lateral izquierda, o bien, dar el click en boton de la parte superior, si estas en un dispositivo movil</p>
+
+                    <p>Aqui puedes cambiar a gusto propio, el tema que mas te agrade para el foro.</p>
+                    
+                    <img src="./img/image_05.svg" alt="temas" class="imgPc">
 
             </ul>
         </div>
