@@ -1,12 +1,8 @@
 <?php
+session_start();
+$usuario = $_SESSION["welcome"];
 include "../BACKEND/conector.php";
 
-if(!isset($_SESSION)){
-    session_start();
-}
-
-$idHilo;
-$usuario = $_SESSION["welcome"];
 if (!isset($_SESSION["welcome"])) {
     header("location: index.html");
 } else {

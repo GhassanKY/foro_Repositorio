@@ -28,7 +28,7 @@ if (!empty($imagen)) {
 
 
 
-
+// $clave_encriptada = password_hash($clave,PASSWORD_DEFAULT);
 $query = "INSERT INTO usuarios(correo,nombreUsuario,clave,nombreCompleto,image_user,telefono,link,borrar_user)
           VALUES('$correo','$usuario','$clave','$nombre','$destino','vacio','vacio','1')";
 

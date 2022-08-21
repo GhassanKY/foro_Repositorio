@@ -712,8 +712,8 @@ dialog {
         opacity: 1;
         transition: .3s;
         height: auto;
-        z-index: 2700;
-        border: 1px solid red;
+        z-index: 950;
+ 
     }
 
     .datos2 a {
