@@ -55,7 +55,7 @@ include "../BACKEND/BD_PERFIL.php";
         <ul>
 
             <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
-            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            <!-- <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li> -->
             <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul>
     </div>
@@ -139,15 +139,21 @@ include "../BACKEND/BD_PERFIL.php";
                     </div>
                 </div>
 
-                <button  class="botonEliminar" onclick="eliminar_userMobile()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
-                <dialog class="dialog2" id="dialog2">
+                <?php
+                $SesionActual = $_GET['idPerfil'];
+                if ($idSesion == $SesionActual){
+                ?>
+                <button  class="botonEliminar" onclick="eliminar_user ()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
+                <dialog id="dialogo">
                     ¿Estas seguro de querer eliminar tu cuenta?
                     <div class="boton_fiting">
                     <form method="POST" action="../BACKEND/borrarUser.php"><button class="botonEliminar" id="Si" value="0">Si</button></form>
-                    <button class="botonEliminar" onclick="cerrar_dialog2()">No</button>
+                    <button class="botonEliminar" onclick="cerrar_dialog()">No</button>
                     </div>
                 </dialog>
-                </div>
+                <?php
+                }
+                ?>
         </div>
     </div>
 

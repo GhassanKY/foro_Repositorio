@@ -528,7 +528,7 @@ ul {
 
     .comment-box .comment-head {
         background: #FCFCFC;
-        width: 64vw;
+        width: 91vw;
         padding: 10px 12px;
         border-bottom: 1px solid #E5E5E5;
         overflow: hidden;
@@ -538,7 +538,7 @@ ul {
     }
     .comment-box .comment-content {
         background: #fff;
-        width: 64vw;
+        width: 91vw;
         padding: 12px;
         display: flex;
         font-size: 15px;

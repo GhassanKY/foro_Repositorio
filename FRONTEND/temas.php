@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/dialog.css">
     <title>Document</title>
 </head>
 <body>
@@ -45,11 +46,65 @@
 
         <ul>
              <a href="sesion.php"><li class="listGroup"><img src="image/hom.png" alt="Chat" class="imgBar">  Inicio</li></a>
-            <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li>
+            <!-- <li class="listGroup"><img src="image/question.png" alt="Chat" class="imgBar"> Ayuda</li> -->
             <a href="sidebar.php?id=3"><li class="listGroup"><img src="image/config.png" alt="Chat" class="imgBar"> Ajustes</li></a>
         </ul> 
             </ul>
         </div>
+
+
+
+        <div class="dialog slide-in-left">
+            
+            <div class="hear">
+           
+                                        <a href="../FRONTEND/sesion.php">
+                                           
+                                                <img src="image/500horas.png" alt="buttonHome" class="buttonHomeCOming">
+                                            
+                                        </a>
+                 
+                <h1>Vaya, parece que necesitas ayuda :/.</h1>
+            </div>
+
+                    
+            <p>Esta es una pequeña guia para que entiendas, donde se encuentran cada una de las funciones que buscas </p>
+            <ul>
+                <li><h2>Como crear una nueva Conversacion/Discusión.</h2></li>
+                <p>Haciendo click en el boton (Iniciar una Nueva Discusion), podras comenzar un nuevo hilo.</p>
+                <p>Este hilo puede ser de temas variados, incluso puedes tener varios hilos a la vez.</p>
+                <li><img src="./img/SessionAyuda.svg" alt="img_config" srcset="" class="imgPc"></li>
+                
+                <p>Una vez le hayas dado click (Iniciar nueva discusion) te deberia de aparecer algo como esto</p>
+                <p>desde aqui podras crear tu hilo el cual te solicita un (nombre) y una (descripcion) sobre que trata el hilo creado</p>
+                <li><img src="./img/CrearHiloAyuda.svg" alt="img_config" srcset="" class="imgMovil"></li>
+                
+                <p>Una vez creada tu nueva discusion deberia verse algo asi</p>
+                <li><img src="./img/discusionCreada.svg" alt="" srcset="" class="imgPc"></li>
+                
+
+                <h2>Como agregar un comentario</h2>
+                <p>Una vez que hagas click sobre tu discusion deberia desplegarse algo asi</p>
+                <li><img src="./img/discusionCreadaAyuda (2).svg" alt="" srcset="" class="imgPc"></li>
+                <p>Desde aqui puedes agregar nuevos comentarios a tu discusion y otros usuarios tambien pueden comentar</p>
+                <li><img src="./img/CrearComentarioAyuda.svg" alt="" srcset="" class="imgPc"></li>
+                <p>En la barra superior que tienes en el recuadro de agregar un nuevo comentario <br>
+                puedes agregar emoticos, estilos de colores, distintas fuentes, incluso agregar un link</p>
+                <li><img src="./img/barraComentarioAyuda.svg" alt="" srcset="" class="imgPc"></li>
+                <p>Una vez que hagas click en (Agregar Comentario), tu comentario automaticamente se subira a la conversacion</p>
+                <li><img src="./img/comentarioRealizado.svg" alt="" srcset="" class="imgPc"></li>
+
+
+                
+
+            </ul>
+        </div>
+
+
+
+
+
+
 
         <div class="principalDiv">  
             
@@ -137,7 +192,10 @@
 
 
                 </div>
-                <img src="./img/fondoReparado.svg" class="fondo-imagen">
+            <img src="./img/fondoReparado.svg" class="fondo-imagen">
+    
+    
+<script src="js/help.js"></script>
 <script src="js/temas.js"></script>
 <script src="js/temacolor.js"></script>
 </body>
