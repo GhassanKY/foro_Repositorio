@@ -450,6 +450,7 @@ body {
 
 dialog {
     display: none;
+    align-items: center;
     margin: auto;
     height: 25vh;
     flex-direction: column;
@@ -893,6 +894,7 @@ body.oscuro{
     .oscuro .botonEliminar{
         background-color: #3f3f3f4f;
         color: white;
+        margin: 5px;
      }
 }
  .oscuro .informacion{
