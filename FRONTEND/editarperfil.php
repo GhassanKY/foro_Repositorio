@@ -19,7 +19,7 @@ include "../BACKEND/BD_EDITAR-PERFIL.php";
           <img src="image/izq.png" alt=""><p>PERFIL</p>
         </div></a>
         <a href="sesion.php"><div class="homme">
-          <p>HOMME</p><img src="image/der.png" alt="">
+          <p>INICIO</p><img src="image/der.png" alt="">
         </div></a>
     </div>
   <header>

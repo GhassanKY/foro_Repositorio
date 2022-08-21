@@ -25,7 +25,7 @@ include "../BACKEND/BD_PERFIL.php";
 <body>
 
     <div class="mandos">
-      <a href="sesion.php"><p>HOMME</p><img src="image/der.png" alt=""></a>
+      <a href="sesion.php"><p>INICIO</p><img src="image/der.png" alt=""></a>
     </div>
     <header>
         <nav>
