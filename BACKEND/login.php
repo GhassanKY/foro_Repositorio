@@ -9,9 +9,11 @@ $clave = $_POST["clave"] ?? null;
 
 $validar = mysqli_query($conector, "SELECT * FROM usuarios 
                                     WHERE correo = '$correo' and clave = '$clave' and borrar_user = 1");
-                            
+            
+       //desesncriptar contraseña     
 
-if(mysqli_num_rows($validar) > 0){
+
+if(mysqli_num_rows($validar) > 0  ){
     $_SESSION["welcome"] = $correo;  
     header("location: ../FRONTEND/sesion.php");
     
