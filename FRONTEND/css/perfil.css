@@ -712,7 +712,7 @@ dialog {
         opacity: 1;
         transition: .3s;
         height: auto;
-        z-index: 2700;
+        z-index: 950;
         border: 1px solid red;
     }
 
