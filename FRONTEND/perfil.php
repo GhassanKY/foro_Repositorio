@@ -5,7 +5,7 @@ include "../BACKEND/BD_PERFIL.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible"  content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/ba10ce0731.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -139,15 +139,21 @@ include "../BACKEND/BD_PERFIL.php";
                     </div>
                 </div>
 
-                <button  class="botonEliminar" onclick="eliminar_userMobile()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
-                <dialog class="dialog2" id="dialog2">
+                <?php
+                $SesionActual = $_GET['idPerfil'];
+                if ($idSesion == $SesionActual){
+                ?>
+                <button  class="botonEliminar" onclick="eliminar_user ()"><img class="iconoTrash" src="../FRONTEND/image/trash-can.png">Eliminar Cuenta</button>
+                <dialog id="dialogo">
                     ¿Estas seguro de querer eliminar tu cuenta?
                     <div class="boton_fiting">
                     <form method="POST" action="../BACKEND/borrarUser.php"><button class="botonEliminar" id="Si" value="0">Si</button></form>
-                    <button class="botonEliminar" onclick="cerrar_dialog2()">No</button>
+                    <button class="botonEliminar" onclick="cerrar_dialog()">No</button>
                     </div>
                 </dialog>
-                </div>
+                <?php
+                }
+                ?>
         </div>
     </div>
 
