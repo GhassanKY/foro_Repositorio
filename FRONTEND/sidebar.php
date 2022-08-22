@@ -21,7 +21,7 @@ include "../BACKEND/BD_SESION.php";
     <div class="mandos">
         <a href="sesion.php">
             <div class="homme">
-          <img src="image/izq.png" alt=""><p>HOMME</p>
+          <img src="image/izq.png" alt=""><p>HOME</p>
         </div></a>
         
             <div class="">
